@@ -1,0 +1,1265 @@
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 4
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"SampleVoice.cpp"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._ZN11SampleVoice7GetNameEv,"ax",%progbits
+  19              		.align	1
+  20              		.global	_ZN11SampleVoice7GetNameEv
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	_ZN11SampleVoice7GetNameEv:
+  26              	.LVL0:
+  27              	.LFB2542:
+  28              		.file 1 "SampleVoice.cpp"
+   1:SampleVoice.cpp **** #include "SampleVoice.h"	
+   2:SampleVoice.cpp **** 	
+   3:SampleVoice.cpp ****     
+   4:SampleVoice.cpp **** char *SampleVoice::GetName() {
+  29              		.loc 1 4 30 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+   5:SampleVoice.cpp **** 	return file_name;
+  34              		.loc 1 5 2 view .LVU1
+   6:SampleVoice.cpp **** }
+  35              		.loc 1 6 1 is_stmt 0 view .LVU2
+  36 0000 00F51270 		add	r0, r0, #584
+  37              	.LVL1:
+  38              		.loc 1 6 1 view .LVU3
+  39 0004 7047     		bx	lr
+  40              		.cfi_endproc
+  41              	.LFE2542:
+  43              		.section	.text._ZN11SampleVoice4InitEPsm,"ax",%progbits
+  44              		.align	1
+  45              		.global	_ZN11SampleVoice4InitEPsm
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	_ZN11SampleVoice4InitEPsm:
+  51              	.LVL2:
+  52              	.LFB2543:
+   7:SampleVoice.cpp **** 
+   8:SampleVoice.cpp **** // buffer should be predefined in SDRAM
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 2
+
+
+   9:SampleVoice.cpp **** void SampleVoice::Init(int16_t *buffer, uint32_t bufferLength) {
+  53              		.loc 1 9 64 is_stmt 1 view -0
+  54              		.cfi_startproc
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57              		@ link register save eliminated.
+  10:SampleVoice.cpp **** 	this->buffer = buffer;
+  58              		.loc 1 10 2 view .LVU5
+  11:SampleVoice.cpp **** 	this->bufferLength = bufferLength;
+  12:SampleVoice.cpp **** 	sample_length = 0;
+  59              		.loc 1 12 16 is_stmt 0 view .LVU6
+  60 0000 0023     		movs	r3, #0
+  10:SampleVoice.cpp **** 	this->buffer = buffer;
+  61              		.loc 1 10 15 view .LVU7
+  62 0002 8161     		str	r1, [r0, #24]
+  11:SampleVoice.cpp **** 	this->bufferLength = bufferLength;
+  63              		.loc 1 11 2 is_stmt 1 view .LVU8
+  11:SampleVoice.cpp **** 	this->bufferLength = bufferLength;
+  64              		.loc 1 11 21 is_stmt 0 view .LVU9
+  65 0004 0260     		str	r2, [r0]
+  66              		.loc 1 12 2 is_stmt 1 view .LVU10
+  67              		.loc 1 12 16 is_stmt 0 view .LVU11
+  68 0006 4360     		str	r3, [r0, #4]
+  13:SampleVoice.cpp **** 	startSample = 0;
+  69              		.loc 1 13 2 is_stmt 1 view .LVU12
+  14:SampleVoice.cpp **** 	endSample = bufferLength;
+  15:SampleVoice.cpp **** 	position = 0;
+  70              		.loc 1 15 11 is_stmt 0 view .LVU13
+  71 0008 8360     		str	r3, [r0, #8]
+  16:SampleVoice.cpp **** 	
+  17:SampleVoice.cpp **** 	playing = false;
+  72              		.loc 1 17 10 view .LVU14
+  73 000a 0375     		strb	r3, [r0, #20]
+  14:SampleVoice.cpp **** 	endSample = bufferLength;
+  74              		.loc 1 14 12 view .LVU15
+  75 000c C0E90332 		strd	r3, r2, [r0, #12]
+  15:SampleVoice.cpp **** 	
+  76              		.loc 1 15 2 is_stmt 1 view .LVU16
+  77              		.loc 1 17 2 view .LVU17
+  18:SampleVoice.cpp **** }
+  78              		.loc 1 18 1 is_stmt 0 view .LVU18
+  79 0010 7047     		bx	lr
+  80              		.cfi_endproc
+  81              	.LFE2543:
+  83              		.section	.text._ZN11SampleVoice4PlayEh,"ax",%progbits
+  84              		.align	1
+  85              		.global	_ZN11SampleVoice4PlayEh
+  86              		.syntax unified
+  87              		.thumb
+  88              		.thumb_func
+  90              	_ZN11SampleVoice4PlayEh:
+  91              	.LVL3:
+  92              	.LFB2544:
+  19:SampleVoice.cpp **** 
+  20:SampleVoice.cpp **** // starts sample playing with velocity 
+  21:SampleVoice.cpp **** void SampleVoice::Play(uint8_t velocity) {
+  93              		.loc 1 21 42 is_stmt 1 view -0
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 3
+
+
+  94              		.cfi_startproc
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  22:SampleVoice.cpp **** 	velocity_gain = ((float)(velocity & 127)) / 127.f;
+  98              		.loc 1 22 2 view .LVU20
+  99              		.loc 1 22 36 is_stmt 0 view .LVU21
+ 100 0000 01F07F01 		and	r1, r1, #127
+ 101              	.LVL4:
+ 102              		.loc 1 22 44 view .LVU22
+ 103 0004 DFED076A 		vldr.32	s13, .L4
+  23:SampleVoice.cpp **** 	playing = true;
+ 104              		.loc 1 23 10 view .LVU23
+ 105 0008 0123     		movs	r3, #1
+  22:SampleVoice.cpp **** 	velocity_gain = ((float)(velocity & 127)) / 127.f;
+ 106              		.loc 1 22 19 view .LVU24
+ 107 000a 07EE901A 		vmov	s15, r1	@ int
+ 108              		.loc 1 23 10 view .LVU25
+ 109 000e 0375     		strb	r3, [r0, #20]
+  22:SampleVoice.cpp **** 	velocity_gain = ((float)(velocity & 127)) / 127.f;
+ 110              		.loc 1 22 19 view .LVU26
+ 111 0010 F8EEE77A 		vcvt.f32.s32	s15, s15
+  24:SampleVoice.cpp **** 	position = startSample;
+ 112              		.loc 1 24 11 view .LVU27
+ 113 0014 C368     		ldr	r3, [r0, #12]
+ 114 0016 8360     		str	r3, [r0, #8]
+  22:SampleVoice.cpp **** 	velocity_gain = ((float)(velocity & 127)) / 127.f;
+ 115              		.loc 1 22 44 view .LVU28
+ 116 0018 87EEA67A 		vdiv.f32	s14, s15, s13
+  22:SampleVoice.cpp **** 	velocity_gain = ((float)(velocity & 127)) / 127.f;
+ 117              		.loc 1 22 16 view .LVU29
+ 118 001c 80EDD47A 		vstr.32	s14, [r0, #848]
+  23:SampleVoice.cpp **** 	playing = true;
+ 119              		.loc 1 23 2 is_stmt 1 view .LVU30
+ 120              		.loc 1 24 2 view .LVU31
+  25:SampleVoice.cpp **** }
+ 121              		.loc 1 25 1 is_stmt 0 view .LVU32
+ 122 0020 7047     		bx	lr
+ 123              	.L5:
+ 124 0022 00BF     		.align	2
+ 125              	.L4:
+ 126 0024 0000FE42 		.word	1123942400
+ 127              		.cfi_endproc
+ 128              	.LFE2544:
+ 130              		.section	.text._ZN11SampleVoice12IncrementPanEa,"ax",%progbits
+ 131              		.align	1
+ 132              		.global	_ZN11SampleVoice12IncrementPanEa
+ 133              		.syntax unified
+ 134              		.thumb
+ 135              		.thumb_func
+ 137              	_ZN11SampleVoice12IncrementPanEa:
+ 138              	.LVL5:
+ 139              	.LFB2545:
+  26:SampleVoice.cpp **** 
+  27:SampleVoice.cpp **** void SampleVoice::IncrementPan(int8_t inc) {
+ 140              		.loc 1 27 44 is_stmt 1 view -0
+ 141              		.cfi_startproc
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 4
+
+
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144              		@ link register save eliminated.
+  28:SampleVoice.cpp **** 	if (inc == -1 && pan > -50) pan--;
+ 145              		.loc 1 28 2 view .LVU34
+ 146 0000 4B1C     		adds	r3, r1, #1
+ 147 0002 08D1     		bne	.L7
+ 148              		.loc 1 28 19 is_stmt 0 discriminator 1 view .LVU35
+ 149 0004 90F9EC34 		ldrsb	r3, [r0, #1260]
+ 150              		.loc 1 28 16 discriminator 1 view .LVU36
+ 151 0008 13F1310F 		cmn	r3, #49
+ 152 000c 02DB     		blt	.L6
+ 153              		.loc 1 28 30 is_stmt 1 discriminator 2 view .LVU37
+ 154              		.loc 1 28 33 is_stmt 0 discriminator 2 view .LVU38
+ 155 000e 013B     		subs	r3, r3, #1
+ 156              	.L9:
+  29:SampleVoice.cpp **** 	else if (inc == 1 && pan < 50) pan++;
+ 157              		.loc 1 29 36 discriminator 2 view .LVU39
+ 158 0010 80F8EC34 		strb	r3, [r0, #1260]
+ 159              	.L6:
+  30:SampleVoice.cpp **** }
+ 160              		.loc 1 30 1 view .LVU40
+ 161 0014 7047     		bx	lr
+ 162              	.L7:
+  29:SampleVoice.cpp **** 	else if (inc == 1 && pan < 50) pan++;
+ 163              		.loc 1 29 7 is_stmt 1 view .LVU41
+ 164 0016 0129     		cmp	r1, #1
+ 165 0018 FCD1     		bne	.L6
+  29:SampleVoice.cpp **** 	else if (inc == 1 && pan < 50) pan++;
+ 166              		.loc 1 29 23 is_stmt 0 discriminator 1 view .LVU42
+ 167 001a 90F9EC34 		ldrsb	r3, [r0, #1260]
+  29:SampleVoice.cpp **** 	else if (inc == 1 && pan < 50) pan++;
+ 168              		.loc 1 29 20 discriminator 1 view .LVU43
+ 169 001e 312B     		cmp	r3, #49
+ 170 0020 F8DC     		bgt	.L6
+  29:SampleVoice.cpp **** 	else if (inc == 1 && pan < 50) pan++;
+ 171              		.loc 1 29 33 is_stmt 1 discriminator 2 view .LVU44
+  29:SampleVoice.cpp **** 	else if (inc == 1 && pan < 50) pan++;
+ 172              		.loc 1 29 36 is_stmt 0 discriminator 2 view .LVU45
+ 173 0022 0133     		adds	r3, r3, #1
+ 174 0024 F4E7     		b	.L9
+ 175              		.cfi_endproc
+ 176              	.LFE2545:
+ 178              		.section	.text._ZN11SampleVoice6StreamEv,"ax",%progbits
+ 179              		.align	1
+ 180              		.global	_ZN11SampleVoice6StreamEv
+ 181              		.syntax unified
+ 182              		.thumb
+ 183              		.thumb_func
+ 185              	_ZN11SampleVoice6StreamEv:
+ 186              	.LVL6:
+ 187              	.LFB2546:
+  31:SampleVoice.cpp **** 
+  32:SampleVoice.cpp **** 
+  33:SampleVoice.cpp **** 
+  34:SampleVoice.cpp **** float SampleVoice::Stream() {
+ 188              		.loc 1 34 29 is_stmt 1 view -0
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 5
+
+
+ 189              		.cfi_startproc
+ 190              		@ args = 0, pretend = 0, frame = 0
+ 191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 192              		@ link register save eliminated.
+  35:SampleVoice.cpp **** 	if (playing) {
+ 193              		.loc 1 35 2 view .LVU47
+ 194 0000 037D     		ldrb	r3, [r0, #20]	@ zero_extendqisi2
+ 195 0002 53B1     		cbz	r3, .L14
+ 196              	.LVL7:
+ 197              	.LBB10:
+ 198              	.LBI10:
+  34:SampleVoice.cpp **** 	if (playing) {
+ 199              		.loc 1 34 7 view .LVU48
+ 200              	.LBB11:
+  36:SampleVoice.cpp **** 		if (position >= sample_length || position >= endSample) {
+ 201              		.loc 1 36 3 view .LVU49
+ 202 0004 D0E90123 		ldrd	r2, r3, [r0, #4]
+ 203 0008 9342     		cmp	r3, r2
+ 204 000a 02D2     		bcs	.L12
+ 205              		.loc 1 36 33 is_stmt 0 view .LVU50
+ 206 000c 0269     		ldr	r2, [r0, #16]
+ 207 000e 9342     		cmp	r3, r2
+ 208 0010 06D3     		bcc	.L13
+ 209              	.L12:
+  37:SampleVoice.cpp **** 			playing = false;
+ 210              		.loc 1 37 4 is_stmt 1 view .LVU51
+ 211              		.loc 1 37 12 is_stmt 0 view .LVU52
+ 212 0012 0023     		movs	r3, #0
+ 213 0014 0375     		strb	r3, [r0, #20]
+  38:SampleVoice.cpp **** 			position = startSample;
+ 214              		.loc 1 38 4 is_stmt 1 view .LVU53
+ 215              		.loc 1 38 13 is_stmt 0 view .LVU54
+ 216 0016 C368     		ldr	r3, [r0, #12]
+ 217 0018 8360     		str	r3, [r0, #8]
+  39:SampleVoice.cpp **** 			return 0.0;
+ 218              		.loc 1 39 4 is_stmt 1 view .LVU55
+ 219              	.LVL8:
+ 220              	.L14:
+ 221              		.loc 1 39 4 is_stmt 0 view .LVU56
+ 222              	.LBE11:
+ 223              	.LBE10:
+  40:SampleVoice.cpp **** 		}
+  41:SampleVoice.cpp **** 		return s162f(buffer[position++])*gain;
+  42:SampleVoice.cpp **** 	}
+  43:SampleVoice.cpp **** 	return 0.0;
+ 224              		.loc 1 43 9 view .LVU57
+ 225 001a 9FED080A 		vldr.32	s0, .L15
+  44:SampleVoice.cpp **** }
+ 226              		.loc 1 44 1 view .LVU58
+ 227 001e 7047     		bx	lr
+ 228              	.LVL9:
+ 229              	.L13:
+ 230              	.LBB17:
+ 231              	.LBB16:
+  41:SampleVoice.cpp **** 	}
+ 232              		.loc 1 41 3 is_stmt 1 view .LVU59
+  41:SampleVoice.cpp **** 	}
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 6
+
+
+ 233              		.loc 1 41 16 is_stmt 0 view .LVU60
+ 234 0020 8269     		ldr	r2, [r0, #24]
+  41:SampleVoice.cpp **** 	}
+ 235              		.loc 1 41 31 view .LVU61
+ 236 0022 591C     		adds	r1, r3, #1
+  41:SampleVoice.cpp **** 	}
+ 237              		.loc 1 41 36 view .LVU62
+ 238 0024 D0EDD37A 		vldr.32	s15, [r0, #844]
+ 239              	.LBB12:
+ 240              	.LBB13:
+ 241              		.file 2 "../../libDaisy//src/daisy_core.h"
+   1:../../libDaisy//src/daisy_core.h **** #pragma once
+   2:../../libDaisy//src/daisy_core.h **** #ifndef DSY_CORE_HW_H
+   3:../../libDaisy//src/daisy_core.h **** #define DSY_CORE_HW_H /**< & */
+   4:../../libDaisy//src/daisy_core.h **** #include <stdint.h>
+   5:../../libDaisy//src/daisy_core.h **** #include <stdlib.h>
+   6:../../libDaisy//src/daisy_core.h **** 
+   7:../../libDaisy//src/daisy_core.h **** #if defined(_MSC_VER)
+   8:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE __forceinline /**< & */
+   9:../../libDaisy//src/daisy_core.h **** #elif defined(__clang__)
+  10:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE inline __attribute__((always_inline)) /**< & */
+  11:../../libDaisy//src/daisy_core.h **** #pragma clang diagnostic ignored "-Wduplicate-decl-specifier"
+  12:../../libDaisy//src/daisy_core.h **** #elif defined(__GNUC__)
+  13:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE inline __attribute__((always_inline)) /**< & */
+  14:../../libDaisy//src/daisy_core.h **** #else
+  15:../../libDaisy//src/daisy_core.h **** #error unknown compiler
+  16:../../libDaisy//src/daisy_core.h **** #endif
+  17:../../libDaisy//src/daisy_core.h **** 
+  18:../../libDaisy//src/daisy_core.h **** /** @addtogroup utility
+  19:../../libDaisy//src/daisy_core.h ****     @{
+  20:../../libDaisy//src/daisy_core.h **** */
+  21:../../libDaisy//src/daisy_core.h **** 
+  22:../../libDaisy//src/daisy_core.h **** /** Macro for area of memory that is configured as cacheless
+  23:../../libDaisy//src/daisy_core.h **** This should be used primarily for DMA buffers, and the like.
+  24:../../libDaisy//src/daisy_core.h **** */
+  25:../../libDaisy//src/daisy_core.h **** #define DMA_BUFFER_MEM_SECTION __attribute__((section(".sram1_bss")))
+  26:../../libDaisy//src/daisy_core.h **** /** 
+  27:../../libDaisy//src/daisy_core.h **** THE DTCM RAM section is also non-cached. However, is not suitable 
+  28:../../libDaisy//src/daisy_core.h **** for DMA transfers. Performance is on par with internal SRAM w/ 
+  29:../../libDaisy//src/daisy_core.h **** cache enabled.
+  30:../../libDaisy//src/daisy_core.h **** */
+  31:../../libDaisy//src/daisy_core.h **** #define DTCM_MEM_SECTION __attribute__((section(".dtcmram_bss")))
+  32:../../libDaisy//src/daisy_core.h **** 
+  33:../../libDaisy//src/daisy_core.h **** #define FBIPMAX 0.999985f             /**< close to 1.0f-LSB at 16 bit */
+  34:../../libDaisy//src/daisy_core.h **** #define FBIPMIN (-FBIPMAX)            /**< - (1 - LSB) */
+  35:../../libDaisy//src/daisy_core.h **** #define U82F_SCALE 0.0078740f         /**< 1 / 127 */
+  36:../../libDaisy//src/daisy_core.h **** #define F2U8_SCALE 127.0f             /**< 128 - 1 */
+  37:../../libDaisy//src/daisy_core.h **** #define S82F_SCALE 0.0078125f         /**< 1 / (2**7) */
+  38:../../libDaisy//src/daisy_core.h **** #define F2S8_SCALE 127.0f             /**< (2 ** 7) - 1 */
+  39:../../libDaisy//src/daisy_core.h **** #define S162F_SCALE 3.0517578125e-05f /**< 1 / (2** 15) */
+  40:../../libDaisy//src/daisy_core.h **** #define F2S16_SCALE 32767.0f          /**< (2 ** 15) - 1 */
+  41:../../libDaisy//src/daisy_core.h **** #define F2S24_SCALE 8388608.0f        /**< 2 ** 23 */
+  42:../../libDaisy//src/daisy_core.h **** #define S242F_SCALE 1.192092896e-07f  /**< 1 / (2 ** 23) */
+  43:../../libDaisy//src/daisy_core.h **** #define S24SIGN 0x800000              /**< 2 ** 23 */
+  44:../../libDaisy//src/daisy_core.h **** #define S322F_SCALE 4.6566129e-10f    /**< 1 / (2** 31) */
+  45:../../libDaisy//src/daisy_core.h **** #define F2S32_SCALE 2147483647.f      /**< (2 ** 31) - 1 */
+  46:../../libDaisy//src/daisy_core.h **** 
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 7
+
+
+  47:../../libDaisy//src/daisy_core.h **** 
+  48:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the left 
+  49:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved output buffer named out */
+  50:../../libDaisy//src/daisy_core.h **** #define OUT_L out[0]
+  51:../../libDaisy//src/daisy_core.h **** 
+  52:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
+  53:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved output buffer named out */
+  54:../../libDaisy//src/daisy_core.h **** #define OUT_R out[1]
+  55:../../libDaisy//src/daisy_core.h **** 
+  56:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the left 
+  57:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved input buffer named in */
+  58:../../libDaisy//src/daisy_core.h **** #define IN_L in[0]
+  59:../../libDaisy//src/daisy_core.h **** 
+  60:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
+  61:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved input buffer named in */
+  62:../../libDaisy//src/daisy_core.h **** #define IN_R in[1]
+  63:../../libDaisy//src/daisy_core.h **** 
+  64:../../libDaisy//src/daisy_core.h **** /** 
+  65:../../libDaisy//src/daisy_core.h ****     Computes cube.
+  66:../../libDaisy//src/daisy_core.h ****     \param x Number to be cubed
+  67:../../libDaisy//src/daisy_core.h ****     \return x ^ 3
+  68:../../libDaisy//src/daisy_core.h **** */
+  69:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float cube(float x)
+  70:../../libDaisy//src/daisy_core.h **** {
+  71:../../libDaisy//src/daisy_core.h ****     return (x * x) * x;
+  72:../../libDaisy//src/daisy_core.h **** }
+  73:../../libDaisy//src/daisy_core.h **** 
+  74:../../libDaisy//src/daisy_core.h **** /** 
+  75:../../libDaisy//src/daisy_core.h ****     Converts unsigned 8-bit to float
+  76:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+  77:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+  78:../../libDaisy//src/daisy_core.h **** */
+  79:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float u82f(uint8_t x)
+  80:../../libDaisy//src/daisy_core.h **** {
+  81:../../libDaisy//src/daisy_core.h ****     return ((float)x - 127.f) * U82F_SCALE;
+  82:../../libDaisy//src/daisy_core.h **** }
+  83:../../libDaisy//src/daisy_core.h **** 
+  84:../../libDaisy//src/daisy_core.h **** /**
+  85:../../libDaisy//src/daisy_core.h ****     Converts float to unsigned 8-bit
+  86:../../libDaisy//src/daisy_core.h **** */
+  87:../../libDaisy//src/daisy_core.h **** FORCE_INLINE uint8_t f2u8(float x)
+  88:../../libDaisy//src/daisy_core.h **** {
+  89:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+  90:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+  91:../../libDaisy//src/daisy_core.h ****     return (uint8_t)((x * F2U8_SCALE) + F2U8_SCALE);
+  92:../../libDaisy//src/daisy_core.h **** }
+  93:../../libDaisy//src/daisy_core.h **** 
+  94:../../libDaisy//src/daisy_core.h **** 
+  95:../../libDaisy//src/daisy_core.h **** /** 
+  96:../../libDaisy//src/daisy_core.h ****     Converts Signed 8-bit to float
+  97:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+  98:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+  99:../../libDaisy//src/daisy_core.h **** */
+ 100:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s82f(int8_t x)
+ 101:../../libDaisy//src/daisy_core.h **** {
+ 102:../../libDaisy//src/daisy_core.h ****     return (float)x * S82F_SCALE;
+ 103:../../libDaisy//src/daisy_core.h **** }
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 8
+
+
+ 104:../../libDaisy//src/daisy_core.h **** 
+ 105:../../libDaisy//src/daisy_core.h **** /**
+ 106:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 8-bit
+ 107:../../libDaisy//src/daisy_core.h **** */
+ 108:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int8_t f2s8(float x)
+ 109:../../libDaisy//src/daisy_core.h **** {
+ 110:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 111:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 112:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S8_SCALE);
+ 113:../../libDaisy//src/daisy_core.h **** }
+ 114:../../libDaisy//src/daisy_core.h **** 
+ 115:../../libDaisy//src/daisy_core.h **** /** 
+ 116:../../libDaisy//src/daisy_core.h ****     Converts Signed 16-bit to float
+ 117:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+ 118:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+ 119:../../libDaisy//src/daisy_core.h **** */
+ 120:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s162f(int16_t x)
+ 121:../../libDaisy//src/daisy_core.h **** {
+ 122:../../libDaisy//src/daisy_core.h ****     return (float)x * S162F_SCALE;
+ 242              		.loc 2 122 12 view .LVU63
+ 243 0028 32F91330 		ldrsh	r3, [r2, r3, lsl #1]
+ 244              	.LBE13:
+ 245              	.LBE12:
+  41:SampleVoice.cpp **** 	}
+ 246              		.loc 1 41 31 view .LVU64
+ 247 002c 8160     		str	r1, [r0, #8]
+ 248              	.LBB15:
+ 249              	.LBI12:
+ 120:../../libDaisy//src/daisy_core.h **** {
+ 250              		.loc 2 120 20 is_stmt 1 view .LVU65
+ 251              	.LBB14:
+ 252              		.loc 2 122 5 view .LVU66
+ 253              		.loc 2 122 12 is_stmt 0 view .LVU67
+ 254 002e 00EE103A 		vmov	s0, r3	@ int
+ 255              		.loc 2 122 23 view .LVU68
+ 256 0032 BAEEE80A 		vcvt.f32.s32	s0, s0, #15
+ 257              	.LBE14:
+ 258              	.LBE15:
+  41:SampleVoice.cpp **** 	}
+ 259              		.loc 1 41 36 view .LVU69
+ 260 0036 20EE270A 		vmul.f32	s0, s0, s15
+ 261 003a 7047     		bx	lr
+ 262              	.L16:
+ 263              		.align	2
+ 264              	.L15:
+ 265 003c 00000000 		.word	0
+ 266              	.LBE16:
+ 267              	.LBE17:
+ 268              		.cfi_endproc
+ 269              	.LFE2546:
+ 271              		.section	.text._ZN11SampleVoice13IncrementGainEaf,"ax",%progbits
+ 272              		.align	1
+ 273              		.global	_ZN11SampleVoice13IncrementGainEaf
+ 274              		.syntax unified
+ 275              		.thumb
+ 276              		.thumb_func
+ 278              	_ZN11SampleVoice13IncrementGainEaf:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 9
+
+
+ 279              	.LVL10:
+ 280              	.LFB2547:
+  45:SampleVoice.cpp **** 
+  46:SampleVoice.cpp **** void SampleVoice::IncrementGain(int8_t inc, float amount) {
+ 281              		.loc 1 46 59 is_stmt 1 view -0
+ 282              		.cfi_startproc
+ 283              		@ args = 0, pretend = 0, frame = 0
+ 284              		@ frame_needed = 0, uses_anonymous_args = 0
+ 285              		@ link register save eliminated.
+  47:SampleVoice.cpp **** 	if (inc > 0 && gain < 1.0) gain += amount;
+ 286              		.loc 1 47 2 view .LVU71
+ 287 0000 0029     		cmp	r1, #0
+ 288 0002 0DDD     		ble	.L18
+ 289              		.loc 1 47 14 is_stmt 0 discriminator 1 view .LVU72
+ 290 0004 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 291              		.loc 1 47 17 discriminator 1 view .LVU73
+ 292 0008 D0EDD37A 		vldr.32	s15, [r0, #844]
+ 293              		.loc 1 47 14 discriminator 1 view .LVU74
+ 294 000c F4EEC77A 		vcmpe.f32	s15, s14
+ 295 0010 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 296 0014 03D5     		bpl	.L17
+ 297              		.loc 1 47 29 is_stmt 1 discriminator 2 view .LVU75
+ 298              		.loc 1 47 34 is_stmt 0 discriminator 2 view .LVU76
+ 299 0016 37EE800A 		vadd.f32	s0, s15, s0
+ 300              	.LVL11:
+ 301              	.L24:
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 302              		.loc 1 48 50 discriminator 2 view .LVU77
+ 303 001a 80EDD30A 		vstr.32	s0, [r0, #844]
+ 304              	.L17:
+  49:SampleVoice.cpp **** }
+ 305              		.loc 1 49 1 view .LVU78
+ 306 001e 7047     		bx	lr
+ 307              	.LVL12:
+ 308              	.L18:
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 309              		.loc 1 48 7 is_stmt 1 view .LVU79
+ 310 0020 FDD0     		beq	.L17
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 311              		.loc 1 48 36 is_stmt 0 discriminator 1 view .LVU80
+ 312 0022 B7EEC06A 		vcvt.f64.f32	d6, s0
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 313              		.loc 1 48 22 discriminator 1 view .LVU81
+ 314 0026 D0EDD37A 		vldr.32	s15, [r0, #844]
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 315              		.loc 1 48 34 discriminator 1 view .LVU82
+ 316 002a 9FED074B 		vldr.64	d4, .L25
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 317              		.loc 1 48 22 discriminator 1 view .LVU83
+ 318 002e B7EEE75A 		vcvt.f64.f32	d5, s15
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 319              		.loc 1 48 34 discriminator 1 view .LVU84
+ 320 0032 36EE046B 		vadd.f64	d6, d6, d4
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 321              		.loc 1 48 19 discriminator 1 view .LVU85
+ 322 0036 B4EEC65B 		vcmpe.f64	d5, d6
+ 323 003a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 10
+
+
+ 324 003e EEDD     		ble	.L17
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 325              		.loc 1 48 45 is_stmt 1 discriminator 2 view .LVU86
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 326              		.loc 1 48 50 is_stmt 0 discriminator 2 view .LVU87
+ 327 0040 37EEC00A 		vsub.f32	s0, s15, s0
+ 328              	.LVL13:
+  48:SampleVoice.cpp **** 	else if (inc < 0 && gain > (0.0 + amount)) gain -= amount;
+ 329              		.loc 1 48 50 discriminator 2 view .LVU88
+ 330 0044 E9E7     		b	.L24
+ 331              	.L26:
+ 332 0046 00BF     		.align	3
+ 333              	.L25:
+ 334 0048 00000000 		.word	0
+ 335 004c 00000000 		.word	0
+ 336              		.cfi_endproc
+ 337              	.LFE2547:
+ 339              		.section	.text._ZN11SampleVoice12StreamStereoEv,"ax",%progbits
+ 340              		.align	1
+ 341              		.global	_ZN11SampleVoice12StreamStereoEv
+ 342              		.syntax unified
+ 343              		.thumb
+ 344              		.thumb_func
+ 346              	_ZN11SampleVoice12StreamStereoEv:
+ 347              	.LVL14:
+ 348              	.LFB2548:
+  50:SampleVoice.cpp **** 
+  51:SampleVoice.cpp **** // calling this will sequence audio the same as stream
+  52:SampleVoice.cpp **** StereoSample SampleVoice::StreamStereo() {
+ 349              		.loc 1 52 42 is_stmt 1 view -0
+ 350              		.cfi_startproc
+ 351              		@ args = 0, pretend = 0, frame = 16
+ 352              		@ frame_needed = 0, uses_anonymous_args = 0
+  53:SampleVoice.cpp **** 	float samp = Stream();
+ 353              		.loc 1 53 2 view .LVU90
+  52:SampleVoice.cpp **** 	float samp = Stream();
+ 354              		.loc 1 52 42 is_stmt 0 view .LVU91
+ 355 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 356              		.cfi_def_cfa_offset 24
+ 357              		.cfi_offset 4, -8
+ 358              		.cfi_offset 14, -4
+ 359              		.loc 1 53 21 view .LVU92
+ 360 0002 FFF7FEFF 		bl	_ZN11SampleVoice6StreamEv
+ 361              	.LVL15:
+  54:SampleVoice.cpp **** 	StereoSample stereoSamp;
+ 362              		.loc 1 54 2 is_stmt 1 view .LVU93
+  55:SampleVoice.cpp **** 
+  56:SampleVoice.cpp **** 	if (pan < 0) {
+ 363              		.loc 1 56 2 view .LVU94
+  52:SampleVoice.cpp **** 	float samp = Stream();
+ 364              		.loc 1 52 42 is_stmt 0 view .LVU95
+ 365 0006 0446     		mov	r4, r0
+ 366              		.loc 1 56 6 view .LVU96
+ 367 0008 90F9EC04 		ldrsb	r0, [r0, #1260]
+ 368              	.LVL16:
+ 369              		.loc 1 56 2 view .LVU97
+ 370 000c 0028     		cmp	r0, #0
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 11
+
+
+ 371 000e 11DA     		bge	.L28
+  57:SampleVoice.cpp **** 		// pan left
+  58:SampleVoice.cpp **** 		stereoSamp.left = panTableB[pan*-1]*samp;
+ 372              		.loc 1 58 3 is_stmt 1 view .LVU98
+ 373 0010 6FF00303 		mvn	r3, #3
+ 374 0014 03FB0044 		mla	r4, r3, r0, r4
+ 375              	.LVL17:
+ 376              		.loc 1 58 37 is_stmt 0 view .LVU99
+ 377 0018 04F58463 		add	r3, r4, #1056
+  59:SampleVoice.cpp **** 		stereoSamp.right = panTableA[pan*-1]*samp;
+ 378              		.loc 1 59 39 view .LVU100
+ 379 001c D4EDD50A 		vldr.32	s1, [r4, #852]
+  58:SampleVoice.cpp **** 		stereoSamp.right = panTableA[pan*-1]*samp;
+ 380              		.loc 1 58 38 view .LVU101
+ 381 0020 D3ED007A 		vldr.32	s15, [r3]
+ 382 0024 60EE277A 		vmul.f32	s15, s0, s15
+ 383              	.LVL18:
+ 384              		.loc 1 59 3 is_stmt 1 view .LVU102
+ 385              	.L30:
+  60:SampleVoice.cpp **** 	} else {
+  61:SampleVoice.cpp **** 		// pan right
+  62:SampleVoice.cpp **** 		stereoSamp.left = panTableA[pan]*samp;
+  63:SampleVoice.cpp **** 		stereoSamp.right = panTableB[pan]*samp;
+ 386              		.loc 1 63 36 is_stmt 0 view .LVU103
+ 387 0028 60EE200A 		vmul.f32	s1, s0, s1
+ 388              	.LVL19:
+  64:SampleVoice.cpp **** 	}
+  65:SampleVoice.cpp **** 	return stereoSamp;
+ 389              		.loc 1 65 2 is_stmt 1 view .LVU104
+  66:SampleVoice.cpp **** }
+ 390              		.loc 1 66 1 is_stmt 0 view .LVU105
+ 391 002c B0EE670A 		vmov.f32	s0, s15
+ 392              	.LVL20:
+ 393              		.loc 1 66 1 view .LVU106
+ 394 0030 04B0     		add	sp, sp, #16
+ 395              		.cfi_remember_state
+ 396              		.cfi_def_cfa_offset 8
+ 397              		@ sp needed
+ 398 0032 10BD     		pop	{r4, pc}
+ 399              	.LVL21:
+ 400              	.L28:
+ 401              		.cfi_restore_state
+  62:SampleVoice.cpp **** 		stereoSamp.right = panTableB[pan]*samp;
+ 402              		.loc 1 62 3 is_stmt 1 view .LVU107
+ 403 0034 04EB8004 		add	r4, r4, r0, lsl #2
+ 404              	.LVL22:
+  62:SampleVoice.cpp **** 		stereoSamp.right = panTableB[pan]*samp;
+ 405              		.loc 1 62 35 is_stmt 0 view .LVU108
+ 406 0038 D4EDD57A 		vldr.32	s15, [r4, #852]
+  63:SampleVoice.cpp **** 	}
+ 407              		.loc 1 63 35 view .LVU109
+ 408 003c 04F58464 		add	r4, r4, #1056
+  62:SampleVoice.cpp **** 		stereoSamp.right = panTableB[pan]*samp;
+ 409              		.loc 1 62 35 view .LVU110
+ 410 0040 60EE277A 		vmul.f32	s15, s0, s15
+ 411              	.LVL23:
+  63:SampleVoice.cpp **** 	}
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 12
+
+
+ 412              		.loc 1 63 3 is_stmt 1 view .LVU111
+  63:SampleVoice.cpp **** 	}
+ 413              		.loc 1 63 36 is_stmt 0 view .LVU112
+ 414 0044 D4ED000A 		vldr.32	s1, [r4]
+ 415 0048 EEE7     		b	.L30
+ 416              		.cfi_endproc
+ 417              	.LFE2548:
+ 419              		.section	.text._ZN11SampleVoice11SetFileNameEPc,"ax",%progbits
+ 420              		.align	1
+ 421              		.global	_ZN11SampleVoice11SetFileNameEPc
+ 422              		.syntax unified
+ 423              		.thumb
+ 424              		.thumb_func
+ 426              	_ZN11SampleVoice11SetFileNameEPc:
+ 427              	.LVL24:
+ 428              	.LFB2549:
+  67:SampleVoice.cpp **** 
+  68:SampleVoice.cpp **** void SampleVoice::SetFileName(char * fname) {
+ 429              		.loc 1 68 45 is_stmt 1 view -0
+ 430              		.cfi_startproc
+ 431              		@ args = 0, pretend = 0, frame = 0
+ 432              		@ frame_needed = 0, uses_anonymous_args = 0
+ 433              		@ link register save eliminated.
+  69:SampleVoice.cpp **** 	strcpy(fname, file_name);
+ 434              		.loc 1 69 2 view .LVU114
+  68:SampleVoice.cpp **** 	strcpy(fname, file_name);
+ 435              		.loc 1 68 45 is_stmt 0 view .LVU115
+ 436 0000 0B46     		mov	r3, r1
+ 437              		.loc 1 69 8 view .LVU116
+ 438 0002 00F51271 		add	r1, r0, #584
+ 439              	.LVL25:
+ 440              		.loc 1 69 8 view .LVU117
+ 441 0006 1846     		mov	r0, r3
+ 442              	.LVL26:
+ 443              		.loc 1 69 8 view .LVU118
+ 444 0008 FFF7FEBF 		b	strcpy
+ 445              	.LVL27:
+ 446              		.loc 1 69 8 view .LVU119
+ 447              		.cfi_endproc
+ 448              	.LFE2549:
+ 450              		.section	.text._ZN11SampleVoice20IncrementStartSampleEi,"ax",%progbits
+ 451              		.align	1
+ 452              		.global	_ZN11SampleVoice20IncrementStartSampleEi
+ 453              		.syntax unified
+ 454              		.thumb
+ 455              		.thumb_func
+ 457              	_ZN11SampleVoice20IncrementStartSampleEi:
+ 458              	.LVL28:
+ 459              	.LFB2550:
+  70:SampleVoice.cpp **** }
+  71:SampleVoice.cpp **** 
+  72:SampleVoice.cpp **** void SampleVoice::IncrementStartSample(int inc) {
+ 460              		.loc 1 72 49 is_stmt 1 view -0
+ 461              		.cfi_startproc
+ 462              		@ args = 0, pretend = 0, frame = 0
+ 463              		@ frame_needed = 0, uses_anonymous_args = 0
+ 464              		@ link register save eliminated.
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 13
+
+
+  73:SampleVoice.cpp **** 	if (inc < 0 && startSample > 0) startSample--;
+ 465              		.loc 1 73 2 view .LVU121
+ 466 0000 0029     		cmp	r1, #0
+ 467 0002 04DA     		bge	.L33
+ 468              		.loc 1 73 17 is_stmt 0 discriminator 1 view .LVU122
+ 469 0004 C368     		ldr	r3, [r0, #12]
+ 470              		.loc 1 73 14 discriminator 1 view .LVU123
+ 471 0006 0BB1     		cbz	r3, .L32
+ 472              		.loc 1 73 34 is_stmt 1 discriminator 2 view .LVU124
+ 473              		.loc 1 73 45 is_stmt 0 discriminator 2 view .LVU125
+ 474 0008 013B     		subs	r3, r3, #1
+ 475              	.L38:
+  74:SampleVoice.cpp **** 	else if (inc > 0 && startSample < endSample && startSample < sample_length) startSample++;
+ 476              		.loc 1 74 89 discriminator 3 view .LVU126
+ 477 000a C360     		str	r3, [r0, #12]
+ 478              	.L32:
+  75:SampleVoice.cpp **** }
+ 479              		.loc 1 75 1 view .LVU127
+ 480 000c 7047     		bx	lr
+ 481              	.L33:
+  74:SampleVoice.cpp **** 	else if (inc > 0 && startSample < endSample && startSample < sample_length) startSample++;
+ 482              		.loc 1 74 7 is_stmt 1 view .LVU128
+ 483 000e FDD0     		beq	.L32
+  74:SampleVoice.cpp **** 	else if (inc > 0 && startSample < endSample && startSample < sample_length) startSample++;
+ 484              		.loc 1 74 19 is_stmt 0 discriminator 1 view .LVU129
+ 485 0010 D0E90332 		ldrd	r3, r2, [r0, #12]
+ 486 0014 9342     		cmp	r3, r2
+ 487 0016 F9D2     		bcs	.L32
+  74:SampleVoice.cpp **** 	else if (inc > 0 && startSample < endSample && startSample < sample_length) startSample++;
+ 488              		.loc 1 74 46 discriminator 2 view .LVU130
+ 489 0018 4268     		ldr	r2, [r0, #4]
+ 490 001a 9342     		cmp	r3, r2
+ 491 001c F6D2     		bcs	.L32
+  74:SampleVoice.cpp **** 	else if (inc > 0 && startSample < endSample && startSample < sample_length) startSample++;
+ 492              		.loc 1 74 78 is_stmt 1 discriminator 3 view .LVU131
+  74:SampleVoice.cpp **** 	else if (inc > 0 && startSample < endSample && startSample < sample_length) startSample++;
+ 493              		.loc 1 74 89 is_stmt 0 discriminator 3 view .LVU132
+ 494 001e 0133     		adds	r3, r3, #1
+ 495 0020 F3E7     		b	.L38
+ 496              		.cfi_endproc
+ 497              	.LFE2550:
+ 499              		.section	.text._ZN11SampleVoice18IncrementEndSampleEi,"ax",%progbits
+ 500              		.align	1
+ 501              		.global	_ZN11SampleVoice18IncrementEndSampleEi
+ 502              		.syntax unified
+ 503              		.thumb
+ 504              		.thumb_func
+ 506              	_ZN11SampleVoice18IncrementEndSampleEi:
+ 507              	.LVL29:
+ 508              	.LFB2551:
+  76:SampleVoice.cpp **** 
+  77:SampleVoice.cpp **** void SampleVoice::IncrementEndSample(int inc) {
+ 509              		.loc 1 77 47 is_stmt 1 view -0
+ 510              		.cfi_startproc
+ 511              		@ args = 0, pretend = 0, frame = 0
+ 512              		@ frame_needed = 0, uses_anonymous_args = 0
+ 513              		@ link register save eliminated.
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 14
+
+
+  78:SampleVoice.cpp **** 	if (inc < 0 && endSample > startSample && endSample > 0) endSample--;
+ 514              		.loc 1 78 2 view .LVU134
+ 515 0000 0029     		cmp	r1, #0
+ 516 0002 06DA     		bge	.L40
+ 517              		.loc 1 78 41 is_stmt 0 discriminator 1 view .LVU135
+ 518 0004 D0E90323 		ldrd	r2, r3, [r0, #12]
+ 519 0008 9342     		cmp	r3, r2
+ 520 000a 0AD9     		bls	.L39
+ 521              		.loc 1 78 59 is_stmt 1 discriminator 3 view .LVU136
+ 522              		.loc 1 78 68 is_stmt 0 discriminator 3 view .LVU137
+ 523 000c 013B     		subs	r3, r3, #1
+ 524 000e 0361     		str	r3, [r0, #16]
+ 525 0010 7047     		bx	lr
+ 526              	.L40:
+  79:SampleVoice.cpp **** 	else if (inc > 0 && endSample < sample_length) startSample++;
+ 527              		.loc 1 79 7 is_stmt 1 view .LVU138
+ 528 0012 06D0     		beq	.L39
+ 529              		.loc 1 79 19 is_stmt 0 discriminator 1 view .LVU139
+ 530 0014 4368     		ldr	r3, [r0, #4]
+ 531 0016 0269     		ldr	r2, [r0, #16]
+ 532 0018 9A42     		cmp	r2, r3
+ 533              		.loc 1 79 49 is_stmt 1 discriminator 1 view .LVU140
+ 534              		.loc 1 79 60 is_stmt 0 discriminator 1 view .LVU141
+ 535 001a 3EBF     		ittt	cc
+ 536 001c C368     		ldrcc	r3, [r0, #12]
+ 537 001e 0133     		addcc	r3, r3, #1
+ 538 0020 C360     		strcc	r3, [r0, #12]
+ 539              	.L39:
+  80:SampleVoice.cpp **** }
+ 540              		.loc 1 80 1 view .LVU142
+ 541 0022 7047     		bx	lr
+ 542              		.cfi_endproc
+ 543              	.LFE2551:
+ 545              		.section	.text._ZN11SampleVoice9SetLengthEj,"ax",%progbits
+ 546              		.align	1
+ 547              		.global	_ZN11SampleVoice9SetLengthEj
+ 548              		.syntax unified
+ 549              		.thumb
+ 550              		.thumb_func
+ 552              	_ZN11SampleVoice9SetLengthEj:
+ 553              	.LVL30:
+ 554              	.LFB2552:
+  81:SampleVoice.cpp **** 
+  82:SampleVoice.cpp **** 
+  83:SampleVoice.cpp **** 
+  84:SampleVoice.cpp **** 
+  85:SampleVoice.cpp **** void SampleVoice::SetLength(size_t sample_length) {this->sample_length = sample_length;}
+ 555              		.loc 1 85 51 is_stmt 1 view -0
+ 556              		.cfi_startproc
+ 557              		@ args = 0, pretend = 0, frame = 0
+ 558              		@ frame_needed = 0, uses_anonymous_args = 0
+ 559              		@ link register save eliminated.
+ 560              		.loc 1 85 52 view .LVU144
+ 561              		.loc 1 85 72 is_stmt 0 view .LVU145
+ 562 0000 4160     		str	r1, [r0, #4]
+ 563              		.loc 1 85 88 view .LVU146
+ 564 0002 7047     		bx	lr
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 15
+
+
+ 565              		.cfi_endproc
+ 566              	.LFE2552:
+ 568              		.section	.text._ZN11SampleVoice9GetBufferEv,"ax",%progbits
+ 569              		.align	1
+ 570              		.global	_ZN11SampleVoice9GetBufferEv
+ 571              		.syntax unified
+ 572              		.thumb
+ 573              		.thumb_func
+ 575              	_ZN11SampleVoice9GetBufferEv:
+ 576              	.LVL31:
+ 577              	.LFB2553:
+  86:SampleVoice.cpp **** 
+  87:SampleVoice.cpp **** void *SampleVoice::GetBuffer() {return (void *)buffer;}
+ 578              		.loc 1 87 32 is_stmt 1 view -0
+ 579              		.cfi_startproc
+ 580              		@ args = 0, pretend = 0, frame = 0
+ 581              		@ frame_needed = 0, uses_anonymous_args = 0
+ 582              		@ link register save eliminated.
+ 583              		.loc 1 87 33 view .LVU148
+ 584              		.loc 1 87 55 is_stmt 0 view .LVU149
+ 585 0000 8069     		ldr	r0, [r0, #24]
+ 586              	.LVL32:
+ 587              		.loc 1 87 55 view .LVU150
+ 588 0002 7047     		bx	lr
+ 589              		.cfi_endproc
+ 590              	.LFE2553:
+ 592              		.section	.text._ZN11SampleVoice15GetBufferLengthEv,"ax",%progbits
+ 593              		.align	1
+ 594              		.global	_ZN11SampleVoice15GetBufferLengthEv
+ 595              		.syntax unified
+ 596              		.thumb
+ 597              		.thumb_func
+ 599              	_ZN11SampleVoice15GetBufferLengthEv:
+ 600              	.LVL33:
+ 601              	.LFB2554:
+  88:SampleVoice.cpp **** 
+  89:SampleVoice.cpp **** uint32_t SampleVoice::GetBufferLength() {return bufferLength;}
+ 602              		.loc 1 89 41 is_stmt 1 view -0
+ 603              		.cfi_startproc
+ 604              		@ args = 0, pretend = 0, frame = 0
+ 605              		@ frame_needed = 0, uses_anonymous_args = 0
+ 606              		@ link register save eliminated.
+ 607              		.loc 1 89 42 view .LVU152
+ 608              		.loc 1 89 62 is_stmt 0 view .LVU153
+ 609 0000 0068     		ldr	r0, [r0]
+ 610              	.LVL34:
+ 611              		.loc 1 89 62 view .LVU154
+ 612 0002 7047     		bx	lr
+ 613              		.cfi_endproc
+ 614              	.LFE2554:
+ 616              		.section	.text._ZN11SampleVoice8IsStereoEv,"ax",%progbits
+ 617              		.align	1
+ 618              		.global	_ZN11SampleVoice8IsStereoEv
+ 619              		.syntax unified
+ 620              		.thumb
+ 621              		.thumb_func
+ 623              	_ZN11SampleVoice8IsStereoEv:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 16
+
+
+ 624              	.LVL35:
+ 625              	.LFB2555:
+  90:SampleVoice.cpp **** 
+  91:SampleVoice.cpp **** bool SampleVoice::IsStereo() {return stereo;}
+ 626              		.loc 1 91 30 is_stmt 1 view -0
+ 627              		.cfi_startproc
+ 628              		@ args = 0, pretend = 0, frame = 0
+ 629              		@ frame_needed = 0, uses_anonymous_args = 0
+ 630              		@ link register save eliminated.
+ 631              		.loc 1 91 31 view .LVU156
+ 632              		.loc 1 91 45 is_stmt 0 view .LVU157
+ 633 0000 90F84803 		ldrb	r0, [r0, #840]	@ zero_extendqisi2
+ 634              	.LVL36:
+ 635              		.loc 1 91 45 view .LVU158
+ 636 0004 7047     		bx	lr
+ 637              		.cfi_endproc
+ 638              	.LFE2555:
+ 640              		.section	.text._ZN11SampleVoice6IsMonoEv,"ax",%progbits
+ 641              		.align	1
+ 642              		.global	_ZN11SampleVoice6IsMonoEv
+ 643              		.syntax unified
+ 644              		.thumb
+ 645              		.thumb_func
+ 647              	_ZN11SampleVoice6IsMonoEv:
+ 648              	.LVL37:
+ 649              	.LFB2556:
+  92:SampleVoice.cpp **** bool SampleVoice::IsMono() {return !stereo;}
+ 650              		.loc 1 92 28 is_stmt 1 view -0
+ 651              		.cfi_startproc
+ 652              		@ args = 0, pretend = 0, frame = 0
+ 653              		@ frame_needed = 0, uses_anonymous_args = 0
+ 654              		@ link register save eliminated.
+ 655              		.loc 1 92 29 view .LVU160
+ 656              		.loc 1 92 37 is_stmt 0 view .LVU161
+ 657 0000 90F84803 		ldrb	r0, [r0, #840]	@ zero_extendqisi2
+ 658              	.LVL38:
+ 659              		.loc 1 92 44 view .LVU162
+ 660 0004 80F00100 		eor	r0, r0, #1
+ 661 0008 7047     		bx	lr
+ 662              		.cfi_endproc
+ 663              	.LFE2556:
+ 665              		.section	.text._ZN11SampleVoice9SetSampleEPc,"ax",%progbits
+ 666              		.align	1
+ 667              		.global	_ZN11SampleVoice9SetSampleEPc
+ 668              		.syntax unified
+ 669              		.thumb
+ 670              		.thumb_func
+ 672              	_ZN11SampleVoice9SetSampleEPc:
+ 673              	.LVL39:
+ 674              	.LFB2557:
+  93:SampleVoice.cpp **** 
+  94:SampleVoice.cpp **** /* adds given file to the buffer. Only supports 16bit PCM 48kHz Mono. 
+  95:SampleVoice.cpp **** 	* If Stereo samples are interleaved left then right.
+  96:SampleVoice.cpp **** 	* return 0: succesful, 1: file read failed, 2: invalid format, 3: file too large
+  97:SampleVoice.cpp **** */ 
+  98:SampleVoice.cpp **** int SampleVoice::SetSample(TCHAR *fname) {
+ 675              		.loc 1 98 42 is_stmt 1 view -0
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 17
+
+
+ 676              		.cfi_startproc
+ 677              		@ args = 0, pretend = 0, frame = 48
+ 678              		@ frame_needed = 0, uses_anonymous_args = 0
+  99:SampleVoice.cpp **** 	UINT bytesread;
+ 679              		.loc 1 99 2 view .LVU164
+ 100:SampleVoice.cpp **** 	WAV_FormatTypeDef wav_data; 
+ 680              		.loc 1 100 2 view .LVU165
+ 101:SampleVoice.cpp **** 	
+ 102:SampleVoice.cpp **** 	memset(buffer, 0, bufferLength);
+ 681              		.loc 1 102 2 view .LVU166
+  98:SampleVoice.cpp **** 	UINT bytesread;
+ 682              		.loc 1 98 42 is_stmt 0 view .LVU167
+ 683 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 684              		.cfi_def_cfa_offset 20
+ 685              		.cfi_offset 4, -20
+ 686              		.cfi_offset 5, -16
+ 687              		.cfi_offset 6, -12
+ 688              		.cfi_offset 7, -8
+ 689              		.cfi_offset 14, -4
+ 690              		.loc 1 102 8 view .LVU168
+ 691 0002 0646     		mov	r6, r0
+  98:SampleVoice.cpp **** 	UINT bytesread;
+ 692              		.loc 1 98 42 view .LVU169
+ 693 0004 0F46     		mov	r7, r1
+ 694 0006 8DB0     		sub	sp, sp, #52
+ 695              		.cfi_def_cfa_offset 72
+ 696              		.loc 1 102 8 view .LVU170
+ 697 0008 0021     		movs	r1, #0
+ 698              	.LVL40:
+ 699              		.loc 1 102 8 view .LVU171
+ 700 000a 56F81C2B 		ldr	r2, [r6], #28
+  98:SampleVoice.cpp **** 	UINT bytesread;
+ 701              		.loc 1 98 42 view .LVU172
+ 702 000e 0546     		mov	r5, r0
+ 703              		.loc 1 102 8 view .LVU173
+ 704 0010 8069     		ldr	r0, [r0, #24]
+ 705              	.LVL41:
+ 706              		.loc 1 102 8 view .LVU174
+ 707 0012 FFF7FEFF 		bl	memset
+ 708              	.LVL42:
+ 103:SampleVoice.cpp **** 	
+ 104:SampleVoice.cpp **** 	if(f_open(&fp, fname, (FA_OPEN_EXISTING | FA_READ)) == FR_OK) {
+ 709              		.loc 1 104 2 is_stmt 1 view .LVU175
+ 710              		.loc 1 104 11 is_stmt 0 view .LVU176
+ 711 0016 0122     		movs	r2, #1
+ 712 0018 3946     		mov	r1, r7
+ 713 001a 3046     		mov	r0, r6
+ 714 001c FFF7FEFF 		bl	f_open
+ 715              	.LVL43:
+ 716              		.loc 1 104 2 view .LVU177
+ 717 0020 10B1     		cbz	r0, .L48
+ 718              	.L50:
+ 105:SampleVoice.cpp **** 		// Populate the WAV Info
+ 106:SampleVoice.cpp **** 		if(f_read(&fp, (void *)&wav_data, sizeof(WAV_FormatTypeDef), &bytesread) != FR_OK) return 1;	
+ 107:SampleVoice.cpp **** 	} else return 1;
+ 719              		.loc 1 107 16 view .LVU178
+ 720 0022 0120     		movs	r0, #1
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 18
+
+
+ 721              	.L47:
+ 108:SampleVoice.cpp **** 
+ 109:SampleVoice.cpp **** 	if (wav_data.SampleRate != 48000 || wav_data.BitPerSample != 16) return 2;
+ 110:SampleVoice.cpp **** 	if (wav_data.SubCHunk2Size > bufferLength || wav_data.NbrChannels > 2 || wav_data.NbrChannels != 1
+ 111:SampleVoice.cpp **** 	stereo = wav_data.NbrChannels == 2;
+ 112:SampleVoice.cpp **** 
+ 113:SampleVoice.cpp **** 	if (f_lseek(&fp, sizeof(WAV_FormatTypeDef)) != FR_OK) return 1;
+ 114:SampleVoice.cpp **** 	if(f_read(&fp, buffer, wav_data.SubCHunk2Size, &bytesread) != FR_OK) return 1;
+ 115:SampleVoice.cpp **** 	sample_length = bytesread / (wav_data.BitPerSample / 8);
+ 116:SampleVoice.cpp **** 	endSample = sample_length;
+ 117:SampleVoice.cpp **** 	strcpy(file_name, fname);
+ 118:SampleVoice.cpp **** 	f_close(&fp);
+ 119:SampleVoice.cpp **** 	return 0;
+ 120:SampleVoice.cpp **** }...
+ 722              		.loc 1 120 1 view .LVU179
+ 723 0024 0DB0     		add	sp, sp, #52
+ 724              		.cfi_remember_state
+ 725              		.cfi_def_cfa_offset 20
+ 726              		@ sp needed
+ 727 0026 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 728              	.LVL44:
+ 729              	.L48:
+ 730              		.cfi_restore_state
+ 106:SampleVoice.cpp **** 		if(f_read(&fp, (void *)&wav_data, sizeof(WAV_FormatTypeDef), &bytesread) != FR_OK) return 1;	
+ 731              		.loc 1 106 3 is_stmt 1 view .LVU180
+ 106:SampleVoice.cpp **** 		if(f_read(&fp, (void *)&wav_data, sizeof(WAV_FormatTypeDef), &bytesread) != FR_OK) return 1;	
+ 732              		.loc 1 106 12 is_stmt 0 view .LVU181
+ 733 0028 6B46     		mov	r3, sp
+ 734 002a 2C22     		movs	r2, #44
+ 735 002c 01A9     		add	r1, sp, #4
+ 736 002e 3046     		mov	r0, r6
+ 737 0030 FFF7FEFF 		bl	f_read
+ 738              	.LVL45:
+ 106:SampleVoice.cpp **** 		if(f_read(&fp, (void *)&wav_data, sizeof(WAV_FormatTypeDef), &bytesread) != FR_OK) return 1;	
+ 739              		.loc 1 106 3 view .LVU182
+ 740 0034 0028     		cmp	r0, #0
+ 741 0036 F4D1     		bne	.L50
+ 109:SampleVoice.cpp **** 	if (wav_data.SampleRate != 48000 || wav_data.BitPerSample != 16) return 2;
+ 742              		.loc 1 109 2 is_stmt 1 view .LVU183
+ 743 0038 079A     		ldr	r2, [sp, #28]
+ 744 003a 4BF68033 		movw	r3, #48000
+ 745 003e 9A42     		cmp	r2, r3
+ 746 0040 2ED1     		bne	.L52
+ 109:SampleVoice.cpp **** 	if (wav_data.SampleRate != 48000 || wav_data.BitPerSample != 16) return 2;
+ 747              		.loc 1 109 35 is_stmt 0 discriminator 2 view .LVU184
+ 748 0042 BDF82630 		ldrh	r3, [sp, #38]
+ 749 0046 102B     		cmp	r3, #16
+ 750 0048 2AD1     		bne	.L52
+ 110:SampleVoice.cpp **** 	if (wav_data.SubCHunk2Size > bufferLength || wav_data.NbrChannels > 2 || wav_data.NbrChannels != 1
+ 751              		.loc 1 110 2 is_stmt 1 view .LVU185
+ 752 004a 2B68     		ldr	r3, [r5]
+ 753 004c 0B9A     		ldr	r2, [sp, #44]
+ 754 004e 9A42     		cmp	r2, r3
+ 755 0050 28D8     		bhi	.L54
+ 110:SampleVoice.cpp **** 	if (wav_data.SubCHunk2Size > bufferLength || wav_data.NbrChannels > 2 || wav_data.NbrChannels != 1
+ 756              		.loc 1 110 72 is_stmt 0 discriminator 2 view .LVU186
+ 757 0052 BDF81A30 		ldrh	r3, [sp, #26]
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 19
+
+
+ 758 0056 012B     		cmp	r3, #1
+ 759 0058 24D1     		bne	.L54
+ 111:SampleVoice.cpp **** 	stereo = wav_data.NbrChannels == 2;
+ 760              		.loc 1 111 2 is_stmt 1 view .LVU187
+ 111:SampleVoice.cpp **** 	stereo = wav_data.NbrChannels == 2;
+ 761              		.loc 1 111 9 is_stmt 0 view .LVU188
+ 762 005a 85F84803 		strb	r0, [r5, #840]
+ 113:SampleVoice.cpp **** 	if (f_lseek(&fp, sizeof(WAV_FormatTypeDef)) != FR_OK) return 1;
+ 763              		.loc 1 113 2 is_stmt 1 view .LVU189
+ 113:SampleVoice.cpp **** 	if (f_lseek(&fp, sizeof(WAV_FormatTypeDef)) != FR_OK) return 1;
+ 764              		.loc 1 113 13 is_stmt 0 view .LVU190
+ 765 005e 2C21     		movs	r1, #44
+ 766 0060 3046     		mov	r0, r6
+ 767 0062 FFF7FEFF 		bl	f_lseek
+ 768              	.LVL46:
+ 113:SampleVoice.cpp **** 	if (f_lseek(&fp, sizeof(WAV_FormatTypeDef)) != FR_OK) return 1;
+ 769              		.loc 1 113 2 view .LVU191
+ 770 0066 0028     		cmp	r0, #0
+ 771 0068 DBD1     		bne	.L50
+ 114:SampleVoice.cpp **** 	if(f_read(&fp, buffer, wav_data.SubCHunk2Size, &bytesread) != FR_OK) return 1;
+ 772              		.loc 1 114 2 is_stmt 1 view .LVU192
+ 114:SampleVoice.cpp **** 	if(f_read(&fp, buffer, wav_data.SubCHunk2Size, &bytesread) != FR_OK) return 1;
+ 773              		.loc 1 114 11 is_stmt 0 view .LVU193
+ 774 006a 6B46     		mov	r3, sp
+ 775 006c 0B9A     		ldr	r2, [sp, #44]
+ 776 006e A969     		ldr	r1, [r5, #24]
+ 777 0070 3046     		mov	r0, r6
+ 778 0072 FFF7FEFF 		bl	f_read
+ 779              	.LVL47:
+ 114:SampleVoice.cpp **** 	if(f_read(&fp, buffer, wav_data.SubCHunk2Size, &bytesread) != FR_OK) return 1;
+ 780              		.loc 1 114 2 view .LVU194
+ 781 0076 0446     		mov	r4, r0
+ 782 0078 0028     		cmp	r0, #0
+ 783 007a D2D1     		bne	.L50
+ 115:SampleVoice.cpp **** 	sample_length = bytesread / (wav_data.BitPerSample / 8);
+ 784              		.loc 1 115 2 is_stmt 1 view .LVU195
+ 115:SampleVoice.cpp **** 	sample_length = bytesread / (wav_data.BitPerSample / 8);
+ 785              		.loc 1 115 53 is_stmt 0 view .LVU196
+ 786 007c BDF82630 		ldrh	r3, [sp, #38]
+ 117:SampleVoice.cpp **** 	strcpy(file_name, fname);
+ 787              		.loc 1 117 8 view .LVU197
+ 788 0080 3946     		mov	r1, r7
+ 789 0082 05F51270 		add	r0, r5, #584
+ 115:SampleVoice.cpp **** 	sample_length = bytesread / (wav_data.BitPerSample / 8);
+ 790              		.loc 1 115 53 view .LVU198
+ 791 0086 DA08     		lsrs	r2, r3, #3
+ 115:SampleVoice.cpp **** 	sample_length = bytesread / (wav_data.BitPerSample / 8);
+ 792              		.loc 1 115 28 view .LVU199
+ 793 0088 009B     		ldr	r3, [sp]
+ 794 008a B3FBF2F3 		udiv	r3, r3, r2
+ 115:SampleVoice.cpp **** 	sample_length = bytesread / (wav_data.BitPerSample / 8);
+ 795              		.loc 1 115 16 view .LVU200
+ 796 008e 6B60     		str	r3, [r5, #4]
+ 116:SampleVoice.cpp **** 	endSample = sample_length;
+ 797              		.loc 1 116 2 is_stmt 1 view .LVU201
+ 116:SampleVoice.cpp **** 	endSample = sample_length;
+ 798              		.loc 1 116 12 is_stmt 0 view .LVU202
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 20
+
+
+ 799 0090 2B61     		str	r3, [r5, #16]
+ 117:SampleVoice.cpp **** 	strcpy(file_name, fname);
+ 800              		.loc 1 117 2 is_stmt 1 view .LVU203
+ 117:SampleVoice.cpp **** 	strcpy(file_name, fname);
+ 801              		.loc 1 117 8 is_stmt 0 view .LVU204
+ 802 0092 FFF7FEFF 		bl	strcpy
+ 803              	.LVL48:
+ 118:SampleVoice.cpp **** 	f_close(&fp);
+ 804              		.loc 1 118 2 is_stmt 1 view .LVU205
+ 118:SampleVoice.cpp **** 	f_close(&fp);
+ 805              		.loc 1 118 9 is_stmt 0 view .LVU206
+ 806 0096 3046     		mov	r0, r6
+ 807 0098 FFF7FEFF 		bl	f_close
+ 808              	.LVL49:
+ 119:SampleVoice.cpp **** 	return 0;
+ 809              		.loc 1 119 2 is_stmt 1 view .LVU207
+ 119:SampleVoice.cpp **** 	return 0;
+ 810              		.loc 1 119 9 is_stmt 0 view .LVU208
+ 811 009c 2046     		mov	r0, r4
+ 812 009e C1E7     		b	.L47
+ 813              	.L52:
+ 109:SampleVoice.cpp **** 	if (wav_data.SampleRate != 48000 || wav_data.BitPerSample != 16) return 2;
+ 814              		.loc 1 109 74 view .LVU209
+ 815 00a0 0220     		movs	r0, #2
+ 816 00a2 BFE7     		b	.L47
+ 817              	.L54:
+ 110:SampleVoice.cpp **** 	if (wav_data.SubCHunk2Size > bufferLength || wav_data.NbrChannels > 2 || wav_data.NbrChannels != 1
+ 818              		.loc 1 110 109 view .LVU210
+ 819 00a4 0320     		movs	r0, #3
+ 820 00a6 BDE7     		b	.L47
+ 821              		.cfi_endproc
+ 822              	.LFE2557:
+ 824              		.text
+ 825              	.Letext0:
+ 826              		.file 3 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/machine/_default_types.h"
+ 827              		.file 4 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_stdint.h"
+ 828              		.file 5 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdint.h"
+ 829              		.file 6 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h"
+ 830              		.file 7 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath"
+ 831              		.file 8 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/std_abs.h"
+ 832              		.file 9 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdlib"
+ 833              		.file 10 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdint"
+ 834              		.file 11 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/type_traits"
+ 835              		.file 12 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/debug/debug.h"
+ 836              		.file 13 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v
+ 837              		.file 14 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/algorithmfwd.h"
+ 838              		.file 15 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/stl_pair.h"
+ 839              		.file 16 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/exception_ptr.h"
+ 840              		.file 17 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdarg"
+ 841              		.file 18 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdio"
+ 842              		.file 19 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstring"
+ 843              		.file 20 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/predefined_ops.h
+ 844              		.file 21 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_types.h"
+ 845              		.file 22 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/reent.h"
+ 846              		.file 23 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/lock.h"
+ 847              		.file 24 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/math.h"
+ 848              		.file 25 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdlib.h"
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 21
+
+
+ 849              		.file 26 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/math.h"
+ 850              		.file 27 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/stdlib.h"
+ 851              		.file 28 "../../libDaisy//src/util/wav_format.h"
+ 852              		.file 29 "../../libDaisy//src/daisy_seed.h"
+ 853              		.file 30 "../../libDaisy//src/dev/max11300.h"
+ 854              		.file 31 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h"
+ 855              		.file 32 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdio.h"
+ 856              		.file 33 "../../libDaisy//Middlewares/Third_Party/FatFs/src/integer.h"
+ 857              		.file 34 "../../libDaisy//Middlewares/Third_Party/FatFs/src/ff.h"
+ 858              		.file 35 "../../libDaisy//src/dev/sr_595.h"
+ 859              		.file 36 "../../libDaisy//src/dev/sr_165.h"
+ 860              		.file 37 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/string.h"
+ 861              		.file 38 "SampleVoice.h"
+ 862              		.file 39 "<built-in>"
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s 			page 22
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 SampleVoice.cpp
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:19     .text._ZN11SampleVoice7GetNameEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:25     .text._ZN11SampleVoice7GetNameEv:0000000000000000 _ZN11SampleVoice7GetNameEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:44     .text._ZN11SampleVoice4InitEPsm:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:50     .text._ZN11SampleVoice4InitEPsm:0000000000000000 _ZN11SampleVoice4InitEPsm
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:84     .text._ZN11SampleVoice4PlayEh:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:90     .text._ZN11SampleVoice4PlayEh:0000000000000000 _ZN11SampleVoice4PlayEh
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:126    .text._ZN11SampleVoice4PlayEh:0000000000000024 $d
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:131    .text._ZN11SampleVoice12IncrementPanEa:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:137    .text._ZN11SampleVoice12IncrementPanEa:0000000000000000 _ZN11SampleVoice12IncrementPanEa
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:179    .text._ZN11SampleVoice6StreamEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:185    .text._ZN11SampleVoice6StreamEv:0000000000000000 _ZN11SampleVoice6StreamEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:265    .text._ZN11SampleVoice6StreamEv:000000000000003c $d
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:272    .text._ZN11SampleVoice13IncrementGainEaf:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:278    .text._ZN11SampleVoice13IncrementGainEaf:0000000000000000 _ZN11SampleVoice13IncrementGainEaf
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:334    .text._ZN11SampleVoice13IncrementGainEaf:0000000000000048 $d
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:340    .text._ZN11SampleVoice12StreamStereoEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:346    .text._ZN11SampleVoice12StreamStereoEv:0000000000000000 _ZN11SampleVoice12StreamStereoEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:420    .text._ZN11SampleVoice11SetFileNameEPc:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:426    .text._ZN11SampleVoice11SetFileNameEPc:0000000000000000 _ZN11SampleVoice11SetFileNameEPc
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:451    .text._ZN11SampleVoice20IncrementStartSampleEi:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:457    .text._ZN11SampleVoice20IncrementStartSampleEi:0000000000000000 _ZN11SampleVoice20IncrementStartSampleEi
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:500    .text._ZN11SampleVoice18IncrementEndSampleEi:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:506    .text._ZN11SampleVoice18IncrementEndSampleEi:0000000000000000 _ZN11SampleVoice18IncrementEndSampleEi
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:546    .text._ZN11SampleVoice9SetLengthEj:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:552    .text._ZN11SampleVoice9SetLengthEj:0000000000000000 _ZN11SampleVoice9SetLengthEj
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:569    .text._ZN11SampleVoice9GetBufferEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:575    .text._ZN11SampleVoice9GetBufferEv:0000000000000000 _ZN11SampleVoice9GetBufferEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:593    .text._ZN11SampleVoice15GetBufferLengthEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:599    .text._ZN11SampleVoice15GetBufferLengthEv:0000000000000000 _ZN11SampleVoice15GetBufferLengthEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:617    .text._ZN11SampleVoice8IsStereoEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:623    .text._ZN11SampleVoice8IsStereoEv:0000000000000000 _ZN11SampleVoice8IsStereoEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:641    .text._ZN11SampleVoice6IsMonoEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:647    .text._ZN11SampleVoice6IsMonoEv:0000000000000000 _ZN11SampleVoice6IsMonoEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:666    .text._ZN11SampleVoice9SetSampleEPc:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccyB1xA2.s:672    .text._ZN11SampleVoice9SetSampleEPc:0000000000000000 _ZN11SampleVoice9SetSampleEPc
+
+UNDEFINED SYMBOLS
+strcpy
+memset
+f_open
+f_read
+f_lseek
+f_close

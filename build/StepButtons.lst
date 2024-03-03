@@ -1,0 +1,870 @@
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 4
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"StepButtons.cpp"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._ZN11StepButtons4InitEv,"ax",%progbits
+  19              		.align	1
+  20              		.global	_ZN11StepButtons4InitEv
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	_ZN11StepButtons4InitEv:
+  26              	.LVL0:
+  27              	.LFB2549:
+  28              		.file 1 "StepButtons.cpp"
+   1:StepButtons.cpp **** #include "StepButtons.h"
+   2:StepButtons.cpp **** 
+   3:StepButtons.cpp **** void StepButtons::Init()
+   4:StepButtons.cpp **** {
+  29              		.loc 1 4 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 8
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+   5:StepButtons.cpp ****     for (uint8_t i=0; i<16; i++) {
+  33              		.loc 1 5 5 view .LVU1
+  34              	.LBB20:
+  35              		.loc 1 5 24 view .LVU2
+  36              	.LBE20:
+   4:StepButtons.cpp ****     for (uint8_t i=0; i<16; i++) {
+  37              		.loc 1 4 1 is_stmt 0 view .LVU3
+  38 0000 2DE9FF41 		push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, lr}
+  39              		.cfi_def_cfa_offset 40
+  40              		.cfi_offset 4, -24
+  41              		.cfi_offset 5, -20
+  42              		.cfi_offset 6, -16
+  43              		.cfi_offset 7, -12
+  44              		.cfi_offset 8, -8
+  45              		.cfi_offset 14, -4
+   4:StepButtons.cpp ****     for (uint8_t i=0; i<16; i++) {
+  46              		.loc 1 4 1 view .LVU4
+  47 0004 0446     		mov	r4, r0
+  48 0006 061F     		subs	r6, r0, #4
+  49 0008 00F14007 		add	r7, r0, #64
+  50 000c 00F13C08 		add	r8, r0, #60
+  51              	.LVL1:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 2
+
+
+  52              	.L2:
+  53              	.LBB21:
+   6:StepButtons.cpp ****         last_update_[i] = daisy::System::GetNow();
+  54              		.loc 1 6 9 is_stmt 1 discriminator 2 view .LVU5
+  55              		.loc 1 6 48 is_stmt 0 discriminator 2 view .LVU6
+  56 0010 FFF7FEFF 		bl	_ZN5daisy6System6GetNowEv
+  57              	.LVL2:
+   7:StepButtons.cpp ****         updated_[i]     = false;
+  58              		.loc 1 7 25 discriminator 2 view .LVU7
+  59 0014 0025     		movs	r5, #0
+   6:StepButtons.cpp ****         last_update_[i] = daisy::System::GetNow();
+  60              		.loc 1 6 25 discriminator 2 view .LVU8
+  61 0016 46F8040F 		str	r0, [r6, #4]!
+  62              		.loc 1 7 9 is_stmt 1 discriminator 2 view .LVU9
+   5:StepButtons.cpp ****         last_update_[i] = daisy::System::GetNow();
+  63              		.loc 1 5 24 is_stmt 0 discriminator 2 view .LVU10
+  64 001a 4645     		cmp	r6, r8
+  65              		.loc 1 7 25 discriminator 2 view .LVU11
+  66 001c 07F8015B 		strb	r5, [r7], #1
+   8:StepButtons.cpp ****         state_[i]       = 0x00;
+  67              		.loc 1 8 9 is_stmt 1 discriminator 2 view .LVU12
+  68              		.loc 1 8 25 is_stmt 0 discriminator 2 view .LVU13
+  69 0020 FD73     		strb	r5, [r7, #15]
+   5:StepButtons.cpp ****         last_update_[i] = daisy::System::GetNow();
+  70              		.loc 1 5 5 is_stmt 1 discriminator 2 view .LVU14
+   5:StepButtons.cpp ****         last_update_[i] = daisy::System::GetNow();
+  71              		.loc 1 5 24 discriminator 2 view .LVU15
+  72 0022 F5D1     		bne	.L2
+  73              	.LBE21:
+   9:StepButtons.cpp ****     }
+  10:StepButtons.cpp **** 
+  11:StepButtons.cpp **** 
+  12:StepButtons.cpp **** 
+  13:StepButtons.cpp ****     spi_conf.periph = daisy::SpiHandle::Config::Peripheral::SPI_1;
+  74              		.loc 1 13 5 view .LVU16
+  14:StepButtons.cpp **** 	spi_conf.direction = daisy::SpiHandle::Config::Direction::TWO_LINES;
+  75              		.loc 1 14 2 view .LVU17
+  15:StepButtons.cpp **** 	spi_conf.pin_config.sclk = daisy::seed::D8;
+  16:StepButtons.cpp **** 	spi_conf.pin_config.miso = daisy::seed::D9;
+  17:StepButtons.cpp **** 	spi_conf.pin_config.mosi = daisy::seed::D10;
+  76              		.loc 1 17 42 is_stmt 0 view .LVU18
+  77 0024 154A     		ldr	r2, .L4
+  18:StepButtons.cpp **** 	spi_conf.pin_config.nss = Pin();
+  19:StepButtons.cpp **** 	spi_conf.nss = daisy::SpiHandle::Config::NSS::SOFT;
+  20:StepButtons.cpp **** 	spi_conf.datasize = 8;
+  21:StepButtons.cpp **** 	spi_conf.baud_prescaler = daisy::SpiHandle::Config::BaudPrescaler::PS_2;
+  22:StepButtons.cpp **** 	spi_conf.clock_polarity = daisy::SpiHandle::Config::ClockPolarity::LOW;
+  23:StepButtons.cpp **** 	spi_conf.clock_phase = daisy::SpiHandle::Config::ClockPhase::ONE_EDGE;
+  24:StepButtons.cpp **** 	
+  25:StepButtons.cpp **** 
+  26:StepButtons.cpp **** 	spi_handle.Init(spi_conf);
+  78              		.loc 1 26 17 view .LVU19
+  79 0026 04F1A401 		add	r1, r4, #164
+  17:StepButtons.cpp **** 	spi_conf.pin_config.nss = Pin();
+  80              		.loc 1 17 42 view .LVU20
+  81 002a 154B     		ldr	r3, .L4+4
+  82              		.loc 1 26 17 view .LVU21
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 3
+
+
+  83 002c 04F1A000 		add	r0, r4, #160
+  14:StepButtons.cpp **** 	spi_conf.pin_config.sclk = daisy::seed::D8;
+  84              		.loc 1 14 21 view .LVU22
+  85 0030 C4F8B450 		str	r5, [r4, #180]
+  15:StepButtons.cpp **** 	spi_conf.pin_config.miso = daisy::seed::D9;
+  86              		.loc 1 15 2 is_stmt 1 view .LVU23
+  87              	.LVL3:
+  88              		.file 2 "../../libDaisy//src/daisy_core.h"
+   1:../../libDaisy//src/daisy_core.h **** #pragma once
+   2:../../libDaisy//src/daisy_core.h **** #ifndef DSY_CORE_HW_H
+   3:../../libDaisy//src/daisy_core.h **** #define DSY_CORE_HW_H /**< & */
+   4:../../libDaisy//src/daisy_core.h **** #include <stdint.h>
+   5:../../libDaisy//src/daisy_core.h **** #include <stdlib.h>
+   6:../../libDaisy//src/daisy_core.h **** 
+   7:../../libDaisy//src/daisy_core.h **** #if defined(_MSC_VER)
+   8:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE __forceinline /**< & */
+   9:../../libDaisy//src/daisy_core.h **** #elif defined(__clang__)
+  10:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE inline __attribute__((always_inline)) /**< & */
+  11:../../libDaisy//src/daisy_core.h **** #pragma clang diagnostic ignored "-Wduplicate-decl-specifier"
+  12:../../libDaisy//src/daisy_core.h **** #elif defined(__GNUC__)
+  13:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE inline __attribute__((always_inline)) /**< & */
+  14:../../libDaisy//src/daisy_core.h **** #else
+  15:../../libDaisy//src/daisy_core.h **** #error unknown compiler
+  16:../../libDaisy//src/daisy_core.h **** #endif
+  17:../../libDaisy//src/daisy_core.h **** 
+  18:../../libDaisy//src/daisy_core.h **** /** @addtogroup utility
+  19:../../libDaisy//src/daisy_core.h ****     @{
+  20:../../libDaisy//src/daisy_core.h **** */
+  21:../../libDaisy//src/daisy_core.h **** 
+  22:../../libDaisy//src/daisy_core.h **** /** Macro for area of memory that is configured as cacheless
+  23:../../libDaisy//src/daisy_core.h **** This should be used primarily for DMA buffers, and the like.
+  24:../../libDaisy//src/daisy_core.h **** */
+  25:../../libDaisy//src/daisy_core.h **** #define DMA_BUFFER_MEM_SECTION __attribute__((section(".sram1_bss")))
+  26:../../libDaisy//src/daisy_core.h **** /** 
+  27:../../libDaisy//src/daisy_core.h **** THE DTCM RAM section is also non-cached. However, is not suitable 
+  28:../../libDaisy//src/daisy_core.h **** for DMA transfers. Performance is on par with internal SRAM w/ 
+  29:../../libDaisy//src/daisy_core.h **** cache enabled.
+  30:../../libDaisy//src/daisy_core.h **** */
+  31:../../libDaisy//src/daisy_core.h **** #define DTCM_MEM_SECTION __attribute__((section(".dtcmram_bss")))
+  32:../../libDaisy//src/daisy_core.h **** 
+  33:../../libDaisy//src/daisy_core.h **** #define FBIPMAX 0.999985f             /**< close to 1.0f-LSB at 16 bit */
+  34:../../libDaisy//src/daisy_core.h **** #define FBIPMIN (-FBIPMAX)            /**< - (1 - LSB) */
+  35:../../libDaisy//src/daisy_core.h **** #define U82F_SCALE 0.0078740f         /**< 1 / 127 */
+  36:../../libDaisy//src/daisy_core.h **** #define F2U8_SCALE 127.0f             /**< 128 - 1 */
+  37:../../libDaisy//src/daisy_core.h **** #define S82F_SCALE 0.0078125f         /**< 1 / (2**7) */
+  38:../../libDaisy//src/daisy_core.h **** #define F2S8_SCALE 127.0f             /**< (2 ** 7) - 1 */
+  39:../../libDaisy//src/daisy_core.h **** #define S162F_SCALE 3.0517578125e-05f /**< 1 / (2** 15) */
+  40:../../libDaisy//src/daisy_core.h **** #define F2S16_SCALE 32767.0f          /**< (2 ** 15) - 1 */
+  41:../../libDaisy//src/daisy_core.h **** #define F2S24_SCALE 8388608.0f        /**< 2 ** 23 */
+  42:../../libDaisy//src/daisy_core.h **** #define S242F_SCALE 1.192092896e-07f  /**< 1 / (2 ** 23) */
+  43:../../libDaisy//src/daisy_core.h **** #define S24SIGN 0x800000              /**< 2 ** 23 */
+  44:../../libDaisy//src/daisy_core.h **** #define S322F_SCALE 4.6566129e-10f    /**< 1 / (2** 31) */
+  45:../../libDaisy//src/daisy_core.h **** #define F2S32_SCALE 2147483647.f      /**< (2 ** 31) - 1 */
+  46:../../libDaisy//src/daisy_core.h **** 
+  47:../../libDaisy//src/daisy_core.h **** 
+  48:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the left 
+  49:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved output buffer named out */
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 4
+
+
+  50:../../libDaisy//src/daisy_core.h **** #define OUT_L out[0]
+  51:../../libDaisy//src/daisy_core.h **** 
+  52:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
+  53:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved output buffer named out */
+  54:../../libDaisy//src/daisy_core.h **** #define OUT_R out[1]
+  55:../../libDaisy//src/daisy_core.h **** 
+  56:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the left 
+  57:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved input buffer named in */
+  58:../../libDaisy//src/daisy_core.h **** #define IN_L in[0]
+  59:../../libDaisy//src/daisy_core.h **** 
+  60:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
+  61:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved input buffer named in */
+  62:../../libDaisy//src/daisy_core.h **** #define IN_R in[1]
+  63:../../libDaisy//src/daisy_core.h **** 
+  64:../../libDaisy//src/daisy_core.h **** /** 
+  65:../../libDaisy//src/daisy_core.h ****     Computes cube.
+  66:../../libDaisy//src/daisy_core.h ****     \param x Number to be cubed
+  67:../../libDaisy//src/daisy_core.h ****     \return x ^ 3
+  68:../../libDaisy//src/daisy_core.h **** */
+  69:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float cube(float x)
+  70:../../libDaisy//src/daisy_core.h **** {
+  71:../../libDaisy//src/daisy_core.h ****     return (x * x) * x;
+  72:../../libDaisy//src/daisy_core.h **** }
+  73:../../libDaisy//src/daisy_core.h **** 
+  74:../../libDaisy//src/daisy_core.h **** /** 
+  75:../../libDaisy//src/daisy_core.h ****     Converts unsigned 8-bit to float
+  76:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+  77:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+  78:../../libDaisy//src/daisy_core.h **** */
+  79:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float u82f(uint8_t x)
+  80:../../libDaisy//src/daisy_core.h **** {
+  81:../../libDaisy//src/daisy_core.h ****     return ((float)x - 127.f) * U82F_SCALE;
+  82:../../libDaisy//src/daisy_core.h **** }
+  83:../../libDaisy//src/daisy_core.h **** 
+  84:../../libDaisy//src/daisy_core.h **** /**
+  85:../../libDaisy//src/daisy_core.h ****     Converts float to unsigned 8-bit
+  86:../../libDaisy//src/daisy_core.h **** */
+  87:../../libDaisy//src/daisy_core.h **** FORCE_INLINE uint8_t f2u8(float x)
+  88:../../libDaisy//src/daisy_core.h **** {
+  89:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+  90:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+  91:../../libDaisy//src/daisy_core.h ****     return (uint8_t)((x * F2U8_SCALE) + F2U8_SCALE);
+  92:../../libDaisy//src/daisy_core.h **** }
+  93:../../libDaisy//src/daisy_core.h **** 
+  94:../../libDaisy//src/daisy_core.h **** 
+  95:../../libDaisy//src/daisy_core.h **** /** 
+  96:../../libDaisy//src/daisy_core.h ****     Converts Signed 8-bit to float
+  97:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+  98:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+  99:../../libDaisy//src/daisy_core.h **** */
+ 100:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s82f(int8_t x)
+ 101:../../libDaisy//src/daisy_core.h **** {
+ 102:../../libDaisy//src/daisy_core.h ****     return (float)x * S82F_SCALE;
+ 103:../../libDaisy//src/daisy_core.h **** }
+ 104:../../libDaisy//src/daisy_core.h **** 
+ 105:../../libDaisy//src/daisy_core.h **** /**
+ 106:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 8-bit
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 5
+
+
+ 107:../../libDaisy//src/daisy_core.h **** */
+ 108:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int8_t f2s8(float x)
+ 109:../../libDaisy//src/daisy_core.h **** {
+ 110:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 111:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 112:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S8_SCALE);
+ 113:../../libDaisy//src/daisy_core.h **** }
+ 114:../../libDaisy//src/daisy_core.h **** 
+ 115:../../libDaisy//src/daisy_core.h **** /** 
+ 116:../../libDaisy//src/daisy_core.h ****     Converts Signed 16-bit to float
+ 117:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+ 118:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+ 119:../../libDaisy//src/daisy_core.h **** */
+ 120:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s162f(int16_t x)
+ 121:../../libDaisy//src/daisy_core.h **** {
+ 122:../../libDaisy//src/daisy_core.h ****     return (float)x * S162F_SCALE;
+ 123:../../libDaisy//src/daisy_core.h **** }
+ 124:../../libDaisy//src/daisy_core.h **** 
+ 125:../../libDaisy//src/daisy_core.h **** /**
+ 126:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 16-bit
+ 127:../../libDaisy//src/daisy_core.h **** */
+ 128:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int16_t f2s16(float x)
+ 129:../../libDaisy//src/daisy_core.h **** {
+ 130:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 131:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 132:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S16_SCALE);
+ 133:../../libDaisy//src/daisy_core.h **** }
+ 134:../../libDaisy//src/daisy_core.h **** 
+ 135:../../libDaisy//src/daisy_core.h **** /**
+ 136:../../libDaisy//src/daisy_core.h ****     Converts Signed 24-bit to float
+ 137:../../libDaisy//src/daisy_core.h ****  */
+ 138:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s242f(int32_t x)
+ 139:../../libDaisy//src/daisy_core.h **** {
+ 140:../../libDaisy//src/daisy_core.h ****     x = (x ^ S24SIGN) - S24SIGN; //sign extend aka ((x<<8)>>8)
+ 141:../../libDaisy//src/daisy_core.h ****     return (float)x * S242F_SCALE;
+ 142:../../libDaisy//src/daisy_core.h **** }
+ 143:../../libDaisy//src/daisy_core.h **** /**
+ 144:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 24-bit
+ 145:../../libDaisy//src/daisy_core.h ****  */
+ 146:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int32_t f2s24(float x)
+ 147:../../libDaisy//src/daisy_core.h **** {
+ 148:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 149:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 150:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S24_SCALE);
+ 151:../../libDaisy//src/daisy_core.h **** }
+ 152:../../libDaisy//src/daisy_core.h **** 
+ 153:../../libDaisy//src/daisy_core.h **** /**
+ 154:../../libDaisy//src/daisy_core.h ****     Converts Signed 32-bit to float
+ 155:../../libDaisy//src/daisy_core.h ****  */
+ 156:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s322f(int32_t x)
+ 157:../../libDaisy//src/daisy_core.h **** {
+ 158:../../libDaisy//src/daisy_core.h ****     return (float)x * S322F_SCALE;
+ 159:../../libDaisy//src/daisy_core.h **** }
+ 160:../../libDaisy//src/daisy_core.h **** /**
+ 161:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 24-bit
+ 162:../../libDaisy//src/daisy_core.h ****  */
+ 163:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int32_t f2s32(float x)
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 6
+
+
+ 164:../../libDaisy//src/daisy_core.h **** {
+ 165:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 166:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 167:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S32_SCALE);
+ 168:../../libDaisy//src/daisy_core.h **** }
+ 169:../../libDaisy//src/daisy_core.h **** 
+ 170:../../libDaisy//src/daisy_core.h **** 
+ 171:../../libDaisy//src/daisy_core.h **** /** Enums and a simple struct for defining a hardware pin on the MCU
+ 172:../../libDaisy//src/daisy_core.h ****  *  These correlate with the stm32 datasheet, and are used to configure
+ 173:../../libDaisy//src/daisy_core.h ****  *  the hardware.
+ 174:../../libDaisy//src/daisy_core.h ****  * 
+ 175:../../libDaisy//src/daisy_core.h ****  *  This along with the dsy_gpio_pin class should no longer be used.
+ 176:../../libDaisy//src/daisy_core.h ****  *  They are available for backwards compatability. 
+ 177:../../libDaisy//src/daisy_core.h ****  * 
+ 178:../../libDaisy//src/daisy_core.h ****  *  Please use GPIOPort enum and the Pin struct instead.
+ 179:../../libDaisy//src/daisy_core.h ****  */
+ 180:../../libDaisy//src/daisy_core.h **** typedef enum
+ 181:../../libDaisy//src/daisy_core.h **** {
+ 182:../../libDaisy//src/daisy_core.h ****     DSY_GPIOA, /**< & */
+ 183:../../libDaisy//src/daisy_core.h ****     DSY_GPIOB, /**< & */
+ 184:../../libDaisy//src/daisy_core.h ****     DSY_GPIOC, /**< & */
+ 185:../../libDaisy//src/daisy_core.h ****     DSY_GPIOD, /**< & */
+ 186:../../libDaisy//src/daisy_core.h ****     DSY_GPIOE, /**< & */
+ 187:../../libDaisy//src/daisy_core.h ****     DSY_GPIOF, /**< & */
+ 188:../../libDaisy//src/daisy_core.h ****     DSY_GPIOG, /**< & */
+ 189:../../libDaisy//src/daisy_core.h ****     DSY_GPIOH, /**< & */
+ 190:../../libDaisy//src/daisy_core.h ****     DSY_GPIOI, /**< & */
+ 191:../../libDaisy//src/daisy_core.h ****     DSY_GPIOJ, /**< & */
+ 192:../../libDaisy//src/daisy_core.h ****     DSY_GPIOK, /**< & */
+ 193:../../libDaisy//src/daisy_core.h ****     DSY_GPIOX, /** This is a non-existant port for unsupported bits of hardware. */
+ 194:../../libDaisy//src/daisy_core.h ****     DSY_GPIO_LAST, /** Final enum member */
+ 195:../../libDaisy//src/daisy_core.h **** } dsy_gpio_port;
+ 196:../../libDaisy//src/daisy_core.h **** 
+ 197:../../libDaisy//src/daisy_core.h **** /** Hardware define pins 
+ 198:../../libDaisy//src/daisy_core.h ****  *  
+ 199:../../libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
+ 200:../../libDaisy//src/daisy_core.h ****  *  backwards compatability.
+ 201:../../libDaisy//src/daisy_core.h ****  * 
+ 202:../../libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
+ 203:../../libDaisy//src/daisy_core.h ****  */
+ 204:../../libDaisy//src/daisy_core.h **** typedef struct
+ 205:../../libDaisy//src/daisy_core.h **** {
+ 206:../../libDaisy//src/daisy_core.h ****     dsy_gpio_port port; /**< & */
+ 207:../../libDaisy//src/daisy_core.h ****     uint8_t       pin;  /**< number 0-15 */
+ 208:../../libDaisy//src/daisy_core.h **** } dsy_gpio_pin;
+ 209:../../libDaisy//src/daisy_core.h **** 
+ 210:../../libDaisy//src/daisy_core.h **** /** Helper for creating pins from port/pin combos easily
+ 211:../../libDaisy//src/daisy_core.h ****  * 
+ 212:../../libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
+ 213:../../libDaisy//src/daisy_core.h ****  *  backwards compatability.
+ 214:../../libDaisy//src/daisy_core.h ****  * 
+ 215:../../libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
+ 216:../../libDaisy//src/daisy_core.h **** */
+ 217:../../libDaisy//src/daisy_core.h **** FORCE_INLINE dsy_gpio_pin dsy_pin(dsy_gpio_port port, uint8_t pin)
+ 218:../../libDaisy//src/daisy_core.h **** {
+ 219:../../libDaisy//src/daisy_core.h ****     dsy_gpio_pin p;
+ 220:../../libDaisy//src/daisy_core.h ****     p.port = port;
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 7
+
+
+ 221:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+ 222:../../libDaisy//src/daisy_core.h ****     return p;
+ 223:../../libDaisy//src/daisy_core.h **** }
+ 224:../../libDaisy//src/daisy_core.h **** 
+ 225:../../libDaisy//src/daisy_core.h **** /** Helper for testing sameness of two dsy_gpio_pins
+ 226:../../libDaisy//src/daisy_core.h ****  *  \return    1 if same, 0 if different
+ 227:../../libDaisy//src/daisy_core.h ****  * 
+ 228:../../libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
+ 229:../../libDaisy//src/daisy_core.h ****  *  backwards compatability.
+ 230:../../libDaisy//src/daisy_core.h ****  * 
+ 231:../../libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
+ 232:../../libDaisy//src/daisy_core.h ****  */
+ 233:../../libDaisy//src/daisy_core.h **** FORCE_INLINE uint8_t dsy_pin_cmp(dsy_gpio_pin *a, dsy_gpio_pin *b)
+ 234:../../libDaisy//src/daisy_core.h **** {
+ 235:../../libDaisy//src/daisy_core.h ****     return ((a->port == b->port) && (a->pin == b->pin));
+ 236:../../libDaisy//src/daisy_core.h **** }
+ 237:../../libDaisy//src/daisy_core.h **** 
+ 238:../../libDaisy//src/daisy_core.h **** #ifdef __cplusplus
+ 239:../../libDaisy//src/daisy_core.h **** 
+ 240:../../libDaisy//src/daisy_core.h **** namespace daisy
+ 241:../../libDaisy//src/daisy_core.h **** {
+ 242:../../libDaisy//src/daisy_core.h **** /** @brief GPIO Port names */
+ 243:../../libDaisy//src/daisy_core.h **** enum GPIOPort
+ 244:../../libDaisy//src/daisy_core.h **** {
+ 245:../../libDaisy//src/daisy_core.h ****     PORTA, /**< Port A */
+ 246:../../libDaisy//src/daisy_core.h ****     PORTB, /**< Port B */
+ 247:../../libDaisy//src/daisy_core.h ****     PORTC, /**< Port C */
+ 248:../../libDaisy//src/daisy_core.h ****     PORTD, /**< Port D */
+ 249:../../libDaisy//src/daisy_core.h ****     PORTE, /**< Port E */
+ 250:../../libDaisy//src/daisy_core.h ****     PORTF, /**< Port F */
+ 251:../../libDaisy//src/daisy_core.h ****     PORTG, /**< Port G */
+ 252:../../libDaisy//src/daisy_core.h ****     PORTH, /**< Port H */
+ 253:../../libDaisy//src/daisy_core.h ****     PORTI, /**< Port I */
+ 254:../../libDaisy//src/daisy_core.h ****     PORTJ, /**< Port J */
+ 255:../../libDaisy//src/daisy_core.h ****     PORTK, /**< Port K */
+ 256:../../libDaisy//src/daisy_core.h ****     PORTX, /**< Used as a dummy port to signal an invalid pin. */
+ 257:../../libDaisy//src/daisy_core.h **** };
+ 258:../../libDaisy//src/daisy_core.h **** 
+ 259:../../libDaisy//src/daisy_core.h **** /** @brief representation of hardware port/pin combination */
+ 260:../../libDaisy//src/daisy_core.h **** struct Pin
+ 261:../../libDaisy//src/daisy_core.h **** {
+ 262:../../libDaisy//src/daisy_core.h ****     GPIOPort port;
+ 263:../../libDaisy//src/daisy_core.h ****     uint8_t  pin;
+ 264:../../libDaisy//src/daisy_core.h **** 
+ 265:../../libDaisy//src/daisy_core.h ****     /** @brief Constructor creates a valid pin. 
+ 266:../../libDaisy//src/daisy_core.h ****      *  @param pt GPIOPort between PA, and PK corresponding to STM32 Port.
+ 267:../../libDaisy//src/daisy_core.h ****      *  @param pn pin number in range of 0-15
+ 268:../../libDaisy//src/daisy_core.h ****     */
+ 269:../../libDaisy//src/daisy_core.h ****     constexpr Pin(const GPIOPort pt, const uint8_t pn) : port(pt), pin(pn) {}
+ 270:../../libDaisy//src/daisy_core.h **** 
+ 271:../../libDaisy//src/daisy_core.h ****     /** @brief Basic Constructor creates an invalid Pin object */
+ 272:../../libDaisy//src/daisy_core.h ****     constexpr Pin() : port(PORTX), pin(255) {}
+ 273:../../libDaisy//src/daisy_core.h **** 
+ 274:../../libDaisy//src/daisy_core.h ****     /** @brief checks validity of a Pin 
+ 275:../../libDaisy//src/daisy_core.h ****      *  @retval returns true if the port is a valid hardware pin, otherwise false.
+ 276:../../libDaisy//src/daisy_core.h ****     */
+ 277:../../libDaisy//src/daisy_core.h ****     constexpr bool IsValid() const { return port != PORTX && pin < 16; }
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 8
+
+
+ 278:../../libDaisy//src/daisy_core.h **** 
+ 279:../../libDaisy//src/daisy_core.h ****     /** @brief comparison operator for checking equality between Pin objects */
+ 280:../../libDaisy//src/daisy_core.h ****     constexpr bool operator==(const Pin &rhs) const
+ 281:../../libDaisy//src/daisy_core.h ****     {
+ 282:../../libDaisy//src/daisy_core.h ****         return (rhs.port == port) && (rhs.pin == pin);
+ 283:../../libDaisy//src/daisy_core.h ****     }
+ 284:../../libDaisy//src/daisy_core.h **** 
+ 285:../../libDaisy//src/daisy_core.h ****     /** @brief comparison operator for checking inequality between Pin objects */
+ 286:../../libDaisy//src/daisy_core.h ****     constexpr bool operator!=(const Pin &rhs) const { return !operator==(rhs); }
+ 287:../../libDaisy//src/daisy_core.h **** 
+ 288:../../libDaisy//src/daisy_core.h ****     /** @brief conversion operation for converting to the old-style representation
+ 289:../../libDaisy//src/daisy_core.h ****      *         of a pin.
+ 290:../../libDaisy//src/daisy_core.h ****      * 
+ 291:../../libDaisy//src/daisy_core.h ****      *  This allows the new Pin type to be used in place of the older, dsy_gpio_pin
+ 292:../../libDaisy//src/daisy_core.h ****      *  type.
+ 293:../../libDaisy//src/daisy_core.h ****      */
+ 294:../../libDaisy//src/daisy_core.h ****     operator dsy_gpio_pin() const
+ 295:../../libDaisy//src/daisy_core.h ****     {
+ 296:../../libDaisy//src/daisy_core.h ****         return dsy_pin(static_cast<dsy_gpio_port>(port), pin);
+  89              		.loc 2 296 9 view .LVU24
+ 219:../../libDaisy//src/daisy_core.h ****     p.port = port;
+  90              		.loc 2 219 5 view .LVU25
+ 220:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+  91              		.loc 2 220 5 view .LVU26
+ 221:../../libDaisy//src/daisy_core.h ****     return p;
+  92              		.loc 2 221 5 view .LVU27
+ 222:../../libDaisy//src/daisy_core.h **** }
+  93              		.loc 2 222 5 view .LVU28
+  16:StepButtons.cpp **** 	spi_conf.pin_config.mosi = daisy::seed::D10;
+  94              		.loc 1 16 2 view .LVU29
+  95              		.loc 2 296 9 view .LVU30
+ 219:../../libDaisy//src/daisy_core.h ****     p.port = port;
+  96              		.loc 2 219 5 view .LVU31
+ 220:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+  97              		.loc 2 220 5 view .LVU32
+ 221:../../libDaisy//src/daisy_core.h ****     return p;
+  98              		.loc 2 221 5 view .LVU33
+ 222:../../libDaisy//src/daisy_core.h **** }
+  99              		.loc 2 222 5 view .LVU34
+  17:StepButtons.cpp **** 	spi_conf.pin_config.nss = Pin();
+ 100              		.loc 1 17 2 view .LVU35
+ 101              		.loc 2 296 9 view .LVU36
+ 219:../../libDaisy//src/daisy_core.h ****     p.port = port;
+ 102              		.loc 2 219 5 view .LVU37
+ 220:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+ 103              		.loc 2 220 5 view .LVU38
+ 221:../../libDaisy//src/daisy_core.h ****     return p;
+ 104              		.loc 2 221 5 view .LVU39
+ 222:../../libDaisy//src/daisy_core.h **** }
+ 105              		.loc 2 222 5 view .LVU40
+  18:StepButtons.cpp **** 	spi_conf.nss = daisy::SpiHandle::Config::NSS::SOFT;
+ 106              		.loc 1 18 2 view .LVU41
+ 107              	.LBB22:
+ 108              	.LBI22:
+ 272:../../libDaisy//src/daisy_core.h **** 
+ 109              		.loc 2 272 15 view .LVU42
+ 272:../../libDaisy//src/daisy_core.h **** 
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 9
+
+
+ 110              		.loc 2 272 15 is_stmt 0 view .LVU43
+ 111              	.LBE22:
+ 112              		.loc 2 296 9 is_stmt 1 view .LVU44
+ 219:../../libDaisy//src/daisy_core.h ****     p.port = port;
+ 113              		.loc 2 219 5 view .LVU45
+ 220:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+ 114              		.loc 2 220 5 view .LVU46
+ 221:../../libDaisy//src/daisy_core.h ****     return p;
+ 115              		.loc 2 221 5 view .LVU47
+ 222:../../libDaisy//src/daisy_core.h **** }
+ 116              		.loc 2 222 5 view .LVU48
+  13:StepButtons.cpp **** 	spi_conf.direction = daisy::SpiHandle::Config::Direction::TWO_LINES;
+ 117              		.loc 1 13 21 is_stmt 0 view .LVU49
+ 118 0034 C4F8AC50 		str	r5, [r4, #172]
+  19:StepButtons.cpp **** 	spi_conf.datasize = 8;
+ 119              		.loc 1 19 2 is_stmt 1 view .LVU50
+  19:StepButtons.cpp **** 	spi_conf.datasize = 8;
+ 120              		.loc 1 19 15 is_stmt 0 view .LVU51
+ 121 0038 C4F8C450 		str	r5, [r4, #196]
+  20:StepButtons.cpp **** 	spi_conf.baud_prescaler = daisy::SpiHandle::Config::BaudPrescaler::PS_2;
+ 122              		.loc 1 20 2 is_stmt 1 view .LVU52
+  21:StepButtons.cpp **** 	spi_conf.clock_polarity = daisy::SpiHandle::Config::ClockPolarity::LOW;
+ 123              		.loc 1 21 26 is_stmt 0 view .LVU53
+ 124 003c C4F8C850 		str	r5, [r4, #200]
+  17:StepButtons.cpp **** 	spi_conf.pin_config.nss = Pin();
+ 125              		.loc 1 17 42 view .LVU54
+ 126 0040 C4E92923 		strd	r2, r3, [r4, #164]
+  20:StepButtons.cpp **** 	spi_conf.baud_prescaler = daisy::SpiHandle::Config::BaudPrescaler::PS_2;
+ 127              		.loc 1 20 20 view .LVU55
+ 128 0044 0823     		movs	r3, #8
+  23:StepButtons.cpp **** 	
+ 129              		.loc 1 23 23 view .LVU56
+ 130 0046 C4E92F55 		strd	r5, r5, [r4, #188]
+  20:StepButtons.cpp **** 	spi_conf.baud_prescaler = daisy::SpiHandle::Config::BaudPrescaler::PS_2;
+ 131              		.loc 1 20 20 view .LVU57
+ 132 004a C4F8B830 		str	r3, [r4, #184]
+  21:StepButtons.cpp **** 	spi_conf.clock_polarity = daisy::SpiHandle::Config::ClockPolarity::LOW;
+ 133              		.loc 1 21 2 is_stmt 1 view .LVU58
+  22:StepButtons.cpp **** 	spi_conf.clock_phase = daisy::SpiHandle::Config::ClockPhase::ONE_EDGE;
+ 134              		.loc 1 22 2 view .LVU59
+ 135              		.loc 1 26 2 view .LVU60
+ 136              		.loc 1 26 17 is_stmt 0 view .LVU61
+ 137 004e FFF7FEFF 		bl	_ZN5daisy9SpiHandle4InitERKNS0_6ConfigE
+ 138              	.LVL4:
+  27:StepButtons.cpp ****     latch.Init(daisy::seed::D14, daisy::GPIO::Mode::OUTPUT);
+ 139              		.loc 1 27 5 is_stmt 1 view .LVU62
+ 140              		.loc 1 27 15 is_stmt 0 view .LVU63
+ 141 0052 0C4B     		ldr	r3, .L4+8
+ 142 0054 04F1CC00 		add	r0, r4, #204
+ 143 0058 0122     		movs	r2, #1
+ 144 005a 5C78     		ldrb	r4, [r3, #1]	@ zero_extendqisi2
+ 145              	.LVL5:
+ 146              		.loc 1 27 15 view .LVU64
+ 147 005c 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 148 005e 2B46     		mov	r3, r5
+ 149 0060 0095     		str	r5, [sp]
+ 150 0062 41EA0421 		orr	r1, r1, r4, lsl #8
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 10
+
+
+ 151 0066 0390     		str	r0, [sp, #12]
+ 152 0068 FFF7FEFF 		bl	_ZN5daisy4GPIO4InitENS_3PinENS0_4ModeENS0_4PullENS0_5SpeedE
+ 153              	.LVL6:
+  28:StepButtons.cpp ****     latch.Write(true);
+ 154              		.loc 1 28 5 is_stmt 1 view .LVU65
+ 155              		.loc 1 28 16 is_stmt 0 view .LVU66
+ 156 006c 0121     		movs	r1, #1
+ 157 006e 0398     		ldr	r0, [sp, #12]
+  29:StepButtons.cpp **** }
+ 158              		.loc 1 29 1 view .LVU67
+ 159 0070 04B0     		add	sp, sp, #16
+ 160              		.cfi_def_cfa_offset 24
+ 161              		@ sp needed
+ 162 0072 BDE8F041 		pop	{r4, r5, r6, r7, r8, lr}
+ 163              		.cfi_restore 14
+ 164              		.cfi_restore 8
+ 165              		.cfi_restore 7
+ 166              		.cfi_restore 6
+ 167              		.cfi_restore 5
+ 168              		.cfi_restore 4
+ 169              		.cfi_def_cfa_offset 0
+ 170              	.LVL7:
+  28:StepButtons.cpp ****     latch.Write(true);
+ 171              		.loc 1 28 16 view .LVU68
+ 172 0076 FFF7FEBF 		b	_ZN5daisy4GPIO5WriteEb
+ 173              	.LVL8:
+ 174              	.L5:
+ 175 007a 00BF     		.align	2
+ 176              	.L4:
+ 177 007c 060B0104 		.word	67177222
+ 178 0080 01050BFF 		.word	-16055039
+ 179 0084 00000000 		.word	.LANCHOR0
+ 180              		.cfi_endproc
+ 181              	.LFE2549:
+ 183              		.section	.text._ZN11StepButtons3GetEh,"ax",%progbits
+ 184              		.align	1
+ 185              		.global	_ZN11StepButtons3GetEh
+ 186              		.syntax unified
+ 187              		.thumb
+ 188              		.thumb_func
+ 190              	_ZN11StepButtons3GetEh:
+ 191              	.LVL9:
+ 192              	.LFB2550:
+  30:StepButtons.cpp **** 
+  31:StepButtons.cpp **** bool StepButtons::Get(uint8_t i) {
+ 193              		.loc 1 31 34 is_stmt 1 view -0
+ 194              		.cfi_startproc
+ 195              		@ args = 0, pretend = 0, frame = 0
+ 196              		@ frame_needed = 0, uses_anonymous_args = 0
+ 197              		@ link register save eliminated.
+  32:StepButtons.cpp ****     return i<8 ? (buff[0]>>i)&1 : (buff[1]>>(i%8))&1;
+ 198              		.loc 1 32 5 view .LVU70
+ 199              		.loc 1 32 16 is_stmt 0 view .LVU71
+ 200 0000 0729     		cmp	r1, #7
+ 201              		.loc 1 32 25 view .LVU72
+ 202 0002 97BF     		itett	ls
+ 203 0004 90F8E030 		ldrbls	r3, [r0, #224]	@ zero_extendqisi2
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 11
+
+
+ 204              		.loc 1 32 42 view .LVU73
+ 205 0008 90F8E130 		ldrbhi	r3, [r0, #225]	@ zero_extendqisi2
+ 206              		.loc 1 32 26 view .LVU74
+ 207 000c 43FA01F1 		asrls	r1, r3, r1
+ 208              	.LVL10:
+ 209              		.loc 1 32 16 view .LVU75
+ 210 0010 01F00100 		andls	r0, r1, #1
+ 211              	.LVL11:
+ 212              		.loc 1 32 47 view .LVU76
+ 213 0014 82BF     		ittt	hi
+ 214 0016 01F00700 		andhi	r0, r1, #7
+ 215              		.loc 1 32 43 view .LVU77
+ 216 001a 43FA00F0 		asrhi	r0, r3, r0
+ 217              		.loc 1 32 16 view .LVU78
+ 218 001e 00F00100 		andhi	r0, r0, #1
+  33:StepButtons.cpp **** }
+ 219              		.loc 1 33 1 view .LVU79
+ 220 0022 7047     		bx	lr
+ 221              		.cfi_endproc
+ 222              	.LFE2550:
+ 224              		.section	.text._ZN11StepButtons8DebounceEv,"ax",%progbits
+ 225              		.align	1
+ 226              		.global	_ZN11StepButtons8DebounceEv
+ 227              		.syntax unified
+ 228              		.thumb
+ 229              		.thumb_func
+ 231              	_ZN11StepButtons8DebounceEv:
+ 232              	.LVL12:
+ 233              	.LFB2551:
+  34:StepButtons.cpp **** 
+  35:StepButtons.cpp **** void StepButtons::Debounce()
+  36:StepButtons.cpp **** {
+ 234              		.loc 1 36 1 is_stmt 1 view -0
+ 235              		.cfi_startproc
+ 236              		@ args = 0, pretend = 0, frame = 0
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+  37:StepButtons.cpp **** 
+  38:StepButtons.cpp ****     latch.Write(false);
+ 238              		.loc 1 38 5 view .LVU81
+  36:StepButtons.cpp **** 
+ 239              		.loc 1 36 1 is_stmt 0 view .LVU82
+ 240 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 241              		.cfi_def_cfa_offset 24
+ 242              		.cfi_offset 3, -24
+ 243              		.cfi_offset 4, -20
+ 244              		.cfi_offset 5, -16
+ 245              		.cfi_offset 6, -12
+ 246              		.cfi_offset 7, -8
+ 247              		.cfi_offset 14, -4
+ 248              		.loc 1 38 16 view .LVU83
+ 249 0002 00F1CC05 		add	r5, r0, #204
+  36:StepButtons.cpp **** 
+ 250              		.loc 1 36 1 view .LVU84
+ 251 0006 0446     		mov	r4, r0
+ 252              		.loc 1 38 16 view .LVU85
+ 253 0008 0021     		movs	r1, #0
+ 254              	.LBB23:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 12
+
+
+  39:StepButtons.cpp ****     daisy::System::DelayTicks(1);
+  40:StepButtons.cpp ****     latch.Write(true);
+  41:StepButtons.cpp ****     spi_handle.BlockingReceive(buff, 2, 100);
+  42:StepButtons.cpp ****     for (int i=0; i<16; i++) {
+ 255              		.loc 1 42 14 view .LVU86
+ 256 000a 0026     		movs	r6, #0
+ 257              	.LBE23:
+  38:StepButtons.cpp ****     daisy::System::DelayTicks(1);
+ 258              		.loc 1 38 16 view .LVU87
+ 259 000c 2846     		mov	r0, r5
+ 260              	.LVL13:
+  38:StepButtons.cpp ****     daisy::System::DelayTicks(1);
+ 261              		.loc 1 38 16 view .LVU88
+ 262 000e 271F     		subs	r7, r4, #4
+ 263 0010 FFF7FEFF 		bl	_ZN5daisy4GPIO5WriteEb
+ 264              	.LVL14:
+  39:StepButtons.cpp ****     daisy::System::DelayTicks(1);
+ 265              		.loc 1 39 5 is_stmt 1 view .LVU89
+  39:StepButtons.cpp ****     daisy::System::DelayTicks(1);
+ 266              		.loc 1 39 30 is_stmt 0 view .LVU90
+ 267 0014 0120     		movs	r0, #1
+ 268 0016 FFF7FEFF 		bl	_ZN5daisy6System10DelayTicksEm
+ 269              	.LVL15:
+  40:StepButtons.cpp ****     spi_handle.BlockingReceive(buff, 2, 100);
+ 270              		.loc 1 40 5 is_stmt 1 view .LVU91
+  40:StepButtons.cpp ****     spi_handle.BlockingReceive(buff, 2, 100);
+ 271              		.loc 1 40 16 is_stmt 0 view .LVU92
+ 272 001a 2846     		mov	r0, r5
+ 273 001c 0121     		movs	r1, #1
+ 274 001e 04F14005 		add	r5, r4, #64
+ 275 0022 FFF7FEFF 		bl	_ZN5daisy4GPIO5WriteEb
+ 276              	.LVL16:
+  41:StepButtons.cpp ****     for (int i=0; i<16; i++) {
+ 277              		.loc 1 41 5 is_stmt 1 view .LVU93
+  41:StepButtons.cpp ****     for (int i=0; i<16; i++) {
+ 278              		.loc 1 41 31 is_stmt 0 view .LVU94
+ 279 0026 6423     		movs	r3, #100
+ 280 0028 0222     		movs	r2, #2
+ 281 002a 04F1E001 		add	r1, r4, #224
+ 282 002e 04F1A000 		add	r0, r4, #160
+ 283 0032 FFF7FEFF 		bl	_ZN5daisy9SpiHandle15BlockingReceiveEPhtm
+ 284              	.LVL17:
+ 285              		.loc 1 42 5 is_stmt 1 view .LVU95
+ 286              	.LBB25:
+ 287              		.loc 1 42 20 view .LVU96
+ 288              	.L13:
+ 289              	.LBB24:
+  43:StepButtons.cpp ****         
+  44:StepButtons.cpp ****         uint32_t now = daisy::System::GetNow();
+ 290              		.loc 1 44 9 view .LVU97
+ 291              		.loc 1 44 45 is_stmt 0 view .LVU98
+ 292 0036 FFF7FEFF 		bl	_ZN5daisy6System6GetNowEv
+ 293              	.LVL18:
+  45:StepButtons.cpp ****         updated_[i]     = false;
+ 294              		.loc 1 45 9 is_stmt 1 view .LVU99
+ 295              		.loc 1 45 25 is_stmt 0 view .LVU100
+ 296 003a 0023     		movs	r3, #0
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 13
+
+
+ 297 003c 05F8013B 		strb	r3, [r5], #1
+  46:StepButtons.cpp **** 
+  47:StepButtons.cpp ****         if(now - last_update_[i] >= 1)
+ 298              		.loc 1 47 9 is_stmt 1 view .LVU101
+ 299 0040 57F8043F 		ldr	r3, [r7, #4]!
+ 300 0044 8342     		cmp	r3, r0
+ 301 0046 16D0     		beq	.L11
+  48:StepButtons.cpp ****         {
+  49:StepButtons.cpp ****             last_update_[i] = now;
+ 302              		.loc 1 49 13 view .LVU102
+  50:StepButtons.cpp ****             updated_[i]     = true;
+ 303              		.loc 1 50 29 is_stmt 0 view .LVU103
+ 304 0048 0123     		movs	r3, #1
+  49:StepButtons.cpp ****             updated_[i]     = true;
+ 305              		.loc 1 49 29 view .LVU104
+ 306 004a 3860     		str	r0, [r7]
+ 307              		.loc 1 50 13 is_stmt 1 view .LVU105
+  51:StepButtons.cpp **** 
+  52:StepButtons.cpp ****             // shift over, and introduce new state.
+  53:StepButtons.cpp ****             state_[i] = (state_[i] << 1) | (uint8_t)(Get(i)); // may need to invert
+ 308              		.loc 1 53 57 is_stmt 0 view .LVU106
+ 309 004c F1B2     		uxtb	r1, r6
+ 310 004e 2046     		mov	r0, r4
+ 311              	.LVL19:
+  50:StepButtons.cpp **** 
+ 312              		.loc 1 50 29 view .LVU107
+ 313 0050 05F8013C 		strb	r3, [r5, #-1]
+ 314              		.loc 1 53 13 is_stmt 1 view .LVU108
+ 315              		.loc 1 53 57 is_stmt 0 view .LVU109
+ 316 0054 FFF7FEFF 		bl	_ZN11StepButtons3GetEh
+ 317              	.LVL20:
+ 318              		.loc 1 53 34 view .LVU110
+ 319 0058 EB7B     		ldrb	r3, [r5, #15]	@ zero_extendqisi2
+ 320              		.loc 1 53 42 view .LVU111
+ 321 005a 40EA4300 		orr	r0, r0, r3, lsl #1
+ 322 005e C0B2     		uxtb	r0, r0
+  54:StepButtons.cpp ****             // Set time at which button was pressed
+  55:StepButtons.cpp ****             if(state_[i] == 0x7f) rising_edge_time_[i] = daisy::System::GetNow();
+ 323              		.loc 1 55 13 view .LVU112
+ 324 0060 7F28     		cmp	r0, #127
+  53:StepButtons.cpp ****             // Set time at which button was pressed
+ 325              		.loc 1 53 23 view .LVU113
+ 326 0062 E873     		strb	r0, [r5, #15]
+ 327              		.loc 1 55 13 is_stmt 1 view .LVU114
+ 328 0064 07D1     		bne	.L11
+ 329              		.loc 1 55 35 discriminator 1 view .LVU115
+ 330              		.loc 1 55 79 is_stmt 0 discriminator 1 view .LVU116
+ 331 0066 FFF7FEFF 		bl	_ZN5daisy6System6GetNowEv
+ 332              	.LVL21:
+ 333              		.loc 1 55 56 discriminator 1 view .LVU117
+ 334 006a 07EE900A 		vmov	s15, r0	@ int
+ 335 006e F8EE677A 		vcvt.f32.u32	s15, s15
+ 336 0072 C7ED187A 		vstr.32	s15, [r7, #96]
+ 337              	.L11:
+ 338              		.loc 1 55 56 discriminator 1 view .LVU118
+ 339              	.LBE24:
+  42:StepButtons.cpp ****         
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 14
+
+
+ 340              		.loc 1 42 5 is_stmt 1 discriminator 2 view .LVU119
+ 341 0076 0136     		adds	r6, r6, #1
+ 342              	.LVL22:
+  42:StepButtons.cpp ****         
+ 343              		.loc 1 42 20 discriminator 2 view .LVU120
+ 344 0078 102E     		cmp	r6, #16
+ 345 007a DCD1     		bne	.L13
+ 346              	.LBE25:
+  56:StepButtons.cpp ****         }
+  57:StepButtons.cpp ****     }
+  58:StepButtons.cpp **** 
+  59:StepButtons.cpp **** }
+ 347              		.loc 1 59 1 is_stmt 0 view .LVU121
+ 348 007c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 349              		.loc 1 59 1 view .LVU122
+ 350              		.cfi_endproc
+ 351              	.LFE2551:
+ 353              		.section	.rodata._ZN5daisy4seedL3D14E,"a"
+ 354              		.set	.LANCHOR0,. + 0
+ 357              	_ZN5daisy4seedL3D14E:
+ 358 0000 01       		.byte	1
+ 359 0001 07       		.byte	7
+ 360              		.text
+ 361              	.Letext0:
+ 362              		.file 3 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/machine/_default_types.h"
+ 363              		.file 4 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_stdint.h"
+ 364              		.file 5 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdint.h"
+ 365              		.file 6 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h"
+ 366              		.file 7 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath"
+ 367              		.file 8 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/std_abs.h"
+ 368              		.file 9 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdlib"
+ 369              		.file 10 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdint"
+ 370              		.file 11 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/type_traits"
+ 371              		.file 12 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/debug/debug.h"
+ 372              		.file 13 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v
+ 373              		.file 14 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/algorithmfwd.h"
+ 374              		.file 15 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/stl_pair.h"
+ 375              		.file 16 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/exception_ptr.h"
+ 376              		.file 17 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdarg"
+ 377              		.file 18 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdio"
+ 378              		.file 19 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstring"
+ 379              		.file 20 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/predefined_ops.h
+ 380              		.file 21 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_types.h"
+ 381              		.file 22 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/reent.h"
+ 382              		.file 23 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/lock.h"
+ 383              		.file 24 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/math.h"
+ 384              		.file 25 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdlib.h"
+ 385              		.file 26 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/math.h"
+ 386              		.file 27 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/stdlib.h"
+ 387              		.file 28 "../../libDaisy//src/per/tim.h"
+ 388              		.file 29 "../../libDaisy//src/sys/system.h"
+ 389              		.file 30 "../../libDaisy//src/per/gpio.h"
+ 390              		.file 31 "../../libDaisy//src/per/spi.h"
+ 391              		.file 32 "../../libDaisy//src/util/wav_format.h"
+ 392              		.file 33 "../../libDaisy//src/daisy_seed.h"
+ 393              		.file 34 "../../libDaisy//src/dev/max11300.h"
+ 394              		.file 35 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h"
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 15
+
+
+ 395              		.file 36 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdio.h"
+ 396              		.file 37 "../../libDaisy//src/dev/sr_595.h"
+ 397              		.file 38 "../../libDaisy//src/dev/sr_165.h"
+ 398              		.file 39 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/string.h"
+ 399              		.file 40 "StepButtons.h"
+ 400              		.file 41 "<built-in>"
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 StepButtons.cpp
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s:19     .text._ZN11StepButtons4InitEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s:25     .text._ZN11StepButtons4InitEv:0000000000000000 _ZN11StepButtons4InitEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s:177    .text._ZN11StepButtons4InitEv:000000000000007c $d
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s:184    .text._ZN11StepButtons3GetEh:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s:190    .text._ZN11StepButtons3GetEh:0000000000000000 _ZN11StepButtons3GetEh
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s:225    .text._ZN11StepButtons8DebounceEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s:231    .text._ZN11StepButtons8DebounceEv:0000000000000000 _ZN11StepButtons8DebounceEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//cciObyKp.s:357    .rodata._ZN5daisy4seedL3D14E:0000000000000000 _ZN5daisy4seedL3D14E
+
+UNDEFINED SYMBOLS
+_ZN5daisy6System6GetNowEv
+_ZN5daisy9SpiHandle4InitERKNS0_6ConfigE
+_ZN5daisy4GPIO4InitENS_3PinENS0_4ModeENS0_4PullENS0_5SpeedE
+_ZN5daisy4GPIO5WriteEb
+_ZN5daisy6System10DelayTicksEm
+_ZN5daisy9SpiHandle15BlockingReceiveEPhtm

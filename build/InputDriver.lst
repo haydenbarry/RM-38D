@@ -1,0 +1,2234 @@
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 4
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"InputDriver.cpp"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._ZN11InputDriver4InitEv,"ax",%progbits
+  19              		.align	1
+  20              		.global	_ZN11InputDriver4InitEv
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	_ZN11InputDriver4InitEv:
+  26              	.LVL0:
+  27              	.LFB2559:
+  28              		.file 1 "InputDriver.cpp"
+   1:InputDriver.cpp **** #include "InputDriver.h"
+   2:InputDriver.cpp **** 
+   3:InputDriver.cpp **** void InputDriver::Init() {
+  29              		.loc 1 3 26 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 24
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+   4:InputDriver.cpp ****     step.Init();
+  33              		.loc 1 4 5 view .LVU1
+   3:InputDriver.cpp ****     step.Init();
+  34              		.loc 1 3 26 is_stmt 0 view .LVU2
+  35 0000 70B5     		push	{r4, r5, r6, lr}
+  36              		.cfi_def_cfa_offset 16
+  37              		.cfi_offset 4, -16
+  38              		.cfi_offset 5, -12
+  39              		.cfi_offset 6, -8
+  40              		.cfi_offset 14, -4
+  41 0002 0446     		mov	r4, r0
+  42 0004 86B0     		sub	sp, sp, #24
+  43              		.cfi_def_cfa_offset 40
+  44              		.loc 1 4 14 view .LVU3
+  45 0006 00F5F070 		add	r0, r0, #480
+  46              	.LVL1:
+  47              		.loc 1 4 14 view .LVU4
+  48 000a FFF7FEFF 		bl	_ZN11StepButtons4InitEv
+  49              	.LVL2:
+   5:InputDriver.cpp ****     encoders[0].Init(seed::D23, seed::D22, seed::D24);
+  50              		.loc 1 5 5 is_stmt 1 view .LVU5
+  51              		.loc 1 5 21 is_stmt 0 view .LVU6
+  52 000e 3D4A     		ldr	r2, .L2
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 2
+
+
+  53 0010 3D49     		ldr	r1, .L2+4
+  54 0012 3E48     		ldr	r0, .L2+8
+  55 0014 5678     		ldrb	r6, [r2, #1]	@ zero_extendqisi2
+  56 0016 4D78     		ldrb	r5, [r1, #1]	@ zero_extendqisi2
+  57 0018 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  58 001a 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+  59 001c 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+  60 001e 43EA0623 		orr	r3, r3, r6, lsl #8
+  61 0022 4078     		ldrb	r0, [r0, #1]	@ zero_extendqisi2
+  62 0024 42EA0522 		orr	r2, r2, r5, lsl #8
+  63 0028 41EA0021 		orr	r1, r1, r0, lsl #8
+  64 002c 04F1B000 		add	r0, r4, #176
+  65 0030 FFF7FEFF 		bl	_ZN11EncoderPush4InitEN5daisy3PinES1_S1_
+  66              	.LVL3:
+   6:InputDriver.cpp ****     encoders[1].Init(seed::D26, seed::D25, seed::D27);
+  67              		.loc 1 6 5 is_stmt 1 view .LVU7
+  68              		.loc 1 6 21 is_stmt 0 view .LVU8
+  69 0034 364A     		ldr	r2, .L2+12
+  70 0036 3749     		ldr	r1, .L2+16
+  71 0038 3748     		ldr	r0, .L2+20
+  72 003a 5678     		ldrb	r6, [r2, #1]	@ zero_extendqisi2
+  73 003c 4D78     		ldrb	r5, [r1, #1]	@ zero_extendqisi2
+  74 003e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  75 0040 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+  76 0042 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+  77 0044 43EA0623 		orr	r3, r3, r6, lsl #8
+  78 0048 4078     		ldrb	r0, [r0, #1]	@ zero_extendqisi2
+  79 004a 42EA0522 		orr	r2, r2, r5, lsl #8
+  80 004e 41EA0021 		orr	r1, r1, r0, lsl #8
+  81 0052 04F1FC00 		add	r0, r4, #252
+  82 0056 FFF7FEFF 		bl	_ZN11EncoderPush4InitEN5daisy3PinES1_S1_
+  83              	.LVL4:
+   7:InputDriver.cpp ****     encoders[2].Init(seed::D20, seed::D19, seed::D21);
+  84              		.loc 1 7 5 is_stmt 1 view .LVU9
+  85              		.loc 1 7 21 is_stmt 0 view .LVU10
+  86 005a 304A     		ldr	r2, .L2+24
+  87 005c 3049     		ldr	r1, .L2+28
+  88 005e 3148     		ldr	r0, .L2+32
+  89 0060 5678     		ldrb	r6, [r2, #1]	@ zero_extendqisi2
+  90 0062 4D78     		ldrb	r5, [r1, #1]	@ zero_extendqisi2
+  91 0064 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  92 0066 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+  93 0068 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+  94 006a 43EA0623 		orr	r3, r3, r6, lsl #8
+  95 006e 4078     		ldrb	r0, [r0, #1]	@ zero_extendqisi2
+  96 0070 42EA0522 		orr	r2, r2, r5, lsl #8
+  97 0074 41EA0021 		orr	r1, r1, r0, lsl #8
+  98 0078 04F5A470 		add	r0, r4, #328
+  99 007c FFF7FEFF 		bl	_ZN11EncoderPush4InitEN5daisy3PinES1_S1_
+ 100              	.LVL5:
+   8:InputDriver.cpp ****     encoders[3].Init(seed::D17, seed::D16, seed::D18);
+ 101              		.loc 1 8 5 is_stmt 1 view .LVU11
+ 102              		.loc 1 8 21 is_stmt 0 view .LVU12
+ 103 0080 294A     		ldr	r2, .L2+36
+ 104 0082 2A49     		ldr	r1, .L2+40
+ 105 0084 2A48     		ldr	r0, .L2+44
+ 106 0086 5678     		ldrb	r6, [r2, #1]	@ zero_extendqisi2
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 3
+
+
+ 107 0088 4D78     		ldrb	r5, [r1, #1]	@ zero_extendqisi2
+ 108 008a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 109 008c 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 110 008e 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+ 111 0090 43EA0623 		orr	r3, r3, r6, lsl #8
+ 112 0094 4078     		ldrb	r0, [r0, #1]	@ zero_extendqisi2
+ 113 0096 42EA0522 		orr	r2, r2, r5, lsl #8
+ 114 009a 0125     		movs	r5, #1
+ 115 009c 41EA0021 		orr	r1, r1, r0, lsl #8
+ 116 00a0 04F5CA70 		add	r0, r4, #404
+ 117 00a4 FFF7FEFF 		bl	_ZN11EncoderPush4InitEN5daisy3PinES1_S1_
+ 118              	.LVL6:
+   9:InputDriver.cpp ****     
+  10:InputDriver.cpp **** 
+  11:InputDriver.cpp ****     shift.Init(seed::D30);
+ 119              		.loc 1 11 5 is_stmt 1 view .LVU13
+ 120              	.LBB57:
+ 121              	.LBI57:
+ 122              		.file 2 "../../libDaisy//src/daisy_core.h"
+   1:../../libDaisy//src/daisy_core.h **** #pragma once
+   2:../../libDaisy//src/daisy_core.h **** #ifndef DSY_CORE_HW_H
+   3:../../libDaisy//src/daisy_core.h **** #define DSY_CORE_HW_H /**< & */
+   4:../../libDaisy//src/daisy_core.h **** #include <stdint.h>
+   5:../../libDaisy//src/daisy_core.h **** #include <stdlib.h>
+   6:../../libDaisy//src/daisy_core.h **** 
+   7:../../libDaisy//src/daisy_core.h **** #if defined(_MSC_VER)
+   8:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE __forceinline /**< & */
+   9:../../libDaisy//src/daisy_core.h **** #elif defined(__clang__)
+  10:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE inline __attribute__((always_inline)) /**< & */
+  11:../../libDaisy//src/daisy_core.h **** #pragma clang diagnostic ignored "-Wduplicate-decl-specifier"
+  12:../../libDaisy//src/daisy_core.h **** #elif defined(__GNUC__)
+  13:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE inline __attribute__((always_inline)) /**< & */
+  14:../../libDaisy//src/daisy_core.h **** #else
+  15:../../libDaisy//src/daisy_core.h **** #error unknown compiler
+  16:../../libDaisy//src/daisy_core.h **** #endif
+  17:../../libDaisy//src/daisy_core.h **** 
+  18:../../libDaisy//src/daisy_core.h **** /** @addtogroup utility
+  19:../../libDaisy//src/daisy_core.h ****     @{
+  20:../../libDaisy//src/daisy_core.h **** */
+  21:../../libDaisy//src/daisy_core.h **** 
+  22:../../libDaisy//src/daisy_core.h **** /** Macro for area of memory that is configured as cacheless
+  23:../../libDaisy//src/daisy_core.h **** This should be used primarily for DMA buffers, and the like.
+  24:../../libDaisy//src/daisy_core.h **** */
+  25:../../libDaisy//src/daisy_core.h **** #define DMA_BUFFER_MEM_SECTION __attribute__((section(".sram1_bss")))
+  26:../../libDaisy//src/daisy_core.h **** /** 
+  27:../../libDaisy//src/daisy_core.h **** THE DTCM RAM section is also non-cached. However, is not suitable 
+  28:../../libDaisy//src/daisy_core.h **** for DMA transfers. Performance is on par with internal SRAM w/ 
+  29:../../libDaisy//src/daisy_core.h **** cache enabled.
+  30:../../libDaisy//src/daisy_core.h **** */
+  31:../../libDaisy//src/daisy_core.h **** #define DTCM_MEM_SECTION __attribute__((section(".dtcmram_bss")))
+  32:../../libDaisy//src/daisy_core.h **** 
+  33:../../libDaisy//src/daisy_core.h **** #define FBIPMAX 0.999985f             /**< close to 1.0f-LSB at 16 bit */
+  34:../../libDaisy//src/daisy_core.h **** #define FBIPMIN (-FBIPMAX)            /**< - (1 - LSB) */
+  35:../../libDaisy//src/daisy_core.h **** #define U82F_SCALE 0.0078740f         /**< 1 / 127 */
+  36:../../libDaisy//src/daisy_core.h **** #define F2U8_SCALE 127.0f             /**< 128 - 1 */
+  37:../../libDaisy//src/daisy_core.h **** #define S82F_SCALE 0.0078125f         /**< 1 / (2**7) */
+  38:../../libDaisy//src/daisy_core.h **** #define F2S8_SCALE 127.0f             /**< (2 ** 7) - 1 */
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 4
+
+
+  39:../../libDaisy//src/daisy_core.h **** #define S162F_SCALE 3.0517578125e-05f /**< 1 / (2** 15) */
+  40:../../libDaisy//src/daisy_core.h **** #define F2S16_SCALE 32767.0f          /**< (2 ** 15) - 1 */
+  41:../../libDaisy//src/daisy_core.h **** #define F2S24_SCALE 8388608.0f        /**< 2 ** 23 */
+  42:../../libDaisy//src/daisy_core.h **** #define S242F_SCALE 1.192092896e-07f  /**< 1 / (2 ** 23) */
+  43:../../libDaisy//src/daisy_core.h **** #define S24SIGN 0x800000              /**< 2 ** 23 */
+  44:../../libDaisy//src/daisy_core.h **** #define S322F_SCALE 4.6566129e-10f    /**< 1 / (2** 31) */
+  45:../../libDaisy//src/daisy_core.h **** #define F2S32_SCALE 2147483647.f      /**< (2 ** 31) - 1 */
+  46:../../libDaisy//src/daisy_core.h **** 
+  47:../../libDaisy//src/daisy_core.h **** 
+  48:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the left 
+  49:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved output buffer named out */
+  50:../../libDaisy//src/daisy_core.h **** #define OUT_L out[0]
+  51:../../libDaisy//src/daisy_core.h **** 
+  52:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
+  53:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved output buffer named out */
+  54:../../libDaisy//src/daisy_core.h **** #define OUT_R out[1]
+  55:../../libDaisy//src/daisy_core.h **** 
+  56:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the left 
+  57:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved input buffer named in */
+  58:../../libDaisy//src/daisy_core.h **** #define IN_L in[0]
+  59:../../libDaisy//src/daisy_core.h **** 
+  60:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
+  61:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved input buffer named in */
+  62:../../libDaisy//src/daisy_core.h **** #define IN_R in[1]
+  63:../../libDaisy//src/daisy_core.h **** 
+  64:../../libDaisy//src/daisy_core.h **** /** 
+  65:../../libDaisy//src/daisy_core.h ****     Computes cube.
+  66:../../libDaisy//src/daisy_core.h ****     \param x Number to be cubed
+  67:../../libDaisy//src/daisy_core.h ****     \return x ^ 3
+  68:../../libDaisy//src/daisy_core.h **** */
+  69:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float cube(float x)
+  70:../../libDaisy//src/daisy_core.h **** {
+  71:../../libDaisy//src/daisy_core.h ****     return (x * x) * x;
+  72:../../libDaisy//src/daisy_core.h **** }
+  73:../../libDaisy//src/daisy_core.h **** 
+  74:../../libDaisy//src/daisy_core.h **** /** 
+  75:../../libDaisy//src/daisy_core.h ****     Converts unsigned 8-bit to float
+  76:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+  77:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+  78:../../libDaisy//src/daisy_core.h **** */
+  79:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float u82f(uint8_t x)
+  80:../../libDaisy//src/daisy_core.h **** {
+  81:../../libDaisy//src/daisy_core.h ****     return ((float)x - 127.f) * U82F_SCALE;
+  82:../../libDaisy//src/daisy_core.h **** }
+  83:../../libDaisy//src/daisy_core.h **** 
+  84:../../libDaisy//src/daisy_core.h **** /**
+  85:../../libDaisy//src/daisy_core.h ****     Converts float to unsigned 8-bit
+  86:../../libDaisy//src/daisy_core.h **** */
+  87:../../libDaisy//src/daisy_core.h **** FORCE_INLINE uint8_t f2u8(float x)
+  88:../../libDaisy//src/daisy_core.h **** {
+  89:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+  90:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+  91:../../libDaisy//src/daisy_core.h ****     return (uint8_t)((x * F2U8_SCALE) + F2U8_SCALE);
+  92:../../libDaisy//src/daisy_core.h **** }
+  93:../../libDaisy//src/daisy_core.h **** 
+  94:../../libDaisy//src/daisy_core.h **** 
+  95:../../libDaisy//src/daisy_core.h **** /** 
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 5
+
+
+  96:../../libDaisy//src/daisy_core.h ****     Converts Signed 8-bit to float
+  97:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+  98:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+  99:../../libDaisy//src/daisy_core.h **** */
+ 100:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s82f(int8_t x)
+ 101:../../libDaisy//src/daisy_core.h **** {
+ 102:../../libDaisy//src/daisy_core.h ****     return (float)x * S82F_SCALE;
+ 103:../../libDaisy//src/daisy_core.h **** }
+ 104:../../libDaisy//src/daisy_core.h **** 
+ 105:../../libDaisy//src/daisy_core.h **** /**
+ 106:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 8-bit
+ 107:../../libDaisy//src/daisy_core.h **** */
+ 108:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int8_t f2s8(float x)
+ 109:../../libDaisy//src/daisy_core.h **** {
+ 110:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 111:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 112:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S8_SCALE);
+ 113:../../libDaisy//src/daisy_core.h **** }
+ 114:../../libDaisy//src/daisy_core.h **** 
+ 115:../../libDaisy//src/daisy_core.h **** /** 
+ 116:../../libDaisy//src/daisy_core.h ****     Converts Signed 16-bit to float
+ 117:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+ 118:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+ 119:../../libDaisy//src/daisy_core.h **** */
+ 120:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s162f(int16_t x)
+ 121:../../libDaisy//src/daisy_core.h **** {
+ 122:../../libDaisy//src/daisy_core.h ****     return (float)x * S162F_SCALE;
+ 123:../../libDaisy//src/daisy_core.h **** }
+ 124:../../libDaisy//src/daisy_core.h **** 
+ 125:../../libDaisy//src/daisy_core.h **** /**
+ 126:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 16-bit
+ 127:../../libDaisy//src/daisy_core.h **** */
+ 128:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int16_t f2s16(float x)
+ 129:../../libDaisy//src/daisy_core.h **** {
+ 130:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 131:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 132:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S16_SCALE);
+ 133:../../libDaisy//src/daisy_core.h **** }
+ 134:../../libDaisy//src/daisy_core.h **** 
+ 135:../../libDaisy//src/daisy_core.h **** /**
+ 136:../../libDaisy//src/daisy_core.h ****     Converts Signed 24-bit to float
+ 137:../../libDaisy//src/daisy_core.h ****  */
+ 138:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s242f(int32_t x)
+ 139:../../libDaisy//src/daisy_core.h **** {
+ 140:../../libDaisy//src/daisy_core.h ****     x = (x ^ S24SIGN) - S24SIGN; //sign extend aka ((x<<8)>>8)
+ 141:../../libDaisy//src/daisy_core.h ****     return (float)x * S242F_SCALE;
+ 142:../../libDaisy//src/daisy_core.h **** }
+ 143:../../libDaisy//src/daisy_core.h **** /**
+ 144:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 24-bit
+ 145:../../libDaisy//src/daisy_core.h ****  */
+ 146:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int32_t f2s24(float x)
+ 147:../../libDaisy//src/daisy_core.h **** {
+ 148:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 149:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 150:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S24_SCALE);
+ 151:../../libDaisy//src/daisy_core.h **** }
+ 152:../../libDaisy//src/daisy_core.h **** 
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 6
+
+
+ 153:../../libDaisy//src/daisy_core.h **** /**
+ 154:../../libDaisy//src/daisy_core.h ****     Converts Signed 32-bit to float
+ 155:../../libDaisy//src/daisy_core.h ****  */
+ 156:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s322f(int32_t x)
+ 157:../../libDaisy//src/daisy_core.h **** {
+ 158:../../libDaisy//src/daisy_core.h ****     return (float)x * S322F_SCALE;
+ 159:../../libDaisy//src/daisy_core.h **** }
+ 160:../../libDaisy//src/daisy_core.h **** /**
+ 161:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 24-bit
+ 162:../../libDaisy//src/daisy_core.h ****  */
+ 163:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int32_t f2s32(float x)
+ 164:../../libDaisy//src/daisy_core.h **** {
+ 165:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 166:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 167:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S32_SCALE);
+ 168:../../libDaisy//src/daisy_core.h **** }
+ 169:../../libDaisy//src/daisy_core.h **** 
+ 170:../../libDaisy//src/daisy_core.h **** 
+ 171:../../libDaisy//src/daisy_core.h **** /** Enums and a simple struct for defining a hardware pin on the MCU
+ 172:../../libDaisy//src/daisy_core.h ****  *  These correlate with the stm32 datasheet, and are used to configure
+ 173:../../libDaisy//src/daisy_core.h ****  *  the hardware.
+ 174:../../libDaisy//src/daisy_core.h ****  * 
+ 175:../../libDaisy//src/daisy_core.h ****  *  This along with the dsy_gpio_pin class should no longer be used.
+ 176:../../libDaisy//src/daisy_core.h ****  *  They are available for backwards compatability. 
+ 177:../../libDaisy//src/daisy_core.h ****  * 
+ 178:../../libDaisy//src/daisy_core.h ****  *  Please use GPIOPort enum and the Pin struct instead.
+ 179:../../libDaisy//src/daisy_core.h ****  */
+ 180:../../libDaisy//src/daisy_core.h **** typedef enum
+ 181:../../libDaisy//src/daisy_core.h **** {
+ 182:../../libDaisy//src/daisy_core.h ****     DSY_GPIOA, /**< & */
+ 183:../../libDaisy//src/daisy_core.h ****     DSY_GPIOB, /**< & */
+ 184:../../libDaisy//src/daisy_core.h ****     DSY_GPIOC, /**< & */
+ 185:../../libDaisy//src/daisy_core.h ****     DSY_GPIOD, /**< & */
+ 186:../../libDaisy//src/daisy_core.h ****     DSY_GPIOE, /**< & */
+ 187:../../libDaisy//src/daisy_core.h ****     DSY_GPIOF, /**< & */
+ 188:../../libDaisy//src/daisy_core.h ****     DSY_GPIOG, /**< & */
+ 189:../../libDaisy//src/daisy_core.h ****     DSY_GPIOH, /**< & */
+ 190:../../libDaisy//src/daisy_core.h ****     DSY_GPIOI, /**< & */
+ 191:../../libDaisy//src/daisy_core.h ****     DSY_GPIOJ, /**< & */
+ 192:../../libDaisy//src/daisy_core.h ****     DSY_GPIOK, /**< & */
+ 193:../../libDaisy//src/daisy_core.h ****     DSY_GPIOX, /** This is a non-existant port for unsupported bits of hardware. */
+ 194:../../libDaisy//src/daisy_core.h ****     DSY_GPIO_LAST, /** Final enum member */
+ 195:../../libDaisy//src/daisy_core.h **** } dsy_gpio_port;
+ 196:../../libDaisy//src/daisy_core.h **** 
+ 197:../../libDaisy//src/daisy_core.h **** /** Hardware define pins 
+ 198:../../libDaisy//src/daisy_core.h ****  *  
+ 199:../../libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
+ 200:../../libDaisy//src/daisy_core.h ****  *  backwards compatability.
+ 201:../../libDaisy//src/daisy_core.h ****  * 
+ 202:../../libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
+ 203:../../libDaisy//src/daisy_core.h ****  */
+ 204:../../libDaisy//src/daisy_core.h **** typedef struct
+ 205:../../libDaisy//src/daisy_core.h **** {
+ 206:../../libDaisy//src/daisy_core.h ****     dsy_gpio_port port; /**< & */
+ 207:../../libDaisy//src/daisy_core.h ****     uint8_t       pin;  /**< number 0-15 */
+ 208:../../libDaisy//src/daisy_core.h **** } dsy_gpio_pin;
+ 209:../../libDaisy//src/daisy_core.h **** 
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 7
+
+
+ 210:../../libDaisy//src/daisy_core.h **** /** Helper for creating pins from port/pin combos easily
+ 211:../../libDaisy//src/daisy_core.h ****  * 
+ 212:../../libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
+ 213:../../libDaisy//src/daisy_core.h ****  *  backwards compatability.
+ 214:../../libDaisy//src/daisy_core.h ****  * 
+ 215:../../libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
+ 216:../../libDaisy//src/daisy_core.h **** */
+ 217:../../libDaisy//src/daisy_core.h **** FORCE_INLINE dsy_gpio_pin dsy_pin(dsy_gpio_port port, uint8_t pin)
+ 218:../../libDaisy//src/daisy_core.h **** {
+ 219:../../libDaisy//src/daisy_core.h ****     dsy_gpio_pin p;
+ 220:../../libDaisy//src/daisy_core.h ****     p.port = port;
+ 221:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+ 222:../../libDaisy//src/daisy_core.h ****     return p;
+ 223:../../libDaisy//src/daisy_core.h **** }
+ 224:../../libDaisy//src/daisy_core.h **** 
+ 225:../../libDaisy//src/daisy_core.h **** /** Helper for testing sameness of two dsy_gpio_pins
+ 226:../../libDaisy//src/daisy_core.h ****  *  \return    1 if same, 0 if different
+ 227:../../libDaisy//src/daisy_core.h ****  * 
+ 228:../../libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
+ 229:../../libDaisy//src/daisy_core.h ****  *  backwards compatability.
+ 230:../../libDaisy//src/daisy_core.h ****  * 
+ 231:../../libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
+ 232:../../libDaisy//src/daisy_core.h ****  */
+ 233:../../libDaisy//src/daisy_core.h **** FORCE_INLINE uint8_t dsy_pin_cmp(dsy_gpio_pin *a, dsy_gpio_pin *b)
+ 234:../../libDaisy//src/daisy_core.h **** {
+ 235:../../libDaisy//src/daisy_core.h ****     return ((a->port == b->port) && (a->pin == b->pin));
+ 236:../../libDaisy//src/daisy_core.h **** }
+ 237:../../libDaisy//src/daisy_core.h **** 
+ 238:../../libDaisy//src/daisy_core.h **** #ifdef __cplusplus
+ 239:../../libDaisy//src/daisy_core.h **** 
+ 240:../../libDaisy//src/daisy_core.h **** namespace daisy
+ 241:../../libDaisy//src/daisy_core.h **** {
+ 242:../../libDaisy//src/daisy_core.h **** /** @brief GPIO Port names */
+ 243:../../libDaisy//src/daisy_core.h **** enum GPIOPort
+ 244:../../libDaisy//src/daisy_core.h **** {
+ 245:../../libDaisy//src/daisy_core.h ****     PORTA, /**< Port A */
+ 246:../../libDaisy//src/daisy_core.h ****     PORTB, /**< Port B */
+ 247:../../libDaisy//src/daisy_core.h ****     PORTC, /**< Port C */
+ 248:../../libDaisy//src/daisy_core.h ****     PORTD, /**< Port D */
+ 249:../../libDaisy//src/daisy_core.h ****     PORTE, /**< Port E */
+ 250:../../libDaisy//src/daisy_core.h ****     PORTF, /**< Port F */
+ 251:../../libDaisy//src/daisy_core.h ****     PORTG, /**< Port G */
+ 252:../../libDaisy//src/daisy_core.h ****     PORTH, /**< Port H */
+ 253:../../libDaisy//src/daisy_core.h ****     PORTI, /**< Port I */
+ 254:../../libDaisy//src/daisy_core.h ****     PORTJ, /**< Port J */
+ 255:../../libDaisy//src/daisy_core.h ****     PORTK, /**< Port K */
+ 256:../../libDaisy//src/daisy_core.h ****     PORTX, /**< Used as a dummy port to signal an invalid pin. */
+ 257:../../libDaisy//src/daisy_core.h **** };
+ 258:../../libDaisy//src/daisy_core.h **** 
+ 259:../../libDaisy//src/daisy_core.h **** /** @brief representation of hardware port/pin combination */
+ 260:../../libDaisy//src/daisy_core.h **** struct Pin
+ 261:../../libDaisy//src/daisy_core.h **** {
+ 262:../../libDaisy//src/daisy_core.h ****     GPIOPort port;
+ 263:../../libDaisy//src/daisy_core.h ****     uint8_t  pin;
+ 264:../../libDaisy//src/daisy_core.h **** 
+ 265:../../libDaisy//src/daisy_core.h ****     /** @brief Constructor creates a valid pin. 
+ 266:../../libDaisy//src/daisy_core.h ****      *  @param pt GPIOPort between PA, and PK corresponding to STM32 Port.
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 8
+
+
+ 267:../../libDaisy//src/daisy_core.h ****      *  @param pn pin number in range of 0-15
+ 268:../../libDaisy//src/daisy_core.h ****     */
+ 269:../../libDaisy//src/daisy_core.h ****     constexpr Pin(const GPIOPort pt, const uint8_t pn) : port(pt), pin(pn) {}
+ 270:../../libDaisy//src/daisy_core.h **** 
+ 271:../../libDaisy//src/daisy_core.h ****     /** @brief Basic Constructor creates an invalid Pin object */
+ 272:../../libDaisy//src/daisy_core.h ****     constexpr Pin() : port(PORTX), pin(255) {}
+ 273:../../libDaisy//src/daisy_core.h **** 
+ 274:../../libDaisy//src/daisy_core.h ****     /** @brief checks validity of a Pin 
+ 275:../../libDaisy//src/daisy_core.h ****      *  @retval returns true if the port is a valid hardware pin, otherwise false.
+ 276:../../libDaisy//src/daisy_core.h ****     */
+ 277:../../libDaisy//src/daisy_core.h ****     constexpr bool IsValid() const { return port != PORTX && pin < 16; }
+ 278:../../libDaisy//src/daisy_core.h **** 
+ 279:../../libDaisy//src/daisy_core.h ****     /** @brief comparison operator for checking equality between Pin objects */
+ 280:../../libDaisy//src/daisy_core.h ****     constexpr bool operator==(const Pin &rhs) const
+ 281:../../libDaisy//src/daisy_core.h ****     {
+ 282:../../libDaisy//src/daisy_core.h ****         return (rhs.port == port) && (rhs.pin == pin);
+ 283:../../libDaisy//src/daisy_core.h ****     }
+ 284:../../libDaisy//src/daisy_core.h **** 
+ 285:../../libDaisy//src/daisy_core.h ****     /** @brief comparison operator for checking inequality between Pin objects */
+ 286:../../libDaisy//src/daisy_core.h ****     constexpr bool operator!=(const Pin &rhs) const { return !operator==(rhs); }
+ 287:../../libDaisy//src/daisy_core.h **** 
+ 288:../../libDaisy//src/daisy_core.h ****     /** @brief conversion operation for converting to the old-style representation
+ 289:../../libDaisy//src/daisy_core.h ****      *         of a pin.
+ 290:../../libDaisy//src/daisy_core.h ****      * 
+ 291:../../libDaisy//src/daisy_core.h ****      *  This allows the new Pin type to be used in place of the older, dsy_gpio_pin
+ 292:../../libDaisy//src/daisy_core.h ****      *  type.
+ 293:../../libDaisy//src/daisy_core.h ****      */
+ 294:../../libDaisy//src/daisy_core.h ****     operator dsy_gpio_pin() const
+ 123              		.loc 2 294 5 view .LVU14
+ 124              	.LBE57:
+ 295:../../libDaisy//src/daisy_core.h ****     {
+ 296:../../libDaisy//src/daisy_core.h ****         return dsy_pin(static_cast<dsy_gpio_port>(port), pin);
+ 125              		.loc 2 296 9 view .LVU15
+ 126              	.LBB59:
+ 127              	.LBB58:
+ 128              	.LBI58:
+ 217:../../libDaisy//src/daisy_core.h **** {
+ 129              		.loc 2 217 27 view .LVU16
+ 130              	.LBE58:
+ 131              	.LBE59:
+ 219:../../libDaisy//src/daisy_core.h ****     p.port = port;
+ 132              		.loc 2 219 5 view .LVU17
+ 220:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+ 133              		.loc 2 220 5 view .LVU18
+ 221:../../libDaisy//src/daisy_core.h ****     return p;
+ 134              		.loc 2 221 5 view .LVU19
+ 222:../../libDaisy//src/daisy_core.h **** }
+ 135              		.loc 2 222 5 view .LVU20
+ 222:../../libDaisy//src/daisy_core.h **** }
+ 136              		.loc 2 222 5 is_stmt 0 view .LVU21
+ 137 00a8 0F23     		movs	r3, #15
+ 138 00aa 8DF80C50 		strb	r5, [sp, #12]
+ 139              		.loc 1 11 15 view .LVU22
+ 140 00ae 04F53170 		add	r0, r4, #708
+ 141 00b2 8DF80D30 		strb	r3, [sp, #13]
+ 142              	.LVL7:
+ 143              		.loc 1 11 15 view .LVU23
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 9
+
+
+ 144 00b6 9FED1F0A 		vldr.32	s0, .L2+48
+ 145 00ba 0399     		ldr	r1, [sp, #12]
+ 146 00bc 8DED010A 		vstr.32	s0, [sp, #4]	@ int
+ 147 00c0 FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinf
+ 148              	.LVL8:
+  12:InputDriver.cpp ****     play.Init(seed::D29);
+ 149              		.loc 1 12 5 is_stmt 1 view .LVU24
+ 150              	.LBB60:
+ 151              	.LBI60:
+ 294:../../libDaisy//src/daisy_core.h ****     {
+ 152              		.loc 2 294 5 view .LVU25
+ 153              	.LBE60:
+ 154              		.loc 2 296 9 view .LVU26
+ 155              	.LBB62:
+ 156              	.LBB61:
+ 157              	.LBI61:
+ 217:../../libDaisy//src/daisy_core.h **** {
+ 158              		.loc 2 217 27 view .LVU27
+ 159              	.LBE61:
+ 160              	.LBE62:
+ 219:../../libDaisy//src/daisy_core.h ****     p.port = port;
+ 161              		.loc 2 219 5 view .LVU28
+ 220:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+ 162              		.loc 2 220 5 view .LVU29
+ 221:../../libDaisy//src/daisy_core.h ****     return p;
+ 163              		.loc 2 221 5 view .LVU30
+ 222:../../libDaisy//src/daisy_core.h **** }
+ 164              		.loc 2 222 5 view .LVU31
+ 222:../../libDaisy//src/daisy_core.h **** }
+ 165              		.loc 2 222 5 is_stmt 0 view .LVU32
+ 166 00c4 0E23     		movs	r3, #14
+ 167 00c6 8DF81050 		strb	r5, [sp, #16]
+ 168              		.loc 1 12 14 view .LVU33
+ 169 00ca 9DED010A 		vldr.32	s0, [sp, #4]	@ int
+ 170 00ce 04F53570 		add	r0, r4, #724
+ 171 00d2 8DF81130 		strb	r3, [sp, #17]
+ 172              	.LVL9:
+ 173              		.loc 1 12 14 view .LVU34
+ 174 00d6 0025     		movs	r5, #0
+ 175 00d8 0499     		ldr	r1, [sp, #16]
+ 176 00da FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinf
+ 177              	.LVL10:
+  13:InputDriver.cpp ****     stop.Init(seed::D28);
+ 178              		.loc 1 13 5 is_stmt 1 view .LVU35
+ 179              	.LBB63:
+ 180              	.LBI63:
+ 294:../../libDaisy//src/daisy_core.h ****     {
+ 181              		.loc 2 294 5 view .LVU36
+ 182              	.LBE63:
+ 183              		.loc 2 296 9 view .LVU37
+ 184              	.LBB65:
+ 185              	.LBB64:
+ 186              	.LBI64:
+ 217:../../libDaisy//src/daisy_core.h **** {
+ 187              		.loc 2 217 27 view .LVU38
+ 188              	.LBE64:
+ 189              	.LBE65:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 10
+
+
+ 219:../../libDaisy//src/daisy_core.h ****     p.port = port;
+ 190              		.loc 2 219 5 view .LVU39
+ 220:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+ 191              		.loc 2 220 5 view .LVU40
+ 221:../../libDaisy//src/daisy_core.h ****     return p;
+ 192              		.loc 2 221 5 view .LVU41
+ 222:../../libDaisy//src/daisy_core.h **** }
+ 193              		.loc 2 222 5 view .LVU42
+ 222:../../libDaisy//src/daisy_core.h **** }
+ 194              		.loc 2 222 5 is_stmt 0 view .LVU43
+ 195 00de 0223     		movs	r3, #2
+ 196 00e0 8DF81450 		strb	r5, [sp, #20]
+ 197              		.loc 1 13 14 view .LVU44
+ 198 00e4 04F53970 		add	r0, r4, #740
+ 199 00e8 8DF81530 		strb	r3, [sp, #21]
+ 200              	.LVL11:
+ 201              		.loc 1 13 14 view .LVU45
+ 202 00ec 9DED010A 		vldr.32	s0, [sp, #4]	@ int
+ 203 00f0 0599     		ldr	r1, [sp, #20]
+ 204 00f2 FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinf
+ 205              	.LVL12:
+  14:InputDriver.cpp ****     inputs.Init();
+ 206              		.loc 1 14 5 is_stmt 1 view .LVU46
+ 207              	.LBB66:
+ 208              	.LBI66:
+ 209              		.file 3 "../../libDaisy//src/util/ringbuffer.h"
+   1:../../libDaisy//src/util/ringbuffer.h **** #pragma once
+   2:../../libDaisy//src/util/ringbuffer.h **** #ifndef DSY_RINGBUFFER_H
+   3:../../libDaisy//src/util/ringbuffer.h **** #define DSY_RINGBUFFER_H
+   4:../../libDaisy//src/util/ringbuffer.h **** 
+   5:../../libDaisy//src/util/ringbuffer.h **** #include <algorithm>
+   6:../../libDaisy//src/util/ringbuffer.h **** 
+   7:../../libDaisy//src/util/ringbuffer.h **** namespace daisy
+   8:../../libDaisy//src/util/ringbuffer.h **** {
+   9:../../libDaisy//src/util/ringbuffer.h **** /** @addtogroup utility
+  10:../../libDaisy//src/util/ringbuffer.h ****     @{
+  11:../../libDaisy//src/util/ringbuffer.h **** */
+  12:../../libDaisy//src/util/ringbuffer.h **** 
+  13:../../libDaisy//src/util/ringbuffer.h **** /**
+  14:../../libDaisy//src/util/ringbuffer.h **** Utility Ring Buffer \n 
+  15:../../libDaisy//src/util/ringbuffer.h **** imported from pichenettes/stmlib
+  16:../../libDaisy//src/util/ringbuffer.h **** */
+  17:../../libDaisy//src/util/ringbuffer.h **** template <typename T, size_t size>
+  18:../../libDaisy//src/util/ringbuffer.h **** class RingBuffer
+  19:../../libDaisy//src/util/ringbuffer.h **** {
+  20:../../libDaisy//src/util/ringbuffer.h ****   public:
+  21:../../libDaisy//src/util/ringbuffer.h ****     RingBuffer() {}
+  22:../../libDaisy//src/util/ringbuffer.h **** 
+  23:../../libDaisy//src/util/ringbuffer.h ****     /** Initializes the Ring Buffer */
+  24:../../libDaisy//src/util/ringbuffer.h ****     inline void Init() { read_ptr_ = write_ptr_ = 0; }
+ 210              		.loc 3 24 17 view .LVU47
+ 211              	.LBB67:
+ 212              		.loc 3 24 49 is_stmt 0 view .LVU48
+ 213 00f6 C4F8A450 		str	r5, [r4, #164]
+ 214              		.loc 3 24 36 view .LVU49
+ 215 00fa C4F8A050 		str	r5, [r4, #160]
+ 216              	.LVL13:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 11
+
+
+ 217              		.loc 3 24 36 view .LVU50
+ 218              	.LBE67:
+ 219              	.LBE66:
+  15:InputDriver.cpp ****     
+  16:InputDriver.cpp **** }
+ 220              		.loc 1 16 1 view .LVU51
+ 221 00fe 06B0     		add	sp, sp, #24
+ 222              		.cfi_def_cfa_offset 16
+ 223              		@ sp needed
+ 224 0100 70BD     		pop	{r4, r5, r6, pc}
+ 225              	.LVL14:
+ 226              	.L3:
+ 227              		.loc 1 16 1 view .LVU52
+ 228 0102 00BF     		.align	2
+ 229              	.L2:
+ 230 0104 00000000 		.word	.LANCHOR0
+ 231 0108 00000000 		.word	.LANCHOR1
+ 232 010c 00000000 		.word	.LANCHOR2
+ 233 0110 00000000 		.word	.LANCHOR3
+ 234 0114 00000000 		.word	.LANCHOR4
+ 235 0118 00000000 		.word	.LANCHOR5
+ 236 011c 00000000 		.word	.LANCHOR6
+ 237 0120 00000000 		.word	.LANCHOR7
+ 238 0124 00000000 		.word	.LANCHOR8
+ 239 0128 00000000 		.word	.LANCHOR9
+ 240 012c 00000000 		.word	.LANCHOR10
+ 241 0130 00000000 		.word	.LANCHOR11
+ 242 0134 00000000 		.word	0
+ 243              		.cfi_endproc
+ 244              	.LFE2559:
+ 246              		.section	.text._ZN11InputDriver3PopEv,"ax",%progbits
+ 247              		.align	1
+ 248              		.global	_ZN11InputDriver3PopEv
+ 249              		.syntax unified
+ 250              		.thumb
+ 251              		.thumb_func
+ 253              	_ZN11InputDriver3PopEv:
+ 254              	.LVL15:
+ 255              	.LFB2562:
+  17:InputDriver.cpp **** 
+  18:InputDriver.cpp **** 
+  19:InputDriver.cpp **** // to be called in main loop 
+  20:InputDriver.cpp **** void InputDriver::Update() {
+  21:InputDriver.cpp **** 
+  22:InputDriver.cpp ****     play.Debounce();
+  23:InputDriver.cpp ****     stop.Debounce();
+  24:InputDriver.cpp ****     shift.Debounce();
+  25:InputDriver.cpp ****     step.Debounce();
+  26:InputDriver.cpp ****     Input input = {0,0,0,0};
+  27:InputDriver.cpp ****     int temp;
+  28:InputDriver.cpp ****     int step_pressed = -1;
+  29:InputDriver.cpp **** 
+  30:InputDriver.cpp ****     if (play.FallingEdge()) Push({.id = Input::ID::PLAY, .modifier = shift.Pressed() ? Input::MOD::
+  31:InputDriver.cpp ****     if (play.RisingEdge()) Push({.id = Input::ID::PLAY, .modifier = shift.Pressed() ? Input::MOD::S
+  32:InputDriver.cpp **** 
+  33:InputDriver.cpp ****     if (stop.FallingEdge()) Push({.id = Input::ID::STOP, .modifier = shift.Pressed() ? Input::MOD::
+  34:InputDriver.cpp ****     if (stop.RisingEdge()) Push({.id = Input::ID::STOP, .modifier = shift.Pressed() ? Input::MOD::S
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 12
+
+
+  35:InputDriver.cpp **** 
+  36:InputDriver.cpp ****     for (uint8_t i=0; i<16; i++) {
+  37:InputDriver.cpp ****         if (step.Get(i)) step_pressed = i; // used as modifier for encoders
+  38:InputDriver.cpp ****         if (step.RisingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pres
+  39:InputDriver.cpp ****         if (step.FallingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pre
+  40:InputDriver.cpp ****     }
+  41:InputDriver.cpp **** 
+  42:InputDriver.cpp ****     for (uint8_t i=0; i<4; i++) {
+  43:InputDriver.cpp ****         if ((temp = encoders[i].ReadRotary())) {
+  44:InputDriver.cpp ****             input.id = Input::ID::ENC;
+  45:InputDriver.cpp ****             input.index = i;
+  46:InputDriver.cpp **** 
+  47:InputDriver.cpp ****             if (shift.Pressed()) input.modifier = Input::MOD::SHFT;
+  48:InputDriver.cpp ****             else if (step_pressed != -1) {
+  49:InputDriver.cpp ****                 input.modifier = Input::MOD::MOD_STEP;
+  50:InputDriver.cpp ****                 input.mod_index = i;
+  51:InputDriver.cpp ****             } else input.modifier = Input::MOD::NO_MOD;
+  52:InputDriver.cpp **** 
+  53:InputDriver.cpp ****             if (temp == 1) input.action = Input::ACT::INC;
+  54:InputDriver.cpp ****             else input.action = Input::ACT::DEC;
+  55:InputDriver.cpp ****             Push(input);
+  56:InputDriver.cpp ****         }
+  57:InputDriver.cpp **** 
+  58:InputDriver.cpp ****         encoders[i].Update();
+  59:InputDriver.cpp ****         if (encoders[i].Rising()) {
+  60:InputDriver.cpp ****             input.id = Input::ID::ENC;
+  61:InputDriver.cpp ****             input.index = i;
+  62:InputDriver.cpp ****             if (shift.Pressed()) input.modifier = Input::MOD::SHFT;
+  63:InputDriver.cpp ****             else input.modifier = Input::MOD::NO_MOD;
+  64:InputDriver.cpp **** 
+  65:InputDriver.cpp ****             input.action = Input::ACT::DOWN;
+  66:InputDriver.cpp ****             Push(input);
+  67:InputDriver.cpp ****         }
+  68:InputDriver.cpp **** 
+  69:InputDriver.cpp ****         if (encoders[i].Falling()) {
+  70:InputDriver.cpp ****             input.id = Input::ID::ENC;
+  71:InputDriver.cpp ****             input.index = i;
+  72:InputDriver.cpp ****             if (shift.Pressed()) input.modifier = Input::MOD::SHFT;
+  73:InputDriver.cpp ****             else input.modifier = Input::MOD::NO_MOD;
+  74:InputDriver.cpp **** 
+  75:InputDriver.cpp ****             input.action = Input::ACT::UP;
+  76:InputDriver.cpp ****             Push(input);
+  77:InputDriver.cpp ****         }
+  78:InputDriver.cpp ****     }
+  79:InputDriver.cpp **** }
+  80:InputDriver.cpp **** 
+  81:InputDriver.cpp **** void InputDriver::Push(Input input) {
+  82:InputDriver.cpp ****     inputs.Write(input);
+  83:InputDriver.cpp **** } 
+  84:InputDriver.cpp **** 
+  85:InputDriver.cpp **** // called in interupt to process input 
+  86:InputDriver.cpp **** Input InputDriver::Pop() {
+ 256              		.loc 1 86 26 is_stmt 1 view -0
+ 257              		.cfi_startproc
+ 258              		@ args = 0, pretend = 0, frame = 0
+ 259              		@ frame_needed = 0, uses_anonymous_args = 0
+  87:InputDriver.cpp ****     if (inputs.readable()) return inputs.Read();
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 13
+
+
+ 260              		.loc 1 87 5 view .LVU54
+ 261              	.LBB76:
+ 262              	.LBI76:
+  25:../../libDaisy//src/util/ringbuffer.h **** 
+  26:../../libDaisy//src/util/ringbuffer.h ****     /** \return The total size of the ring buffer */
+  27:../../libDaisy//src/util/ringbuffer.h ****     inline size_t capacity() const { return size; }
+  28:../../libDaisy//src/util/ringbuffer.h **** 
+  29:../../libDaisy//src/util/ringbuffer.h ****     /** \return the number of samples that can be written to ring buffer without overwriting unread
+  30:../../libDaisy//src/util/ringbuffer.h ****     inline size_t writable() const
+  31:../../libDaisy//src/util/ringbuffer.h ****     {
+  32:../../libDaisy//src/util/ringbuffer.h ****         return (read_ptr_ - write_ptr_ - 1) % size;
+  33:../../libDaisy//src/util/ringbuffer.h ****     }
+  34:../../libDaisy//src/util/ringbuffer.h **** 
+  35:../../libDaisy//src/util/ringbuffer.h ****     /** \return number of unread elements in ring buffer */
+  36:../../libDaisy//src/util/ringbuffer.h ****     inline size_t readable() const { return (write_ptr_ - read_ptr_) % size; }
+ 263              		.loc 3 36 19 view .LVU55
+ 264              	.LBB77:
+ 265              		.loc 3 36 46 is_stmt 0 view .LVU56
+ 266 0000 D1F8A430 		ldr	r3, [r1, #164]
+ 267              		.loc 3 36 59 view .LVU57
+ 268 0004 D1F8A020 		ldr	r2, [r1, #160]
+ 269              	.LVL16:
+ 270              		.loc 3 36 57 view .LVU58
+ 271 0008 9B1A     		subs	r3, r3, r2
+ 272              	.LBE77:
+ 273              	.LBE76:
+ 274              		.loc 1 87 5 view .LVU59
+ 275 000a 13F01F03 		ands	r3, r3, #31
+  86:InputDriver.cpp ****     if (inputs.readable()) return inputs.Read();
+ 276              		.loc 1 86 26 view .LVU60
+ 277 000e 10B5     		push	{r4, lr}
+ 278              		.cfi_def_cfa_offset 8
+ 279              		.cfi_offset 4, -8
+ 280              		.cfi_offset 14, -4
+ 281              		.loc 1 87 5 view .LVU61
+ 282 0010 15D0     		beq	.L5
+ 283              	.L6:
+ 284              	.LBB78:
+ 285              	.LBB79:
+  37:../../libDaisy//src/util/ringbuffer.h **** 
+  38:../../libDaisy//src/util/ringbuffer.h ****     /** \returns True, if the buffer is empty. */
+  39:../../libDaisy//src/util/ringbuffer.h ****     inline bool isEmpty() const { return write_ptr_ == read_ptr_; }
+  40:../../libDaisy//src/util/ringbuffer.h **** 
+  41:../../libDaisy//src/util/ringbuffer.h ****     /** Writes the value to the next available position in the ring buffer
+  42:../../libDaisy//src/util/ringbuffer.h ****     \param v Value to write
+  43:../../libDaisy//src/util/ringbuffer.h ****     */
+  44:../../libDaisy//src/util/ringbuffer.h ****     inline void Write(T v)
+  45:../../libDaisy//src/util/ringbuffer.h ****     {
+  46:../../libDaisy//src/util/ringbuffer.h ****         while(!writable())
+  47:../../libDaisy//src/util/ringbuffer.h ****             ;
+  48:../../libDaisy//src/util/ringbuffer.h ****         Overwrite(v);
+  49:../../libDaisy//src/util/ringbuffer.h ****     }
+  50:../../libDaisy//src/util/ringbuffer.h **** 
+  51:../../libDaisy//src/util/ringbuffer.h ****     /** Writes the new element to the ring buffer, overwriting unread data if necessary. 
+  52:../../libDaisy//src/util/ringbuffer.h ****     \param v Value to overwrite
+  53:../../libDaisy//src/util/ringbuffer.h ****      */
+  54:../../libDaisy//src/util/ringbuffer.h ****     inline void Overwrite(T v)
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 14
+
+
+  55:../../libDaisy//src/util/ringbuffer.h ****     {
+  56:../../libDaisy//src/util/ringbuffer.h ****         size_t w   = write_ptr_;
+  57:../../libDaisy//src/util/ringbuffer.h ****         buffer_[w] = v;
+  58:../../libDaisy//src/util/ringbuffer.h ****         write_ptr_ = (w + 1) % size;
+  59:../../libDaisy//src/util/ringbuffer.h ****     }
+  60:../../libDaisy//src/util/ringbuffer.h **** 
+  61:../../libDaisy//src/util/ringbuffer.h ****     /** Reads the first available element from the ring buffer
+  62:../../libDaisy//src/util/ringbuffer.h ****     \return read value
+  63:../../libDaisy//src/util/ringbuffer.h ****      */
+  64:../../libDaisy//src/util/ringbuffer.h ****     inline T Read()
+  65:../../libDaisy//src/util/ringbuffer.h ****     {
+  66:../../libDaisy//src/util/ringbuffer.h ****         while(!readable())
+ 286              		.loc 3 66 24 is_stmt 1 view .LVU62
+ 287              	.LVL17:
+ 288              	.LBB80:
+ 289              	.LBI80:
+  36:../../libDaisy//src/util/ringbuffer.h **** 
+ 290              		.loc 3 36 19 view .LVU63
+ 291              	.LBB81:
+  36:../../libDaisy//src/util/ringbuffer.h **** 
+ 292              		.loc 3 36 46 is_stmt 0 view .LVU64
+ 293 0012 D1F8A430 		ldr	r3, [r1, #164]
+  36:../../libDaisy//src/util/ringbuffer.h **** 
+ 294              		.loc 3 36 59 view .LVU65
+ 295 0016 D1F8A020 		ldr	r2, [r1, #160]
+  36:../../libDaisy//src/util/ringbuffer.h **** 
+ 296              		.loc 3 36 57 view .LVU66
+ 297 001a 9B1A     		subs	r3, r3, r2
+ 298              	.LBE81:
+ 299              	.LBE80:
+ 300              		.loc 3 66 24 view .LVU67
+ 301 001c DB06     		lsls	r3, r3, #27
+ 302 001e F8D0     		beq	.L6
+ 303              	.LVL18:
+ 304              	.LBB82:
+ 305              	.LBI82:
+  67:../../libDaisy//src/util/ringbuffer.h ****             ;
+  68:../../libDaisy//src/util/ringbuffer.h ****         return ImmediateRead();
+  69:../../libDaisy//src/util/ringbuffer.h ****     }
+  70:../../libDaisy//src/util/ringbuffer.h **** 
+  71:../../libDaisy//src/util/ringbuffer.h ****     /** Reads next element from ring buffer immediately
+  72:../../libDaisy//src/util/ringbuffer.h ****     \return read value
+  73:../../libDaisy//src/util/ringbuffer.h ****      */
+  74:../../libDaisy//src/util/ringbuffer.h ****     inline T ImmediateRead()
+ 306              		.loc 3 74 14 is_stmt 1 view .LVU68
+ 307              	.LBB83:
+  75:../../libDaisy//src/util/ringbuffer.h ****     {
+  76:../../libDaisy//src/util/ringbuffer.h ****         size_t r      = read_ptr_;
+ 308              		.loc 3 76 16 is_stmt 0 view .LVU69
+ 309 0020 D1F8A030 		ldr	r3, [r1, #160]
+ 310              	.LVL19:
+  77:../../libDaisy//src/util/ringbuffer.h ****         T      result = buffer_[r];
+ 311              		.loc 3 77 16 view .LVU70
+ 312 0024 03EB8302 		add	r2, r3, r3, lsl #2
+  78:../../libDaisy//src/util/ringbuffer.h ****         read_ptr_     = (r + 1) % size;
+ 313              		.loc 3 78 28 view .LVU71
+ 314 0028 0133     		adds	r3, r3, #1
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 15
+
+
+ 315              	.LVL20:
+  77:../../libDaisy//src/util/ringbuffer.h ****         T      result = buffer_[r];
+ 316              		.loc 3 77 16 view .LVU72
+ 317 002a 8C18     		adds	r4, r1, r2
+ 318 002c 8A58     		ldr	r2, [r1, r2]	@ unaligned
+ 319              		.loc 3 78 33 view .LVU73
+ 320 002e 03F01F03 		and	r3, r3, #31
+ 321              	.LVL21:
+  77:../../libDaisy//src/util/ringbuffer.h ****         T      result = buffer_[r];
+ 322              		.loc 3 77 16 view .LVU74
+ 323 0032 0260     		str	r2, [r0]	@ unaligned
+ 324 0034 2279     		ldrb	r2, [r4, #4]	@ zero_extendqisi2
+ 325              		.loc 3 78 23 view .LVU75
+ 326 0036 C1F8A030 		str	r3, [r1, #160]
+  77:../../libDaisy//src/util/ringbuffer.h ****         T      result = buffer_[r];
+ 327              		.loc 3 77 16 view .LVU76
+ 328 003a 0271     		strb	r2, [r0, #4]
+ 329              	.L4:
+  77:../../libDaisy//src/util/ringbuffer.h ****         T      result = buffer_[r];
+ 330              		.loc 3 77 16 view .LVU77
+ 331              	.LBE83:
+ 332              	.LBE82:
+ 333              	.LBE79:
+ 334              	.LBE78:
+  88:InputDriver.cpp ****     else return {.id = Input::ID::NO_ID, .modifier = Input::MOD::NO_MOD, .action = Input::ACT::NO_A
+  89:InputDriver.cpp **** }
+ 335              		.loc 1 89 1 view .LVU78
+ 336 003c 10BD     		pop	{r4, pc}
+ 337              	.L5:
+  88:InputDriver.cpp ****     else return {.id = Input::ID::NO_ID, .modifier = Input::MOD::NO_MOD, .action = Input::ACT::NO_A
+ 338              		.loc 1 88 10 is_stmt 1 view .LVU79
+  88:InputDriver.cpp ****     else return {.id = Input::ID::NO_ID, .modifier = Input::MOD::NO_MOD, .action = Input::ACT::NO_A
+ 339              		.loc 1 88 114 is_stmt 0 view .LVU80
+ 340 003e 0360     		str	r3, [r0]	@ unaligned
+ 341 0040 0371     		strb	r3, [r0, #4]
+ 342 0042 FBE7     		b	.L4
+ 343              		.cfi_endproc
+ 344              	.LFE2562:
+ 346              		.section	.text._ZN5daisy10RingBufferI5InputLj32EE5WriteES1_,"axG",%progbits,_ZN5daisy10RingBufferI
+ 347              		.align	1
+ 348              		.weak	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 349              		.syntax unified
+ 350              		.thumb
+ 351              		.thumb_func
+ 353              	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_:
+ 354              	.LVL22:
+ 355              	.LFB2573:
+  44:../../libDaisy//src/util/ringbuffer.h ****     {
+ 356              		.loc 3 44 17 is_stmt 1 view -0
+ 357              		.cfi_startproc
+ 358              		@ args = 0, pretend = 0, frame = 8
+ 359              		@ frame_needed = 0, uses_anonymous_args = 0
+  44:../../libDaisy//src/util/ringbuffer.h ****     {
+ 360              		.loc 3 44 17 is_stmt 0 view .LVU82
+ 361 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 362              		.cfi_def_cfa_offset 32
+ 363              		.cfi_offset 4, -20
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 16
+
+
+ 364              		.cfi_offset 5, -16
+ 365              		.cfi_offset 6, -12
+ 366              		.cfi_offset 7, -8
+ 367              		.cfi_offset 14, -4
+ 368 0002 02AB     		add	r3, sp, #8
+ 369 0004 03E90600 		stmdb	r3, {r1, r2}
+ 370              	.L11:
+  46:../../libDaisy//src/util/ringbuffer.h ****             ;
+ 371              		.loc 3 46 24 is_stmt 1 view .LVU83
+ 372              	.LVL23:
+ 373              	.LBB88:
+ 374              	.LBI88:
+  30:../../libDaisy//src/util/ringbuffer.h ****     {
+ 375              		.loc 3 30 19 view .LVU84
+ 376              	.LBB89:
+  32:../../libDaisy//src/util/ringbuffer.h ****     }
+ 377              		.loc 3 32 17 is_stmt 0 view .LVU85
+ 378 0008 D0F8A030 		ldr	r3, [r0, #160]
+  32:../../libDaisy//src/util/ringbuffer.h ****     }
+ 379              		.loc 3 32 29 view .LVU86
+ 380 000c D0F8A420 		ldr	r2, [r0, #164]
+ 381              	.LVL24:
+  32:../../libDaisy//src/util/ringbuffer.h ****     }
+ 382              		.loc 3 32 40 view .LVU87
+ 383 0010 013B     		subs	r3, r3, #1
+ 384 0012 9B1A     		subs	r3, r3, r2
+ 385              	.LBE89:
+ 386              	.LBE88:
+  46:../../libDaisy//src/util/ringbuffer.h ****             ;
+ 387              		.loc 3 46 24 view .LVU88
+ 388 0014 DB06     		lsls	r3, r3, #27
+ 389 0016 F7D0     		beq	.L11
+ 390              	.LVL25:
+ 391              	.LBB90:
+ 392              	.LBB91:
+  56:../../libDaisy//src/util/ringbuffer.h ****         buffer_[w] = v;
+ 393              		.loc 3 56 16 view .LVU89
+ 394 0018 D0F8A430 		ldr	r3, [r0, #164]
+ 395 001c 9DF80170 		ldrb	r7, [sp, #1]	@ zero_extendqisi2
+ 396              	.LVL26:
+  56:../../libDaisy//src/util/ringbuffer.h ****         buffer_[w] = v;
+ 397              		.loc 3 56 16 view .LVU90
+ 398 0020 03EB8301 		add	r1, r3, r3, lsl #2
+  58:../../libDaisy//src/util/ringbuffer.h ****     }
+ 399              		.loc 3 58 25 view .LVU91
+ 400 0024 0133     		adds	r3, r3, #1
+ 401 0026 9DF80260 		ldrb	r6, [sp, #2]	@ zero_extendqisi2
+ 402              	.LVL27:
+  58:../../libDaisy//src/util/ringbuffer.h ****     }
+ 403              		.loc 3 58 25 view .LVU92
+ 404 002a 4218     		adds	r2, r0, r1
+ 405 002c 9DF80350 		ldrb	r5, [sp, #3]	@ zero_extendqisi2
+ 406              	.LVL28:
+  58:../../libDaisy//src/util/ringbuffer.h ****     }
+ 407              		.loc 3 58 25 view .LVU93
+ 408 0030 9DF80440 		ldrb	r4, [sp, #4]	@ zero_extendqisi2
+ 409              	.LVL29:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 17
+
+
+  58:../../libDaisy//src/util/ringbuffer.h ****     }
+ 410              		.loc 3 58 25 view .LVU94
+ 411              	.LBE91:
+ 412              	.LBI90:
+  54:../../libDaisy//src/util/ringbuffer.h ****     {
+ 413              		.loc 3 54 17 is_stmt 1 view .LVU95
+ 414              	.LBB92:
+  58:../../libDaisy//src/util/ringbuffer.h ****     }
+ 415              		.loc 3 58 30 is_stmt 0 view .LVU96
+ 416 0034 03F01F03 		and	r3, r3, #31
+  57:../../libDaisy//src/util/ringbuffer.h ****         write_ptr_ = (w + 1) % size;
+ 417              		.loc 3 57 9 view .LVU97
+ 418 0038 9DF800C0 		ldrb	ip, [sp]	@ zero_extendqisi2
+ 419 003c 00F801C0 		strb	ip, [r0, r1]
+ 420 0040 5770     		strb	r7, [r2, #1]
+ 421 0042 9670     		strb	r6, [r2, #2]
+ 422 0044 D570     		strb	r5, [r2, #3]
+ 423 0046 1471     		strb	r4, [r2, #4]
+  58:../../libDaisy//src/util/ringbuffer.h ****     }
+ 424              		.loc 3 58 20 view .LVU98
+ 425 0048 C0F8A430 		str	r3, [r0, #164]
+ 426              	.LVL30:
+  58:../../libDaisy//src/util/ringbuffer.h ****     }
+ 427              		.loc 3 58 20 view .LVU99
+ 428              	.LBE92:
+ 429              	.LBE90:
+  49:../../libDaisy//src/util/ringbuffer.h **** 
+ 430              		.loc 3 49 5 view .LVU100
+ 431 004c 03B0     		add	sp, sp, #12
+ 432              		.cfi_def_cfa_offset 20
+ 433              		@ sp needed
+ 434 004e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 435              		.cfi_endproc
+ 436              	.LFE2573:
+ 438              		.section	.text._ZN11InputDriver4PushE5Input,"ax",%progbits
+ 439              		.align	1
+ 440              		.global	_ZN11InputDriver4PushE5Input
+ 441              		.syntax unified
+ 442              		.thumb
+ 443              		.thumb_func
+ 445              	_ZN11InputDriver4PushE5Input:
+ 446              	.LVL31:
+ 447              	.LFB2561:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 448              		.loc 1 81 37 is_stmt 1 view -0
+ 449              		.cfi_startproc
+ 450              		@ args = 0, pretend = 0, frame = 8
+ 451              		@ frame_needed = 0, uses_anonymous_args = 0
+  82:InputDriver.cpp **** } 
+ 452              		.loc 1 82 5 view .LVU102
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 453              		.loc 1 81 37 is_stmt 0 view .LVU103
+ 454 0000 07B5     		push	{r0, r1, r2, lr}
+ 455              		.cfi_def_cfa_offset 16
+ 456              		.cfi_offset 14, -4
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 457              		.loc 1 81 37 view .LVU104
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 18
+
+
+ 458 0002 6B46     		mov	r3, sp
+ 459 0004 83E80600 		stm	r3, {r1, r2}
+  82:InputDriver.cpp **** } 
+ 460              		.loc 1 82 17 view .LVU105
+ 461 0008 93E80600 		ldm	r3, {r1, r2}
+ 462 000c FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 463              	.LVL32:
+  83:InputDriver.cpp **** 
+ 464              		.loc 1 83 1 view .LVU106
+ 465 0010 03B0     		add	sp, sp, #12
+ 466              		.cfi_def_cfa_offset 4
+ 467              		@ sp needed
+ 468 0012 5DF804FB 		ldr	pc, [sp], #4
+ 469              		.cfi_endproc
+ 470              	.LFE2561:
+ 472              		.section	.text._ZN11InputDriver6UpdateEv,"ax",%progbits
+ 473              		.align	1
+ 474              		.global	_ZN11InputDriver6UpdateEv
+ 475              		.syntax unified
+ 476              		.thumb
+ 477              		.thumb_func
+ 479              	_ZN11InputDriver6UpdateEv:
+ 480              	.LVL33:
+ 481              	.LFB2560:
+  20:InputDriver.cpp **** 
+ 482              		.loc 1 20 28 is_stmt 1 view -0
+ 483              		.cfi_startproc
+ 484              		@ args = 0, pretend = 0, frame = 8
+ 485              		@ frame_needed = 0, uses_anonymous_args = 0
+  22:InputDriver.cpp ****     stop.Debounce();
+ 486              		.loc 1 22 5 view .LVU108
+  20:InputDriver.cpp **** 
+ 487              		.loc 1 20 28 is_stmt 0 view .LVU109
+ 488 0000 2DE9F347 		push	{r0, r1, r4, r5, r6, r7, r8, r9, r10, lr}
+ 489              		.cfi_def_cfa_offset 40
+ 490              		.cfi_offset 4, -32
+ 491              		.cfi_offset 5, -28
+ 492              		.cfi_offset 6, -24
+ 493              		.cfi_offset 7, -20
+ 494              		.cfi_offset 8, -16
+ 495              		.cfi_offset 9, -12
+ 496              		.cfi_offset 10, -8
+ 497              		.cfi_offset 14, -4
+  20:InputDriver.cpp **** 
+ 498              		.loc 1 20 28 view .LVU110
+ 499 0004 0446     		mov	r4, r0
+  22:InputDriver.cpp ****     stop.Debounce();
+ 500              		.loc 1 22 18 view .LVU111
+ 501 0006 00F53570 		add	r0, r0, #724
+ 502              	.LVL34:
+  22:InputDriver.cpp ****     stop.Debounce();
+ 503              		.loc 1 22 18 view .LVU112
+ 504 000a FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 505              	.LVL35:
+  23:InputDriver.cpp ****     shift.Debounce();
+ 506              		.loc 1 23 5 is_stmt 1 view .LVU113
+  25:InputDriver.cpp ****     Input input = {0,0,0,0};
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 19
+
+
+ 507              		.loc 1 25 18 is_stmt 0 view .LVU114
+ 508 000e 04F5F077 		add	r7, r4, #480
+  23:InputDriver.cpp ****     shift.Debounce();
+ 509              		.loc 1 23 18 view .LVU115
+ 510 0012 04F53970 		add	r0, r4, #740
+ 511 0016 FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 512              	.LVL36:
+  24:InputDriver.cpp ****     step.Debounce();
+ 513              		.loc 1 24 5 is_stmt 1 view .LVU116
+  24:InputDriver.cpp ****     step.Debounce();
+ 514              		.loc 1 24 19 is_stmt 0 view .LVU117
+ 515 001a 04F53170 		add	r0, r4, #708
+ 516 001e FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
+ 517              	.LVL37:
+  25:InputDriver.cpp ****     Input input = {0,0,0,0};
+ 518              		.loc 1 25 5 is_stmt 1 view .LVU118
+  25:InputDriver.cpp ****     Input input = {0,0,0,0};
+ 519              		.loc 1 25 18 is_stmt 0 view .LVU119
+ 520 0022 3846     		mov	r0, r7
+ 521 0024 FFF7FEFF 		bl	_ZN11StepButtons8DebounceEv
+ 522              	.LVL38:
+  26:InputDriver.cpp ****     int temp;
+ 523              		.loc 1 26 5 is_stmt 1 view .LVU120
+  27:InputDriver.cpp ****     int step_pressed = -1;
+ 524              		.loc 1 27 5 view .LVU121
+  28:InputDriver.cpp **** 
+ 525              		.loc 1 28 5 view .LVU122
+  30:InputDriver.cpp ****     if (play.RisingEdge()) Push({.id = Input::ID::PLAY, .modifier = shift.Pressed() ? Input::MOD::S
+ 526              		.loc 1 30 5 view .LVU123
+ 527              	.LBB143:
+ 528              	.LBI143:
+ 529              		.file 4 "../../libDaisy//src/hid/switch.h"
+   1:../../libDaisy//src/hid/switch.h **** #pragma once
+   2:../../libDaisy//src/hid/switch.h **** #ifndef DSY_SWITCH_H
+   3:../../libDaisy//src/hid/switch.h **** #define DSY_SWITCH_H
+   4:../../libDaisy//src/hid/switch.h **** #include "daisy_core.h"
+   5:../../libDaisy//src/hid/switch.h **** #include "per/gpio.h"
+   6:../../libDaisy//src/hid/switch.h **** #include "sys/system.h"
+   7:../../libDaisy//src/hid/switch.h **** 
+   8:../../libDaisy//src/hid/switch.h **** namespace daisy
+   9:../../libDaisy//src/hid/switch.h **** {
+  10:../../libDaisy//src/hid/switch.h **** /** 
+  11:../../libDaisy//src/hid/switch.h ****     Generic Class for handling momentary/latching switches \n 
+  12:../../libDaisy//src/hid/switch.h ****     Inspired/influenced by Mutable Instruments (pichenettes) Switch classes
+  13:../../libDaisy//src/hid/switch.h ****     @author Stephen Hensley
+  14:../../libDaisy//src/hid/switch.h ****     @date December 2019
+  15:../../libDaisy//src/hid/switch.h ****     @ingroup controls
+  16:../../libDaisy//src/hid/switch.h **** */
+  17:../../libDaisy//src/hid/switch.h **** class Switch
+  18:../../libDaisy//src/hid/switch.h **** {
+  19:../../libDaisy//src/hid/switch.h ****   public:
+  20:../../libDaisy//src/hid/switch.h ****     /** Specifies the expected behavior of the switch */
+  21:../../libDaisy//src/hid/switch.h ****     enum Type
+  22:../../libDaisy//src/hid/switch.h ****     {
+  23:../../libDaisy//src/hid/switch.h ****         TYPE_TOGGLE,    /**< & */
+  24:../../libDaisy//src/hid/switch.h ****         TYPE_MOMENTARY, /**< & */
+  25:../../libDaisy//src/hid/switch.h ****     };
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 20
+
+
+  26:../../libDaisy//src/hid/switch.h ****     /** Specifies whether the pressed is HIGH or LOW. */
+  27:../../libDaisy//src/hid/switch.h ****     enum Polarity
+  28:../../libDaisy//src/hid/switch.h ****     {
+  29:../../libDaisy//src/hid/switch.h ****         POLARITY_NORMAL,   /**< & */
+  30:../../libDaisy//src/hid/switch.h ****         POLARITY_INVERTED, /**< & */
+  31:../../libDaisy//src/hid/switch.h ****     };
+  32:../../libDaisy//src/hid/switch.h **** 
+  33:../../libDaisy//src/hid/switch.h ****     /** Specifies whether to use built-in Pull Up/Down resistors to hold button at a given state wh
+  34:../../libDaisy//src/hid/switch.h ****     enum Pull
+  35:../../libDaisy//src/hid/switch.h ****     {
+  36:../../libDaisy//src/hid/switch.h ****         PULL_UP,   /**< & */
+  37:../../libDaisy//src/hid/switch.h ****         PULL_DOWN, /**< & */
+  38:../../libDaisy//src/hid/switch.h ****         PULL_NONE, /**< & */
+  39:../../libDaisy//src/hid/switch.h ****     };
+  40:../../libDaisy//src/hid/switch.h **** 
+  41:../../libDaisy//src/hid/switch.h ****     Switch() {}
+  42:../../libDaisy//src/hid/switch.h ****     ~Switch() {}
+  43:../../libDaisy//src/hid/switch.h **** 
+  44:../../libDaisy//src/hid/switch.h ****     /** 
+  45:../../libDaisy//src/hid/switch.h ****     Initializes the switch object with a given port/pin combo.
+  46:../../libDaisy//src/hid/switch.h ****     \param pin port/pin object to tell the switch which hardware pin to use.
+  47:../../libDaisy//src/hid/switch.h ****     \param update_rate Does nothing. Backwards compatibility until next breaking update.
+  48:../../libDaisy//src/hid/switch.h ****     \param t switch type -- Default: TYPE_MOMENTARY
+  49:../../libDaisy//src/hid/switch.h ****     \param pol switch polarity -- Default: POLARITY_INVERTED
+  50:../../libDaisy//src/hid/switch.h ****     \param pu switch pull up/down -- Default: PULL_UP
+  51:../../libDaisy//src/hid/switch.h ****     */
+  52:../../libDaisy//src/hid/switch.h ****     void
+  53:../../libDaisy//src/hid/switch.h ****     Init(dsy_gpio_pin pin, float update_rate, Type t, Polarity pol, Pull pu);
+  54:../../libDaisy//src/hid/switch.h **** 
+  55:../../libDaisy//src/hid/switch.h ****     /**
+  56:../../libDaisy//src/hid/switch.h ****        Simplified Init.
+  57:../../libDaisy//src/hid/switch.h ****        \param pin port/pin object to tell the switch which hardware pin to use.
+  58:../../libDaisy//src/hid/switch.h ****        \param update_rate Left for backwards compatibility until next breaking change.
+  59:../../libDaisy//src/hid/switch.h ****     */
+  60:../../libDaisy//src/hid/switch.h ****     void Init(dsy_gpio_pin pin, float update_rate = 0.f);
+  61:../../libDaisy//src/hid/switch.h **** 
+  62:../../libDaisy//src/hid/switch.h ****     /** 
+  63:../../libDaisy//src/hid/switch.h ****     Called at update_rate to debounce and handle timing for the switch.
+  64:../../libDaisy//src/hid/switch.h ****     In order for events not to be missed, its important that the Edge/Pressed checks
+  65:../../libDaisy//src/hid/switch.h ****     be made at the same rate as the debounce function is being called.
+  66:../../libDaisy//src/hid/switch.h ****     */
+  67:../../libDaisy//src/hid/switch.h ****     void Debounce();
+  68:../../libDaisy//src/hid/switch.h **** 
+  69:../../libDaisy//src/hid/switch.h ****     /** \return true if a button was just pressed. */
+  70:../../libDaisy//src/hid/switch.h ****     inline bool RisingEdge() const { return updated_ ? state_ == 0x7f : false; }
+  71:../../libDaisy//src/hid/switch.h **** 
+  72:../../libDaisy//src/hid/switch.h ****     /** \return true if the button was just released */
+  73:../../libDaisy//src/hid/switch.h ****     inline bool FallingEdge() const
+ 530              		.loc 4 73 17 view .LVU124
+ 531              	.LBB144:
+  74:../../libDaisy//src/hid/switch.h ****     {
+  75:../../libDaisy//src/hid/switch.h ****         return updated_ ? state_ == 0x80 : false;
+ 532              		.loc 4 75 9 view .LVU125
+ 533              		.loc 4 75 25 is_stmt 0 view .LVU126
+ 534 0028 94F8D832 		ldrb	r3, [r4, #728]	@ zero_extendqisi2
+ 535 002c 4BB1     		cbz	r3, .L17
+ 536              	.LVL39:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 21
+
+
+ 537              		.loc 4 75 25 view .LVU127
+ 538              	.LBE144:
+ 539              	.LBE143:
+  30:InputDriver.cpp ****     if (play.RisingEdge()) Push({.id = Input::ID::PLAY, .modifier = shift.Pressed() ? Input::MOD::S
+ 540              		.loc 1 30 5 view .LVU128
+ 541 002e 94F8DE32 		ldrb	r3, [r4, #734]	@ zero_extendqisi2
+ 542 0032 802B     		cmp	r3, #128
+ 543 0034 00F09E80 		beq	.L18
+ 544              	.L21:
+  31:InputDriver.cpp **** 
+ 545              		.loc 1 31 5 view .LVU129
+ 546 0038 94F8DE32 		ldrb	r3, [r4, #734]	@ zero_extendqisi2
+ 547 003c 7F2B     		cmp	r3, #127
+ 548 003e 00F0B980 		beq	.L19
+ 549              	.L17:
+  33:InputDriver.cpp ****     if (stop.RisingEdge()) Push({.id = Input::ID::STOP, .modifier = shift.Pressed() ? Input::MOD::S
+ 550              		.loc 1 33 5 is_stmt 1 view .LVU130
+ 551              	.LVL40:
+ 552              	.LBB145:
+ 553              	.LBI145:
+  73:../../libDaisy//src/hid/switch.h ****     {
+ 554              		.loc 4 73 17 view .LVU131
+ 555              	.LBB146:
+ 556              		.loc 4 75 9 view .LVU132
+ 557              		.loc 4 75 25 is_stmt 0 view .LVU133
+ 558 0042 94F8E832 		ldrb	r3, [r4, #744]	@ zero_extendqisi2
+ 559 0046 4BB1     		cbz	r3, .L23
+ 560              	.LVL41:
+ 561              		.loc 4 75 25 view .LVU134
+ 562              	.LBE146:
+ 563              	.LBE145:
+  33:InputDriver.cpp ****     if (stop.RisingEdge()) Push({.id = Input::ID::STOP, .modifier = shift.Pressed() ? Input::MOD::S
+ 564              		.loc 1 33 5 view .LVU135
+ 565 0048 94F8EE32 		ldrb	r3, [r4, #750]	@ zero_extendqisi2
+ 566 004c 802B     		cmp	r3, #128
+ 567 004e 00F0CD80 		beq	.L24
+ 568              	.L27:
+  34:InputDriver.cpp **** 
+ 569              		.loc 1 34 5 view .LVU136
+ 570 0052 94F8EE32 		ldrb	r3, [r4, #750]	@ zero_extendqisi2
+ 571 0056 7F2B     		cmp	r3, #127
+ 572 0058 00F0E980 		beq	.L25
+ 573              	.L23:
+  34:InputDriver.cpp **** 
+ 574              		.loc 1 34 5 view .LVU137
+ 575 005c 04F11008 		add	r8, r4, #16
+  20:InputDriver.cpp **** 
+ 576              		.loc 1 20 28 view .LVU138
+ 577 0060 2546     		mov	r5, r4
+ 578 0062 4FF0FF39 		mov	r9, #-1
+ 579              	.LVL42:
+ 580              	.L35:
+  20:InputDriver.cpp **** 
+ 581              		.loc 1 20 28 view .LVU139
+ 582 0066 A5EB040A 		sub	r10, r5, r4
+ 583              	.LBB147:
+  37:InputDriver.cpp ****         if (step.RisingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pres
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 22
+
+
+ 584              		.loc 1 37 21 view .LVU140
+ 585 006a 3846     		mov	r0, r7
+ 586 006c 5FFA8AF6 		uxtb	r6, r10
+ 587              	.LVL43:
+  37:InputDriver.cpp ****         if (step.RisingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pres
+ 588              		.loc 1 37 9 is_stmt 1 view .LVU141
+  37:InputDriver.cpp ****         if (step.RisingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pres
+ 589              		.loc 1 37 21 is_stmt 0 view .LVU142
+ 590 0070 3146     		mov	r1, r6
+ 591 0072 FFF7FEFF 		bl	_ZN11StepButtons3GetEh
+ 592              	.LVL44:
+ 593              	.LBB148:
+ 594              	.LBB149:
+ 595              		.file 5 "StepButtons.h"
+   1:StepButtons.h **** #pragma once
+   2:StepButtons.h **** #ifndef DSY_STEP_BUTTONS_H
+   3:StepButtons.h **** #define DSY_STEP_BUTTONS_H
+   4:StepButtons.h **** #include "daisy.h"
+   5:StepButtons.h **** #include "per/gpio.h"
+   6:StepButtons.h **** #include "sys/system.h"
+   7:StepButtons.h **** #include "per/spi.h"
+   8:StepButtons.h **** /** 
+   9:StepButtons.h ****     @author Hayden Barry
+  10:StepButtons.h ****     @date Febuary 2024
+  11:StepButtons.h **** */
+  12:StepButtons.h **** using namespace daisy;
+  13:StepButtons.h **** class StepButtons
+  14:StepButtons.h **** {
+  15:StepButtons.h ****   public:
+  16:StepButtons.h **** 
+  17:StepButtons.h ****     StepButtons() {}
+  18:StepButtons.h ****     ~StepButtons() {}
+  19:StepButtons.h **** 
+  20:StepButtons.h **** 
+  21:StepButtons.h ****     void Init();
+  22:StepButtons.h ****     void Debounce();
+  23:StepButtons.h **** 
+  24:StepButtons.h ****     /** \return true if a button was just pressed. */
+  25:StepButtons.h ****     inline bool RisingEdge(uint8_t i) const { return updated_[i] ? state_[i] == 0x7f : false; }
+ 596              		.loc 5 25 66 view .LVU143
+ 597 0076 95F82032 		ldrb	r3, [r5, #544]	@ zero_extendqisi2
+ 598              	.LBE149:
+ 599              	.LBE148:
+  37:InputDriver.cpp ****         if (step.RisingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pres
+ 600              		.loc 1 37 39 view .LVU144
+ 601 007a 0028     		cmp	r0, #0
+ 602 007c 18BF     		it	ne
+ 603 007e D146     		movne	r9, r10
+ 604              	.LVL45:
+  38:InputDriver.cpp ****         if (step.FallingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pre
+ 605              		.loc 1 38 9 is_stmt 1 view .LVU145
+ 606              	.LBB151:
+ 607              	.LBI148:
+ 608              		.loc 5 25 17 view .LVU146
+ 609              	.LBB150:
+ 610              		.loc 5 25 47 view .LVU147
+ 611              		.loc 5 25 66 is_stmt 0 view .LVU148
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 23
+
+
+ 612 0080 4BB1     		cbz	r3, .L30
+ 613              	.LVL46:
+ 614              		.loc 5 25 66 view .LVU149
+ 615              	.LBE150:
+ 616              	.LBE151:
+  38:InputDriver.cpp ****         if (step.FallingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pre
+ 617              		.loc 1 38 9 view .LVU150
+ 618 0082 95F83032 		ldrb	r3, [r5, #560]	@ zero_extendqisi2
+ 619 0086 7F2B     		cmp	r3, #127
+ 620 0088 00F0ED80 		beq	.L31
+ 621              	.L34:
+  39:InputDriver.cpp ****     }
+ 622              		.loc 1 39 9 view .LVU151
+ 623 008c 95F83032 		ldrb	r3, [r5, #560]	@ zero_extendqisi2
+ 624 0090 802B     		cmp	r3, #128
+ 625 0092 00F00981 		beq	.L32
+ 626              	.L30:
+  36:InputDriver.cpp ****         if (step.Get(i)) step_pressed = i; // used as modifier for encoders
+ 627              		.loc 1 36 5 is_stmt 1 discriminator 2 view .LVU152
+ 628              	.LVL47:
+  36:InputDriver.cpp ****         if (step.Get(i)) step_pressed = i; // used as modifier for encoders
+ 629              		.loc 1 36 24 discriminator 2 view .LVU153
+ 630 0096 0135     		adds	r5, r5, #1
+ 631 0098 4545     		cmp	r5, r8
+ 632 009a E4D1     		bne	.L35
+  36:InputDriver.cpp ****         if (step.Get(i)) step_pressed = i; // used as modifier for encoders
+ 633              		.loc 1 36 24 is_stmt 0 view .LVU154
+ 634 009c 0026     		movs	r6, #0
+ 635 009e 04F1B005 		add	r5, r4, #176
+ 636              	.LBE147:
+  26:InputDriver.cpp ****     int temp;
+ 637              		.loc 1 26 11 view .LVU155
+ 638 00a2 3746     		mov	r7, r6
+ 639              	.LVL48:
+ 640              	.L41:
+ 641              	.LBB165:
+  43:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 642              		.loc 1 43 43 view .LVU156
+ 643 00a4 2846     		mov	r0, r5
+ 644 00a6 5FFA86F8 		uxtb	r8, r6
+ 645              	.LVL49:
+  43:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 646              		.loc 1 43 9 is_stmt 1 view .LVU157
+  43:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 647              		.loc 1 43 43 is_stmt 0 view .LVU158
+ 648 00aa FFF7FEFF 		bl	_ZN11EncoderPush10ReadRotaryEv
+ 649              	.LVL50:
+  43:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 650              		.loc 1 43 9 view .LVU159
+ 651 00ae 00B3     		cbz	r0, .L36
+  44:InputDriver.cpp ****             input.index = i;
+ 652              		.loc 1 44 13 is_stmt 1 view .LVU160
+ 653              	.LVL51:
+  45:InputDriver.cpp **** 
+ 654              		.loc 1 45 13 view .LVU161
+  47:InputDriver.cpp ****             else if (step_pressed != -1) {
+ 655              		.loc 1 47 13 view .LVU162
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 24
+
+
+ 656              	.LBB166:
+ 657              	.LBI166:
+  76:../../libDaisy//src/hid/switch.h ****     }
+  77:../../libDaisy//src/hid/switch.h **** 
+  78:../../libDaisy//src/hid/switch.h ****     /** \return true if the button is held down (or if the toggle is on) */
+  79:../../libDaisy//src/hid/switch.h ****     inline bool Pressed() const { return state_ == 0xff; }
+ 658              		.loc 4 79 17 view .LVU163
+ 659              	.LBB167:
+ 660              		.loc 4 79 35 view .LVU164
+ 661              		.loc 4 79 35 is_stmt 0 view .LVU165
+ 662              	.LBE167:
+ 663              	.LBE166:
+  47:InputDriver.cpp ****             else if (step_pressed != -1) {
+ 664              		.loc 1 47 13 view .LVU166
+ 665 00b0 94F8CE32 		ldrb	r3, [r4, #718]	@ zero_extendqisi2
+ 666 00b4 FF2B     		cmp	r3, #255
+ 667 00b6 00F01181 		beq	.L42
+  48:InputDriver.cpp ****                 input.modifier = Input::MOD::MOD_STEP;
+ 668              		.loc 1 48 18 is_stmt 1 view .LVU167
+  51:InputDriver.cpp **** 
+ 669              		.loc 1 51 35 is_stmt 0 view .LVU168
+ 670 00ba B9F1FF3F 		cmp	r9, #-1
+ 671 00be 16BF     		itet	ne
+ 672 00c0 0223     		movne	r3, #2
+ 673 00c2 0023     		moveq	r3, #0
+ 674 00c4 4746     		movne	r7, r8
+ 675              	.LVL52:
+ 676              	.L37:
+  53:InputDriver.cpp ****             else input.action = Input::ACT::DEC;
+ 677              		.loc 1 53 13 is_stmt 1 view .LVU169
+  54:InputDriver.cpp ****             Push(input);
+ 678              		.loc 1 54 31 is_stmt 0 view .LVU170
+ 679 00c6 0128     		cmp	r0, #1
+ 680 00c8 4FF00101 		mov	r1, #1
+ 681 00cc 8DF80130 		strb	r3, [sp, #1]
+ 682              	.LBB168:
+ 683              	.LBB169:
+  82:InputDriver.cpp **** } 
+ 684              		.loc 1 82 17 view .LVU171
+ 685 00d0 02AB     		add	r3, sp, #8
+ 686              	.LVL53:
+  82:InputDriver.cpp **** } 
+ 687              		.loc 1 82 17 view .LVU172
+ 688              	.LBE169:
+ 689              	.LBE168:
+  54:InputDriver.cpp ****             Push(input);
+ 690              		.loc 1 54 31 view .LVU173
+ 691 00d2 0CBF     		ite	eq
+ 692 00d4 0322     		moveq	r2, #3
+ 693 00d6 0422     		movne	r2, #4
+ 694              	.LVL54:
+  55:InputDriver.cpp ****         }
+ 695              		.loc 1 55 13 is_stmt 1 view .LVU174
+  55:InputDriver.cpp ****         }
+ 696              		.loc 1 55 13 is_stmt 0 view .LVU175
+ 697 00d8 8DF80010 		strb	r1, [sp]
+ 698              	.LBB172:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 25
+
+
+ 699              	.LBB170:
+  82:InputDriver.cpp **** } 
+ 700              		.loc 1 82 17 view .LVU176
+ 701 00dc 2046     		mov	r0, r4
+ 702              	.LVL55:
+  82:InputDriver.cpp **** } 
+ 703              		.loc 1 82 17 view .LVU177
+ 704 00de 8DF80220 		strb	r2, [sp, #2]
+ 705 00e2 8DF80380 		strb	r8, [sp, #3]
+ 706 00e6 8DF80470 		strb	r7, [sp, #4]
+ 707              	.LBE170:
+ 708              	.LBI168:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 709              		.loc 1 81 6 is_stmt 1 view .LVU178
+ 710              	.LBB171:
+  82:InputDriver.cpp **** } 
+ 711              		.loc 1 82 5 view .LVU179
+  82:InputDriver.cpp **** } 
+ 712              		.loc 1 82 17 is_stmt 0 view .LVU180
+ 713 00ea 13E90600 		ldmdb	r3, {r1, r2}
+ 714              	.LVL56:
+  82:InputDriver.cpp **** } 
+ 715              		.loc 1 82 17 view .LVU181
+ 716 00ee FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 717              	.LVL57:
+ 718              	.L36:
+  82:InputDriver.cpp **** } 
+ 719              		.loc 1 82 17 view .LVU182
+ 720              	.LBE171:
+ 721              	.LBE172:
+  58:InputDriver.cpp ****         if (encoders[i].Rising()) {
+ 722              		.loc 1 58 9 is_stmt 1 view .LVU183
+  58:InputDriver.cpp ****         if (encoders[i].Rising()) {
+ 723              		.loc 1 58 27 is_stmt 0 view .LVU184
+ 724 00f2 2846     		mov	r0, r5
+ 725 00f4 FFF7FEFF 		bl	_ZN11EncoderPush6UpdateEv
+ 726              	.LVL58:
+  59:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 727              		.loc 1 59 9 is_stmt 1 view .LVU185
+  59:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 728              		.loc 1 59 31 is_stmt 0 view .LVU186
+ 729 00f8 2846     		mov	r0, r5
+ 730 00fa FFF7FEFF 		bl	_ZN11EncoderPush6RisingEv
+ 731              	.LVL59:
+  59:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 732              		.loc 1 59 9 view .LVU187
+ 733 00fe B0B1     		cbz	r0, .L39
+  60:InputDriver.cpp ****             input.index = i;
+ 734              		.loc 1 60 13 is_stmt 1 view .LVU188
+ 735              	.LVL60:
+  61:InputDriver.cpp ****             if (shift.Pressed()) input.modifier = Input::MOD::SHFT;
+ 736              		.loc 1 61 13 view .LVU189
+  62:InputDriver.cpp ****             else input.modifier = Input::MOD::NO_MOD;
+ 737              		.loc 1 62 13 view .LVU190
+ 738              	.LBB173:
+ 739              	.LBI173:
+ 740              		.loc 4 79 17 view .LVU191
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 26
+
+
+ 741              	.LBB174:
+ 742              		.loc 4 79 35 view .LVU192
+ 743              		.loc 4 79 35 is_stmt 0 view .LVU193
+ 744              	.LBE174:
+ 745              	.LBE173:
+  62:InputDriver.cpp ****             else input.modifier = Input::MOD::NO_MOD;
+ 746              		.loc 1 62 13 view .LVU194
+ 747 0100 94F8CE32 		ldrb	r3, [r4, #718]	@ zero_extendqisi2
+ 748 0104 0122     		movs	r2, #1
+ 749 0106 8DF80380 		strb	r8, [sp, #3]
+ 750              	.LBB175:
+ 751              	.LBB176:
+  82:InputDriver.cpp **** } 
+ 752              		.loc 1 82 17 view .LVU195
+ 753 010a 2046     		mov	r0, r4
+ 754              	.LBE176:
+ 755              	.LBE175:
+  62:InputDriver.cpp ****             else input.modifier = Input::MOD::NO_MOD;
+ 756              		.loc 1 62 49 view .LVU196
+ 757 010c A3F1FF01 		sub	r1, r3, #255
+ 758 0110 8DF80020 		strb	r2, [sp]
+ 759 0114 8DF80220 		strb	r2, [sp, #2]
+ 760 0118 4B42     		rsbs	r3, r1, #0
+ 761 011a 8DF80470 		strb	r7, [sp, #4]
+ 762 011e 4B41     		adcs	r3, r3, r1
+ 763              	.LVL61:
+  65:InputDriver.cpp ****             Push(input);
+ 764              		.loc 1 65 13 is_stmt 1 view .LVU197
+  66:InputDriver.cpp ****         }
+ 765              		.loc 1 66 13 view .LVU198
+ 766              	.LBB178:
+ 767              	.LBI175:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 768              		.loc 1 81 6 view .LVU199
+ 769              	.LBB177:
+  82:InputDriver.cpp **** } 
+ 770              		.loc 1 82 5 view .LVU200
+ 771 0120 8DF80130 		strb	r3, [sp, #1]
+  82:InputDriver.cpp **** } 
+ 772              		.loc 1 82 17 is_stmt 0 view .LVU201
+ 773 0124 02AB     		add	r3, sp, #8
+ 774              	.LVL62:
+  82:InputDriver.cpp **** } 
+ 775              		.loc 1 82 17 view .LVU202
+ 776 0126 13E90600 		ldmdb	r3, {r1, r2}
+ 777 012a FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 778              	.LVL63:
+ 779              	.L39:
+  82:InputDriver.cpp **** } 
+ 780              		.loc 1 82 17 view .LVU203
+ 781              	.LBE177:
+ 782              	.LBE178:
+  69:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 783              		.loc 1 69 9 is_stmt 1 view .LVU204
+  69:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 784              		.loc 1 69 32 is_stmt 0 view .LVU205
+ 785 012e 2846     		mov	r0, r5
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 27
+
+
+ 786 0130 FFF7FEFF 		bl	_ZN11EncoderPush7FallingEv
+ 787              	.LVL64:
+  69:InputDriver.cpp ****             input.id = Input::ID::ENC;
+ 788              		.loc 1 69 9 view .LVU206
+ 789 0134 B8B1     		cbz	r0, .L40
+  70:InputDriver.cpp ****             input.index = i;
+ 790              		.loc 1 70 13 is_stmt 1 view .LVU207
+ 791              	.LVL65:
+  71:InputDriver.cpp ****             if (shift.Pressed()) input.modifier = Input::MOD::SHFT;
+ 792              		.loc 1 71 13 view .LVU208
+  72:InputDriver.cpp ****             else input.modifier = Input::MOD::NO_MOD;
+ 793              		.loc 1 72 13 view .LVU209
+ 794              	.LBB179:
+ 795              	.LBI179:
+ 796              		.loc 4 79 17 view .LVU210
+ 797              	.LBB180:
+ 798              		.loc 4 79 35 view .LVU211
+ 799              		.loc 4 79 35 is_stmt 0 view .LVU212
+ 800              	.LBE180:
+ 801              	.LBE179:
+  72:InputDriver.cpp ****             else input.modifier = Input::MOD::NO_MOD;
+ 802              		.loc 1 72 13 view .LVU213
+ 803 0136 94F8CE32 		ldrb	r3, [r4, #718]	@ zero_extendqisi2
+ 804              	.LBB181:
+ 805              	.LBB182:
+  82:InputDriver.cpp **** } 
+ 806              		.loc 1 82 17 view .LVU214
+ 807 013a 2046     		mov	r0, r4
+ 808 013c 8DF80380 		strb	r8, [sp, #3]
+ 809              	.LBE182:
+ 810              	.LBE181:
+  72:InputDriver.cpp ****             else input.modifier = Input::MOD::NO_MOD;
+ 811              		.loc 1 72 49 view .LVU215
+ 812 0140 A3F1FF02 		sub	r2, r3, #255
+ 813 0144 8DF80470 		strb	r7, [sp, #4]
+ 814 0148 5342     		rsbs	r3, r2, #0
+ 815 014a 5341     		adcs	r3, r3, r2
+ 816              	.LVL66:
+  75:InputDriver.cpp ****             Push(input);
+ 817              		.loc 1 75 13 is_stmt 1 view .LVU216
+  76:InputDriver.cpp ****         }
+ 818              		.loc 1 76 13 view .LVU217
+ 819              	.LBB184:
+ 820              	.LBI181:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 821              		.loc 1 81 6 view .LVU218
+ 822              	.LBB183:
+  82:InputDriver.cpp **** } 
+ 823              		.loc 1 82 5 view .LVU219
+ 824 014c 0122     		movs	r2, #1
+ 825 014e 8DF80130 		strb	r3, [sp, #1]
+ 826 0152 0223     		movs	r3, #2
+ 827              	.LVL67:
+  82:InputDriver.cpp **** } 
+ 828              		.loc 1 82 5 is_stmt 0 view .LVU220
+ 829 0154 8DF80020 		strb	r2, [sp]
+ 830 0158 8DF80230 		strb	r3, [sp, #2]
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 28
+
+
+  82:InputDriver.cpp **** } 
+ 831              		.loc 1 82 17 view .LVU221
+ 832 015c 02AB     		add	r3, sp, #8
+ 833 015e 13E90600 		ldmdb	r3, {r1, r2}
+ 834 0162 FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 835              	.LVL68:
+ 836              	.L40:
+  82:InputDriver.cpp **** } 
+ 837              		.loc 1 82 17 view .LVU222
+ 838              	.LBE183:
+ 839              	.LBE184:
+  42:InputDriver.cpp ****         if ((temp = encoders[i].ReadRotary())) {
+ 840              		.loc 1 42 5 is_stmt 1 discriminator 2 view .LVU223
+  42:InputDriver.cpp ****         if ((temp = encoders[i].ReadRotary())) {
+ 841              		.loc 1 42 24 discriminator 2 view .LVU224
+ 842 0166 0136     		adds	r6, r6, #1
+ 843              	.LVL69:
+  42:InputDriver.cpp ****         if ((temp = encoders[i].ReadRotary())) {
+ 844              		.loc 1 42 24 is_stmt 0 discriminator 2 view .LVU225
+ 845 0168 4C35     		adds	r5, r5, #76
+ 846 016a 042E     		cmp	r6, #4
+ 847 016c 9AD1     		bne	.L41
+ 848              	.LBE165:
+  79:InputDriver.cpp **** 
+ 849              		.loc 1 79 1 view .LVU226
+ 850 016e 02B0     		add	sp, sp, #8
+ 851              		.cfi_remember_state
+ 852              		.cfi_def_cfa_offset 32
+ 853              		@ sp needed
+ 854 0170 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 855              	.LVL70:
+ 856              	.L18:
+ 857              		.cfi_restore_state
+  30:InputDriver.cpp ****     if (play.RisingEdge()) Push({.id = Input::ID::PLAY, .modifier = shift.Pressed() ? Input::MOD::S
+ 858              		.loc 1 30 29 is_stmt 1 discriminator 1 view .LVU227
+ 859              	.LBB185:
+ 860              	.LBI185:
+ 861              		.loc 4 79 17 discriminator 1 view .LVU228
+ 862              	.LBB186:
+ 863              		.loc 4 79 35 discriminator 1 view .LVU229
+ 864              		.loc 4 79 35 is_stmt 0 discriminator 1 view .LVU230
+ 865              	.LBE186:
+ 866              	.LBE185:
+  30:InputDriver.cpp ****     if (play.RisingEdge()) Push({.id = Input::ID::PLAY, .modifier = shift.Pressed() ? Input::MOD::S
+ 867              		.loc 1 30 86 discriminator 1 view .LVU231
+ 868 0174 94F8CE32 		ldrb	r3, [r4, #718]	@ zero_extendqisi2
+ 869 0178 0222     		movs	r2, #2
+ 870              	.LBB187:
+ 871              	.LBB188:
+  82:InputDriver.cpp **** } 
+ 872              		.loc 1 82 17 discriminator 1 view .LVU232
+ 873 017a 2046     		mov	r0, r4
+ 874              	.LBE188:
+ 875              	.LBE187:
+  30:InputDriver.cpp ****     if (play.RisingEdge()) Push({.id = Input::ID::PLAY, .modifier = shift.Pressed() ? Input::MOD::S
+ 876              		.loc 1 30 86 discriminator 1 view .LVU233
+ 877 017c A3F1FF0A 		sub	r10, r3, #255
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 29
+
+
+ 878 0180 8DF80020 		strb	r2, [sp]
+ 879 0184 8DF80220 		strb	r2, [sp, #2]
+ 880 0188 DAF10003 		rsbs	r3, r10, #0
+ 881 018c 43EB0A03 		adc	r3, r3, r10
+ 882              	.LVL71:
+  30:InputDriver.cpp ****     if (play.RisingEdge()) Push({.id = Input::ID::PLAY, .modifier = shift.Pressed() ? Input::MOD::S
+ 883              		.loc 1 30 86 discriminator 1 view .LVU234
+ 884 0190 8DF80130 		strb	r3, [sp, #1]
+ 885 0194 0023     		movs	r3, #0
+ 886 0196 8DF80330 		strb	r3, [sp, #3]
+ 887 019a 8DF80430 		strb	r3, [sp, #4]
+ 888              	.LBB190:
+ 889              	.LBI187:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 890              		.loc 1 81 6 is_stmt 1 discriminator 1 view .LVU235
+ 891              	.LBB189:
+  82:InputDriver.cpp **** } 
+ 892              		.loc 1 82 5 discriminator 1 view .LVU236
+  82:InputDriver.cpp **** } 
+ 893              		.loc 1 82 17 is_stmt 0 discriminator 1 view .LVU237
+ 894 019e 02AB     		add	r3, sp, #8
+ 895 01a0 13E90600 		ldmdb	r3, {r1, r2}
+ 896 01a4 FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 897              	.LVL72:
+  82:InputDriver.cpp **** } 
+ 898              		.loc 1 82 17 discriminator 1 view .LVU238
+ 899              	.LBE189:
+ 900              	.LBE190:
+  31:InputDriver.cpp **** 
+ 901              		.loc 1 31 5 is_stmt 1 discriminator 1 view .LVU239
+ 902              	.LBB191:
+ 903              	.LBI191:
+  70:../../libDaisy//src/hid/switch.h **** 
+ 904              		.loc 4 70 17 discriminator 1 view .LVU240
+ 905              	.LBB192:
+  70:../../libDaisy//src/hid/switch.h **** 
+ 906              		.loc 4 70 38 discriminator 1 view .LVU241
+  70:../../libDaisy//src/hid/switch.h **** 
+ 907              		.loc 4 70 54 is_stmt 0 discriminator 1 view .LVU242
+ 908 01a8 94F8D832 		ldrb	r3, [r4, #728]	@ zero_extendqisi2
+ 909 01ac 002B     		cmp	r3, #0
+ 910 01ae 7FF443AF 		bne	.L21
+ 911 01b2 46E7     		b	.L17
+ 912              	.LVL73:
+ 913              	.L19:
+  70:../../libDaisy//src/hid/switch.h **** 
+ 914              		.loc 4 70 54 discriminator 1 view .LVU243
+ 915              	.LBE192:
+ 916              	.LBE191:
+  31:InputDriver.cpp **** 
+ 917              		.loc 1 31 28 is_stmt 1 discriminator 1 view .LVU244
+ 918              	.LBB193:
+ 919              	.LBI193:
+ 920              		.loc 4 79 17 discriminator 1 view .LVU245
+ 921              	.LBB194:
+ 922              		.loc 4 79 35 discriminator 1 view .LVU246
+ 923              		.loc 4 79 35 is_stmt 0 discriminator 1 view .LVU247
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 30
+
+
+ 924              	.LBE194:
+ 925              	.LBE193:
+  31:InputDriver.cpp **** 
+ 926              		.loc 1 31 85 discriminator 1 view .LVU248
+ 927 01b4 94F8CE32 		ldrb	r3, [r4, #718]	@ zero_extendqisi2
+ 928 01b8 0222     		movs	r2, #2
+ 929              	.LBB195:
+ 930              	.LBB196:
+  82:InputDriver.cpp **** } 
+ 931              		.loc 1 82 17 discriminator 1 view .LVU249
+ 932 01ba 2046     		mov	r0, r4
+ 933              	.LBE196:
+ 934              	.LBE195:
+  31:InputDriver.cpp **** 
+ 935              		.loc 1 31 85 discriminator 1 view .LVU250
+ 936 01bc A3F1FF09 		sub	r9, r3, #255
+ 937 01c0 8DF80020 		strb	r2, [sp]
+ 938 01c4 D9F10003 		rsbs	r3, r9, #0
+ 939 01c8 43EB0903 		adc	r3, r3, r9
+ 940              	.LVL74:
+  31:InputDriver.cpp **** 
+ 941              		.loc 1 31 85 discriminator 1 view .LVU251
+ 942 01cc 8DF80130 		strb	r3, [sp, #1]
+ 943 01d0 0123     		movs	r3, #1
+ 944 01d2 8DF80230 		strb	r3, [sp, #2]
+ 945 01d6 0023     		movs	r3, #0
+ 946 01d8 8DF80330 		strb	r3, [sp, #3]
+ 947 01dc 8DF80430 		strb	r3, [sp, #4]
+ 948              	.LBB198:
+ 949              	.LBI195:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 950              		.loc 1 81 6 is_stmt 1 discriminator 1 view .LVU252
+ 951              	.LBB197:
+  82:InputDriver.cpp **** } 
+ 952              		.loc 1 82 5 discriminator 1 view .LVU253
+  82:InputDriver.cpp **** } 
+ 953              		.loc 1 82 17 is_stmt 0 discriminator 1 view .LVU254
+ 954 01e0 02AB     		add	r3, sp, #8
+ 955 01e2 13E90600 		ldmdb	r3, {r1, r2}
+ 956 01e6 FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 957              	.LVL75:
+  82:InputDriver.cpp **** } 
+ 958              		.loc 1 82 17 discriminator 1 view .LVU255
+ 959              	.LBE197:
+ 960              	.LBE198:
+ 961 01ea 2AE7     		b	.L17
+ 962              	.L24:
+  33:InputDriver.cpp ****     if (stop.RisingEdge()) Push({.id = Input::ID::STOP, .modifier = shift.Pressed() ? Input::MOD::S
+ 963              		.loc 1 33 29 is_stmt 1 discriminator 1 view .LVU256
+ 964              	.LVL76:
+ 965              	.LBB199:
+ 966              	.LBI199:
+ 967              		.loc 4 79 17 discriminator 1 view .LVU257
+ 968              	.LBB200:
+ 969              		.loc 4 79 35 discriminator 1 view .LVU258
+ 970              		.loc 4 79 35 is_stmt 0 discriminator 1 view .LVU259
+ 971              	.LBE200:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 31
+
+
+ 972              	.LBE199:
+  33:InputDriver.cpp ****     if (stop.RisingEdge()) Push({.id = Input::ID::STOP, .modifier = shift.Pressed() ? Input::MOD::S
+ 973              		.loc 1 33 86 discriminator 1 view .LVU260
+ 974 01ec 94F8CE32 		ldrb	r3, [r4, #718]	@ zero_extendqisi2
+ 975 01f0 0322     		movs	r2, #3
+ 976              	.LBB201:
+ 977              	.LBB202:
+  82:InputDriver.cpp **** } 
+ 978              		.loc 1 82 17 discriminator 1 view .LVU261
+ 979 01f2 2046     		mov	r0, r4
+ 980              	.LBE202:
+ 981              	.LBE201:
+  33:InputDriver.cpp ****     if (stop.RisingEdge()) Push({.id = Input::ID::STOP, .modifier = shift.Pressed() ? Input::MOD::S
+ 982              		.loc 1 33 86 discriminator 1 view .LVU262
+ 983 01f4 A3F1FF08 		sub	r8, r3, #255
+ 984 01f8 8DF80020 		strb	r2, [sp]
+ 985 01fc D8F10003 		rsbs	r3, r8, #0
+ 986 0200 43EB0803 		adc	r3, r3, r8
+ 987              	.LVL77:
+  33:InputDriver.cpp ****     if (stop.RisingEdge()) Push({.id = Input::ID::STOP, .modifier = shift.Pressed() ? Input::MOD::S
+ 988              		.loc 1 33 86 discriminator 1 view .LVU263
+ 989 0204 8DF80130 		strb	r3, [sp, #1]
+ 990 0208 0223     		movs	r3, #2
+ 991 020a 8DF80230 		strb	r3, [sp, #2]
+ 992 020e 0023     		movs	r3, #0
+ 993 0210 8DF80330 		strb	r3, [sp, #3]
+ 994 0214 8DF80430 		strb	r3, [sp, #4]
+ 995              	.LBB204:
+ 996              	.LBI201:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 997              		.loc 1 81 6 is_stmt 1 discriminator 1 view .LVU264
+ 998              	.LBB203:
+  82:InputDriver.cpp **** } 
+ 999              		.loc 1 82 5 discriminator 1 view .LVU265
+  82:InputDriver.cpp **** } 
+ 1000              		.loc 1 82 17 is_stmt 0 discriminator 1 view .LVU266
+ 1001 0218 02AB     		add	r3, sp, #8
+ 1002 021a 13E90600 		ldmdb	r3, {r1, r2}
+ 1003 021e FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 1004              	.LVL78:
+  82:InputDriver.cpp **** } 
+ 1005              		.loc 1 82 17 discriminator 1 view .LVU267
+ 1006              	.LBE203:
+ 1007              	.LBE204:
+  34:InputDriver.cpp **** 
+ 1008              		.loc 1 34 5 is_stmt 1 discriminator 1 view .LVU268
+ 1009              	.LBB205:
+ 1010              	.LBI205:
+  70:../../libDaisy//src/hid/switch.h **** 
+ 1011              		.loc 4 70 17 discriminator 1 view .LVU269
+ 1012              	.LBB206:
+  70:../../libDaisy//src/hid/switch.h **** 
+ 1013              		.loc 4 70 38 discriminator 1 view .LVU270
+  70:../../libDaisy//src/hid/switch.h **** 
+ 1014              		.loc 4 70 54 is_stmt 0 discriminator 1 view .LVU271
+ 1015 0222 94F8E832 		ldrb	r3, [r4, #744]	@ zero_extendqisi2
+ 1016 0226 002B     		cmp	r3, #0
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 32
+
+
+ 1017 0228 7FF413AF 		bne	.L27
+ 1018 022c 16E7     		b	.L23
+ 1019              	.LVL79:
+ 1020              	.L25:
+  70:../../libDaisy//src/hid/switch.h **** 
+ 1021              		.loc 4 70 54 discriminator 1 view .LVU272
+ 1022              	.LBE206:
+ 1023              	.LBE205:
+  34:InputDriver.cpp **** 
+ 1024              		.loc 1 34 28 is_stmt 1 discriminator 1 view .LVU273
+ 1025              	.LBB207:
+ 1026              	.LBI207:
+ 1027              		.loc 4 79 17 discriminator 1 view .LVU274
+ 1028              	.LBB208:
+ 1029              		.loc 4 79 35 discriminator 1 view .LVU275
+ 1030              		.loc 4 79 35 is_stmt 0 discriminator 1 view .LVU276
+ 1031              	.LBE208:
+ 1032              	.LBE207:
+  34:InputDriver.cpp **** 
+ 1033              		.loc 1 34 85 discriminator 1 view .LVU277
+ 1034 022e 94F8CE32 		ldrb	r3, [r4, #718]	@ zero_extendqisi2
+ 1035 0232 0322     		movs	r2, #3
+ 1036              	.LBB209:
+ 1037              	.LBB210:
+  82:InputDriver.cpp **** } 
+ 1038              		.loc 1 82 17 discriminator 1 view .LVU278
+ 1039 0234 2046     		mov	r0, r4
+ 1040              	.LBE210:
+ 1041              	.LBE209:
+  34:InputDriver.cpp **** 
+ 1042              		.loc 1 34 85 discriminator 1 view .LVU279
+ 1043 0236 A3F1FF0E 		sub	lr, r3, #255
+ 1044 023a 8DF80020 		strb	r2, [sp]
+ 1045 023e DEF10003 		rsbs	r3, lr, #0
+ 1046 0242 43EB0E03 		adc	r3, r3, lr
+ 1047              	.LVL80:
+  34:InputDriver.cpp **** 
+ 1048              		.loc 1 34 85 discriminator 1 view .LVU280
+ 1049 0246 8DF80130 		strb	r3, [sp, #1]
+ 1050 024a 0123     		movs	r3, #1
+ 1051 024c 8DF80230 		strb	r3, [sp, #2]
+ 1052 0250 0023     		movs	r3, #0
+ 1053 0252 8DF80330 		strb	r3, [sp, #3]
+ 1054 0256 8DF80430 		strb	r3, [sp, #4]
+ 1055              	.LBB212:
+ 1056              	.LBI209:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 1057              		.loc 1 81 6 is_stmt 1 discriminator 1 view .LVU281
+ 1058              	.LBB211:
+  82:InputDriver.cpp **** } 
+ 1059              		.loc 1 82 5 discriminator 1 view .LVU282
+  82:InputDriver.cpp **** } 
+ 1060              		.loc 1 82 17 is_stmt 0 discriminator 1 view .LVU283
+ 1061 025a 02AB     		add	r3, sp, #8
+ 1062 025c 13E90600 		ldmdb	r3, {r1, r2}
+ 1063 0260 FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 1064              	.LVL81:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 33
+
+
+  82:InputDriver.cpp **** } 
+ 1065              		.loc 1 82 17 discriminator 1 view .LVU284
+ 1066              	.LBE211:
+ 1067              	.LBE212:
+ 1068 0264 FAE6     		b	.L23
+ 1069              	.LVL82:
+ 1070              	.L31:
+ 1071              	.LBB213:
+  38:InputDriver.cpp ****         if (step.FallingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pre
+ 1072              		.loc 1 38 33 is_stmt 1 discriminator 1 view .LVU285
+ 1073              	.LBB152:
+ 1074              	.LBI152:
+ 1075              		.loc 4 79 17 discriminator 1 view .LVU286
+ 1076              	.LBB153:
+ 1077              		.loc 4 79 35 discriminator 1 view .LVU287
+ 1078              		.loc 4 79 35 is_stmt 0 discriminator 1 view .LVU288
+ 1079              	.LBE153:
+ 1080              	.LBE152:
+  38:InputDriver.cpp ****         if (step.FallingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pre
+ 1081              		.loc 1 38 106 discriminator 1 view .LVU289
+ 1082 0266 94F8CE32 		ldrb	r3, [r4, #718]	@ zero_extendqisi2
+ 1083 026a 0422     		movs	r2, #4
+ 1084 026c 8DF80360 		strb	r6, [sp, #3]
+ 1085              	.LBB154:
+ 1086              	.LBB155:
+  82:InputDriver.cpp **** } 
+ 1087              		.loc 1 82 17 discriminator 1 view .LVU290
+ 1088 0270 2046     		mov	r0, r4
+ 1089              	.LBE155:
+ 1090              	.LBE154:
+  38:InputDriver.cpp ****         if (step.FallingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pre
+ 1091              		.loc 1 38 106 discriminator 1 view .LVU291
+ 1092 0272 A3F1FF0C 		sub	ip, r3, #255
+ 1093 0276 8DF80020 		strb	r2, [sp]
+ 1094 027a DCF10003 		rsbs	r3, ip, #0
+ 1095 027e 43EB0C03 		adc	r3, r3, ip
+ 1096              	.LVL83:
+  38:InputDriver.cpp ****         if (step.FallingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pre
+ 1097              		.loc 1 38 106 discriminator 1 view .LVU292
+ 1098 0282 8DF80130 		strb	r3, [sp, #1]
+ 1099 0286 0123     		movs	r3, #1
+ 1100              	.LVL84:
+  38:InputDriver.cpp ****         if (step.FallingEdge(i)) Push({.id = (uint8_t)(Input::ID::STEP), input.modifier = shift.Pre
+ 1101              		.loc 1 38 106 discriminator 1 view .LVU293
+ 1102 0288 8DF80230 		strb	r3, [sp, #2]
+ 1103 028c 0023     		movs	r3, #0
+ 1104 028e 8DF80430 		strb	r3, [sp, #4]
+ 1105              	.LBB157:
+ 1106              	.LBI154:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 1107              		.loc 1 81 6 is_stmt 1 discriminator 1 view .LVU294
+ 1108              	.LBB156:
+  82:InputDriver.cpp **** } 
+ 1109              		.loc 1 82 5 discriminator 1 view .LVU295
+  82:InputDriver.cpp **** } 
+ 1110              		.loc 1 82 17 is_stmt 0 discriminator 1 view .LVU296
+ 1111 0292 02AB     		add	r3, sp, #8
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 34
+
+
+ 1112 0294 13E90600 		ldmdb	r3, {r1, r2}
+ 1113 0298 FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 1114              	.LVL85:
+  82:InputDriver.cpp **** } 
+ 1115              		.loc 1 82 17 discriminator 1 view .LVU297
+ 1116              	.LBE156:
+ 1117              	.LBE157:
+  39:InputDriver.cpp ****     }
+ 1118              		.loc 1 39 9 is_stmt 1 discriminator 1 view .LVU298
+ 1119              	.LBB158:
+ 1120              	.LBI158:
+  26:StepButtons.h **** 
+  27:StepButtons.h ****     /** \return true if the button was just released */
+  28:StepButtons.h ****     inline bool FallingEdge(uint8_t i) const
+ 1121              		.loc 5 28 17 discriminator 1 view .LVU299
+ 1122              	.LBB159:
+  29:StepButtons.h ****     {
+  30:StepButtons.h ****         return updated_[i] ? state_[i] == 0x80 : false;
+ 1123              		.loc 5 30 9 discriminator 1 view .LVU300
+ 1124              		.loc 5 30 28 is_stmt 0 discriminator 1 view .LVU301
+ 1125 029c 95F82032 		ldrb	r3, [r5, #544]	@ zero_extendqisi2
+ 1126 02a0 002B     		cmp	r3, #0
+ 1127 02a2 7FF4F3AE 		bne	.L34
+ 1128 02a6 F6E6     		b	.L30
+ 1129              	.LVL86:
+ 1130              	.L32:
+ 1131              		.loc 5 30 28 discriminator 1 view .LVU302
+ 1132              	.LBE159:
+ 1133              	.LBE158:
+  39:InputDriver.cpp ****     }
+ 1134              		.loc 1 39 34 is_stmt 1 discriminator 1 view .LVU303
+ 1135              	.LBB160:
+ 1136              	.LBI160:
+ 1137              		.loc 4 79 17 discriminator 1 view .LVU304
+ 1138              	.LBB161:
+ 1139              		.loc 4 79 35 discriminator 1 view .LVU305
+ 1140              		.loc 4 79 35 is_stmt 0 discriminator 1 view .LVU306
+ 1141              	.LBE161:
+ 1142              	.LBE160:
+  39:InputDriver.cpp ****     }
+ 1143              		.loc 1 39 107 discriminator 1 view .LVU307
+ 1144 02a8 94F8CE32 		ldrb	r3, [r4, #718]	@ zero_extendqisi2
+ 1145 02ac 0422     		movs	r2, #4
+ 1146 02ae 8DF80360 		strb	r6, [sp, #3]
+ 1147 02b2 A3F1FF00 		sub	r0, r3, #255
+ 1148 02b6 8DF80020 		strb	r2, [sp]
+ 1149 02ba 4342     		rsbs	r3, r0, #0
+ 1150 02bc 4341     		adcs	r3, r3, r0
+ 1151              	.LVL87:
+ 1152              	.LBB162:
+ 1153              	.LBB163:
+  82:InputDriver.cpp **** } 
+ 1154              		.loc 1 82 17 discriminator 1 view .LVU308
+ 1155 02be 2046     		mov	r0, r4
+ 1156 02c0 8DF80130 		strb	r3, [sp, #1]
+ 1157 02c4 0223     		movs	r3, #2
+ 1158              	.LVL88:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 35
+
+
+  82:InputDriver.cpp **** } 
+ 1159              		.loc 1 82 17 discriminator 1 view .LVU309
+ 1160 02c6 8DF80230 		strb	r3, [sp, #2]
+ 1161 02ca 0023     		movs	r3, #0
+ 1162 02cc 8DF80430 		strb	r3, [sp, #4]
+ 1163              	.LBE163:
+ 1164              	.LBI162:
+  81:InputDriver.cpp ****     inputs.Write(input);
+ 1165              		.loc 1 81 6 is_stmt 1 discriminator 1 view .LVU310
+ 1166              	.LBB164:
+  82:InputDriver.cpp **** } 
+ 1167              		.loc 1 82 5 discriminator 1 view .LVU311
+  82:InputDriver.cpp **** } 
+ 1168              		.loc 1 82 17 is_stmt 0 discriminator 1 view .LVU312
+ 1169 02d0 02AB     		add	r3, sp, #8
+ 1170 02d2 13E90600 		ldmdb	r3, {r1, r2}
+ 1171 02d6 FFF7FEFF 		bl	_ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+ 1172              	.LVL89:
+  82:InputDriver.cpp **** } 
+ 1173              		.loc 1 82 17 discriminator 1 view .LVU313
+ 1174              	.LBE164:
+ 1175              	.LBE162:
+ 1176 02da DCE6     		b	.L30
+ 1177              	.LVL90:
+ 1178              	.L42:
+  82:InputDriver.cpp **** } 
+ 1179              		.loc 1 82 17 discriminator 1 view .LVU314
+ 1180              	.LBE213:
+ 1181              	.LBB214:
+  47:InputDriver.cpp ****             else if (step_pressed != -1) {
+ 1182              		.loc 1 47 49 view .LVU315
+ 1183 02dc 0123     		movs	r3, #1
+ 1184 02de F2E6     		b	.L37
+ 1185              	.LBE214:
+ 1186              		.cfi_endproc
+ 1187              	.LFE2560:
+ 1189              		.section	.rodata._ZN5daisy4seedL3D16E,"a"
+ 1190              		.set	.LANCHOR10,. + 0
+ 1193              	_ZN5daisy4seedL3D16E:
+ 1194 0000 00       		.byte	0
+ 1195 0001 03       		.byte	3
+ 1196              		.section	.rodata._ZN5daisy4seedL3D17E,"a"
+ 1197              		.set	.LANCHOR11,. + 0
+ 1200              	_ZN5daisy4seedL3D17E:
+ 1201 0000 01       		.byte	1
+ 1202 0001 01       		.byte	1
+ 1203              		.section	.rodata._ZN5daisy4seedL3D18E,"a"
+ 1204              		.set	.LANCHOR9,. + 0
+ 1207              	_ZN5daisy4seedL3D18E:
+ 1208 0000 00       		.byte	0
+ 1209 0001 07       		.byte	7
+ 1210              		.section	.rodata._ZN5daisy4seedL3D19E,"a"
+ 1211              		.set	.LANCHOR7,. + 0
+ 1214              	_ZN5daisy4seedL3D19E:
+ 1215 0000 00       		.byte	0
+ 1216 0001 06       		.byte	6
+ 1217              		.section	.rodata._ZN5daisy4seedL3D20E,"a"
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 36
+
+
+ 1218              		.set	.LANCHOR8,. + 0
+ 1221              	_ZN5daisy4seedL3D20E:
+ 1222 0000 02       		.byte	2
+ 1223 0001 01       		.byte	1
+ 1224              		.section	.rodata._ZN5daisy4seedL3D21E,"a"
+ 1225              		.set	.LANCHOR6,. + 0
+ 1228              	_ZN5daisy4seedL3D21E:
+ 1229 0000 02       		.byte	2
+ 1230 0001 04       		.byte	4
+ 1231              		.section	.rodata._ZN5daisy4seedL3D22E,"a"
+ 1232              		.set	.LANCHOR1,. + 0
+ 1235              	_ZN5daisy4seedL3D22E:
+ 1236 0000 00       		.byte	0
+ 1237 0001 05       		.byte	5
+ 1238              		.section	.rodata._ZN5daisy4seedL3D23E,"a"
+ 1239              		.set	.LANCHOR2,. + 0
+ 1242              	_ZN5daisy4seedL3D23E:
+ 1243 0000 00       		.byte	0
+ 1244 0001 04       		.byte	4
+ 1245              		.section	.rodata._ZN5daisy4seedL3D24E,"a"
+ 1246              		.set	.LANCHOR0,. + 0
+ 1249              	_ZN5daisy4seedL3D24E:
+ 1250 0000 00       		.byte	0
+ 1251 0001 01       		.byte	1
+ 1252              		.section	.rodata._ZN5daisy4seedL3D25E,"a"
+ 1253              		.set	.LANCHOR4,. + 0
+ 1256              	_ZN5daisy4seedL3D25E:
+ 1257 0000 0000     		.space	2
+ 1258              		.section	.rodata._ZN5daisy4seedL3D26E,"a"
+ 1259              		.set	.LANCHOR5,. + 0
+ 1262              	_ZN5daisy4seedL3D26E:
+ 1263 0000 03       		.byte	3
+ 1264 0001 0B       		.byte	11
+ 1265              		.section	.rodata._ZN5daisy4seedL3D27E,"a"
+ 1266              		.set	.LANCHOR3,. + 0
+ 1269              	_ZN5daisy4seedL3D27E:
+ 1270 0000 06       		.byte	6
+ 1271 0001 09       		.byte	9
+ 1272              		.text
+ 1273              	.Letext0:
+ 1274              		.file 6 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/machine/_default_types.h"
+ 1275              		.file 7 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_stdint.h"
+ 1276              		.file 8 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdint.h"
+ 1277              		.file 9 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h"
+ 1278              		.file 10 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath"
+ 1279              		.file 11 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/std_abs.h"
+ 1280              		.file 12 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdlib"
+ 1281              		.file 13 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdint"
+ 1282              		.file 14 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/type_traits"
+ 1283              		.file 15 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/debug/debug.h"
+ 1284              		.file 16 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v
+ 1285              		.file 17 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/algorithmfwd.h"
+ 1286              		.file 18 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/stl_pair.h"
+ 1287              		.file 19 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/exception_ptr.h"
+ 1288              		.file 20 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdarg"
+ 1289              		.file 21 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdio"
+ 1290              		.file 22 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstring"
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 37
+
+
+ 1291              		.file 23 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/predefined_ops.h
+ 1292              		.file 24 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_types.h"
+ 1293              		.file 25 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/reent.h"
+ 1294              		.file 26 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/lock.h"
+ 1295              		.file 27 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/math.h"
+ 1296              		.file 28 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdlib.h"
+ 1297              		.file 29 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/math.h"
+ 1298              		.file 30 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/stdlib.h"
+ 1299              		.file 31 "../../libDaisy//src/per/tim.h"
+ 1300              		.file 32 "../../libDaisy//src/sys/system.h"
+ 1301              		.file 33 "../../libDaisy//src/per/qspi.h"
+ 1302              		.file 34 "../../libDaisy//src/per/dac.h"
+ 1303              		.file 35 "../../libDaisy//src/per/gpio.h"
+ 1304              		.file 36 "../../libDaisy//src/per/sai.h"
+ 1305              		.file 37 "../../libDaisy//src/hid/audio.h"
+ 1306              		.file 38 "../../libDaisy//src/per/adc.h"
+ 1307              		.file 39 "../../libDaisy//src/hid/usb.h"
+ 1308              		.file 40 "../../libDaisy//src/per/spi.h"
+ 1309              		.file 41 "../../libDaisy//src/util/wav_format.h"
+ 1310              		.file 42 "../../libDaisy//src/daisy_seed.h"
+ 1311              		.file 43 "../../libDaisy//src/dev/max11300.h"
+ 1312              		.file 44 "../../libDaisy//src/dev/sdram.h"
+ 1313              		.file 45 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h"
+ 1314              		.file 46 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdio.h"
+ 1315              		.file 47 "../../libDaisy//src/dev/sr_595.h"
+ 1316              		.file 48 "../../libDaisy//src/dev/sr_165.h"
+ 1317              		.file 49 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/string.h"
+ 1318              		.file 50 "EncoderPush.h"
+ 1319              		.file 51 "InputDriver.h"
+ 1320              		.file 52 "<built-in>"
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s 			page 38
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 InputDriver.cpp
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:19     .text._ZN11InputDriver4InitEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:25     .text._ZN11InputDriver4InitEv:0000000000000000 _ZN11InputDriver4InitEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:230    .text._ZN11InputDriver4InitEv:0000000000000104 $d
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:247    .text._ZN11InputDriver3PopEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:253    .text._ZN11InputDriver3PopEv:0000000000000000 _ZN11InputDriver3PopEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:347    .text._ZN5daisy10RingBufferI5InputLj32EE5WriteES1_:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:353    .text._ZN5daisy10RingBufferI5InputLj32EE5WriteES1_:0000000000000000 _ZN5daisy10RingBufferI5InputLj32EE5WriteES1_
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:439    .text._ZN11InputDriver4PushE5Input:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:445    .text._ZN11InputDriver4PushE5Input:0000000000000000 _ZN11InputDriver4PushE5Input
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:473    .text._ZN11InputDriver6UpdateEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:479    .text._ZN11InputDriver6UpdateEv:0000000000000000 _ZN11InputDriver6UpdateEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1193   .rodata._ZN5daisy4seedL3D16E:0000000000000000 _ZN5daisy4seedL3D16E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1200   .rodata._ZN5daisy4seedL3D17E:0000000000000000 _ZN5daisy4seedL3D17E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1207   .rodata._ZN5daisy4seedL3D18E:0000000000000000 _ZN5daisy4seedL3D18E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1214   .rodata._ZN5daisy4seedL3D19E:0000000000000000 _ZN5daisy4seedL3D19E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1221   .rodata._ZN5daisy4seedL3D20E:0000000000000000 _ZN5daisy4seedL3D20E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1228   .rodata._ZN5daisy4seedL3D21E:0000000000000000 _ZN5daisy4seedL3D21E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1235   .rodata._ZN5daisy4seedL3D22E:0000000000000000 _ZN5daisy4seedL3D22E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1242   .rodata._ZN5daisy4seedL3D23E:0000000000000000 _ZN5daisy4seedL3D23E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1249   .rodata._ZN5daisy4seedL3D24E:0000000000000000 _ZN5daisy4seedL3D24E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1256   .rodata._ZN5daisy4seedL3D25E:0000000000000000 _ZN5daisy4seedL3D25E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1257   .rodata._ZN5daisy4seedL3D25E:0000000000000000 $d
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1262   .rodata._ZN5daisy4seedL3D26E:0000000000000000 _ZN5daisy4seedL3D26E
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccT6eCw3.s:1269   .rodata._ZN5daisy4seedL3D27E:0000000000000000 _ZN5daisy4seedL3D27E
+
+UNDEFINED SYMBOLS
+_ZN11StepButtons4InitEv
+_ZN11EncoderPush4InitEN5daisy3PinES1_S1_
+_ZN5daisy6Switch4InitE12dsy_gpio_pinf
+_ZN5daisy6Switch8DebounceEv
+_ZN11StepButtons8DebounceEv
+_ZN11StepButtons3GetEh
+_ZN11EncoderPush10ReadRotaryEv
+_ZN11EncoderPush6UpdateEv
+_ZN11EncoderPush6RisingEv
+_ZN11EncoderPush7FallingEv

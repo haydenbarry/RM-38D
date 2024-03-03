@@ -1,0 +1,912 @@
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 4
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"EncoderPush.cpp"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._ZN11EncoderPush4InitEN5daisy3PinES1_S1_,"ax",%progbits
+  19              		.align	1
+  20              		.global	_ZN11EncoderPush4InitEN5daisy3PinES1_S1_
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	_ZN11EncoderPush4InitEN5daisy3PinES1_S1_:
+  26              	.LVL0:
+  27              	.LFB2540:
+  28              		.file 1 "EncoderPush.cpp"
+   1:EncoderPush.cpp ****  #include "EncoderPush.h"
+   2:EncoderPush.cpp ****  
+   3:EncoderPush.cpp ****     void EncoderPush::Init(Pin pin_a, Pin pin_b, Pin pin_s) {
+  29              		.loc 1 3 61 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 24
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+   4:EncoderPush.cpp ****         a.Init(pin_a, daisy::GPIO::Mode::INPUT, daisy::GPIO::Pull::PULLUP);
+  33              		.loc 1 4 9 view .LVU1
+   3:EncoderPush.cpp ****         a.Init(pin_a, daisy::GPIO::Mode::INPUT, daisy::GPIO::Pull::PULLUP);
+  34              		.loc 1 3 61 is_stmt 0 view .LVU2
+  35 0000 30B5     		push	{r4, r5, lr}
+  36              		.cfi_def_cfa_offset 12
+  37              		.cfi_offset 4, -12
+  38              		.cfi_offset 5, -8
+  39              		.cfi_offset 14, -4
+  40 0002 89B0     		sub	sp, sp, #36
+  41              		.cfi_def_cfa_offset 48
+  42              		.loc 1 4 15 view .LVU3
+  43 0004 0025     		movs	r5, #0
+   3:EncoderPush.cpp ****         a.Init(pin_a, daisy::GPIO::Mode::INPUT, daisy::GPIO::Pull::PULLUP);
+  44              		.loc 1 3 61 view .LVU4
+  45 0006 0446     		mov	r4, r0
+  46              		.loc 1 4 15 view .LVU5
+  47 0008 0430     		adds	r0, r0, #4
+  48              	.LVL1:
+   3:EncoderPush.cpp ****         a.Init(pin_a, daisy::GPIO::Mode::INPUT, daisy::GPIO::Pull::PULLUP);
+  49              		.loc 1 3 61 view .LVU6
+  50 000a ADF81410 		strh	r1, [sp, #20]	@ movhi
+  51              		.loc 1 4 15 view .LVU7
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 2
+
+
+  52 000e 0599     		ldr	r1, [sp, #20]
+   3:EncoderPush.cpp ****         a.Init(pin_a, daisy::GPIO::Mode::INPUT, daisy::GPIO::Pull::PULLUP);
+  53              		.loc 1 3 61 view .LVU8
+  54 0010 ADF81020 		strh	r2, [sp, #16]	@ movhi
+  55              		.loc 1 4 15 view .LVU9
+  56 0014 2A46     		mov	r2, r5
+   3:EncoderPush.cpp ****         a.Init(pin_a, daisy::GPIO::Mode::INPUT, daisy::GPIO::Pull::PULLUP);
+  57              		.loc 1 3 61 view .LVU10
+  58 0016 ADF80C30 		strh	r3, [sp, #12]	@ movhi
+  59              		.loc 1 4 15 view .LVU11
+  60 001a 0123     		movs	r3, #1
+  61 001c 0095     		str	r5, [sp]
+  62 001e FFF7FEFF 		bl	_ZN5daisy4GPIO4InitENS_3PinENS0_4ModeENS0_4PullENS0_5SpeedE
+  63              	.LVL2:
+   5:EncoderPush.cpp ****         b.Init(pin_b, daisy::GPIO::Mode::INPUT, daisy::GPIO::Pull::PULLUP);
+  64              		.loc 1 5 9 is_stmt 1 view .LVU12
+  65              		.loc 1 5 15 is_stmt 0 view .LVU13
+  66 0022 2A46     		mov	r2, r5
+  67 0024 0499     		ldr	r1, [sp, #16]
+  68 0026 04F11800 		add	r0, r4, #24
+  69 002a 0123     		movs	r3, #1
+  70 002c 0095     		str	r5, [sp]
+  71 002e FFF7FEFF 		bl	_ZN5daisy4GPIO4InitENS_3PinENS0_4ModeENS0_4PullENS0_5SpeedE
+  72              	.LVL3:
+   6:EncoderPush.cpp ****         s.Init(pin_s);
+  73              		.loc 1 6 9 is_stmt 1 view .LVU14
+  74              	.LBB9:
+  75              	.LBI9:
+  76              		.file 2 "../../libDaisy//src/daisy_core.h"
+   1:../../libDaisy//src/daisy_core.h **** #pragma once
+   2:../../libDaisy//src/daisy_core.h **** #ifndef DSY_CORE_HW_H
+   3:../../libDaisy//src/daisy_core.h **** #define DSY_CORE_HW_H /**< & */
+   4:../../libDaisy//src/daisy_core.h **** #include <stdint.h>
+   5:../../libDaisy//src/daisy_core.h **** #include <stdlib.h>
+   6:../../libDaisy//src/daisy_core.h **** 
+   7:../../libDaisy//src/daisy_core.h **** #if defined(_MSC_VER)
+   8:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE __forceinline /**< & */
+   9:../../libDaisy//src/daisy_core.h **** #elif defined(__clang__)
+  10:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE inline __attribute__((always_inline)) /**< & */
+  11:../../libDaisy//src/daisy_core.h **** #pragma clang diagnostic ignored "-Wduplicate-decl-specifier"
+  12:../../libDaisy//src/daisy_core.h **** #elif defined(__GNUC__)
+  13:../../libDaisy//src/daisy_core.h **** #define FORCE_INLINE inline __attribute__((always_inline)) /**< & */
+  14:../../libDaisy//src/daisy_core.h **** #else
+  15:../../libDaisy//src/daisy_core.h **** #error unknown compiler
+  16:../../libDaisy//src/daisy_core.h **** #endif
+  17:../../libDaisy//src/daisy_core.h **** 
+  18:../../libDaisy//src/daisy_core.h **** /** @addtogroup utility
+  19:../../libDaisy//src/daisy_core.h ****     @{
+  20:../../libDaisy//src/daisy_core.h **** */
+  21:../../libDaisy//src/daisy_core.h **** 
+  22:../../libDaisy//src/daisy_core.h **** /** Macro for area of memory that is configured as cacheless
+  23:../../libDaisy//src/daisy_core.h **** This should be used primarily for DMA buffers, and the like.
+  24:../../libDaisy//src/daisy_core.h **** */
+  25:../../libDaisy//src/daisy_core.h **** #define DMA_BUFFER_MEM_SECTION __attribute__((section(".sram1_bss")))
+  26:../../libDaisy//src/daisy_core.h **** /** 
+  27:../../libDaisy//src/daisy_core.h **** THE DTCM RAM section is also non-cached. However, is not suitable 
+  28:../../libDaisy//src/daisy_core.h **** for DMA transfers. Performance is on par with internal SRAM w/ 
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 3
+
+
+  29:../../libDaisy//src/daisy_core.h **** cache enabled.
+  30:../../libDaisy//src/daisy_core.h **** */
+  31:../../libDaisy//src/daisy_core.h **** #define DTCM_MEM_SECTION __attribute__((section(".dtcmram_bss")))
+  32:../../libDaisy//src/daisy_core.h **** 
+  33:../../libDaisy//src/daisy_core.h **** #define FBIPMAX 0.999985f             /**< close to 1.0f-LSB at 16 bit */
+  34:../../libDaisy//src/daisy_core.h **** #define FBIPMIN (-FBIPMAX)            /**< - (1 - LSB) */
+  35:../../libDaisy//src/daisy_core.h **** #define U82F_SCALE 0.0078740f         /**< 1 / 127 */
+  36:../../libDaisy//src/daisy_core.h **** #define F2U8_SCALE 127.0f             /**< 128 - 1 */
+  37:../../libDaisy//src/daisy_core.h **** #define S82F_SCALE 0.0078125f         /**< 1 / (2**7) */
+  38:../../libDaisy//src/daisy_core.h **** #define F2S8_SCALE 127.0f             /**< (2 ** 7) - 1 */
+  39:../../libDaisy//src/daisy_core.h **** #define S162F_SCALE 3.0517578125e-05f /**< 1 / (2** 15) */
+  40:../../libDaisy//src/daisy_core.h **** #define F2S16_SCALE 32767.0f          /**< (2 ** 15) - 1 */
+  41:../../libDaisy//src/daisy_core.h **** #define F2S24_SCALE 8388608.0f        /**< 2 ** 23 */
+  42:../../libDaisy//src/daisy_core.h **** #define S242F_SCALE 1.192092896e-07f  /**< 1 / (2 ** 23) */
+  43:../../libDaisy//src/daisy_core.h **** #define S24SIGN 0x800000              /**< 2 ** 23 */
+  44:../../libDaisy//src/daisy_core.h **** #define S322F_SCALE 4.6566129e-10f    /**< 1 / (2** 31) */
+  45:../../libDaisy//src/daisy_core.h **** #define F2S32_SCALE 2147483647.f      /**< (2 ** 31) - 1 */
+  46:../../libDaisy//src/daisy_core.h **** 
+  47:../../libDaisy//src/daisy_core.h **** 
+  48:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the left 
+  49:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved output buffer named out */
+  50:../../libDaisy//src/daisy_core.h **** #define OUT_L out[0]
+  51:../../libDaisy//src/daisy_core.h **** 
+  52:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
+  53:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved output buffer named out */
+  54:../../libDaisy//src/daisy_core.h **** #define OUT_R out[1]
+  55:../../libDaisy//src/daisy_core.h **** 
+  56:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the left 
+  57:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved input buffer named in */
+  58:../../libDaisy//src/daisy_core.h **** #define IN_L in[0]
+  59:../../libDaisy//src/daisy_core.h **** 
+  60:../../libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
+  61:../../libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved input buffer named in */
+  62:../../libDaisy//src/daisy_core.h **** #define IN_R in[1]
+  63:../../libDaisy//src/daisy_core.h **** 
+  64:../../libDaisy//src/daisy_core.h **** /** 
+  65:../../libDaisy//src/daisy_core.h ****     Computes cube.
+  66:../../libDaisy//src/daisy_core.h ****     \param x Number to be cubed
+  67:../../libDaisy//src/daisy_core.h ****     \return x ^ 3
+  68:../../libDaisy//src/daisy_core.h **** */
+  69:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float cube(float x)
+  70:../../libDaisy//src/daisy_core.h **** {
+  71:../../libDaisy//src/daisy_core.h ****     return (x * x) * x;
+  72:../../libDaisy//src/daisy_core.h **** }
+  73:../../libDaisy//src/daisy_core.h **** 
+  74:../../libDaisy//src/daisy_core.h **** /** 
+  75:../../libDaisy//src/daisy_core.h ****     Converts unsigned 8-bit to float
+  76:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+  77:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+  78:../../libDaisy//src/daisy_core.h **** */
+  79:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float u82f(uint8_t x)
+  80:../../libDaisy//src/daisy_core.h **** {
+  81:../../libDaisy//src/daisy_core.h ****     return ((float)x - 127.f) * U82F_SCALE;
+  82:../../libDaisy//src/daisy_core.h **** }
+  83:../../libDaisy//src/daisy_core.h **** 
+  84:../../libDaisy//src/daisy_core.h **** /**
+  85:../../libDaisy//src/daisy_core.h ****     Converts float to unsigned 8-bit
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 4
+
+
+  86:../../libDaisy//src/daisy_core.h **** */
+  87:../../libDaisy//src/daisy_core.h **** FORCE_INLINE uint8_t f2u8(float x)
+  88:../../libDaisy//src/daisy_core.h **** {
+  89:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+  90:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+  91:../../libDaisy//src/daisy_core.h ****     return (uint8_t)((x * F2U8_SCALE) + F2U8_SCALE);
+  92:../../libDaisy//src/daisy_core.h **** }
+  93:../../libDaisy//src/daisy_core.h **** 
+  94:../../libDaisy//src/daisy_core.h **** 
+  95:../../libDaisy//src/daisy_core.h **** /** 
+  96:../../libDaisy//src/daisy_core.h ****     Converts Signed 8-bit to float
+  97:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+  98:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+  99:../../libDaisy//src/daisy_core.h **** */
+ 100:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s82f(int8_t x)
+ 101:../../libDaisy//src/daisy_core.h **** {
+ 102:../../libDaisy//src/daisy_core.h ****     return (float)x * S82F_SCALE;
+ 103:../../libDaisy//src/daisy_core.h **** }
+ 104:../../libDaisy//src/daisy_core.h **** 
+ 105:../../libDaisy//src/daisy_core.h **** /**
+ 106:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 8-bit
+ 107:../../libDaisy//src/daisy_core.h **** */
+ 108:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int8_t f2s8(float x)
+ 109:../../libDaisy//src/daisy_core.h **** {
+ 110:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 111:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 112:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S8_SCALE);
+ 113:../../libDaisy//src/daisy_core.h **** }
+ 114:../../libDaisy//src/daisy_core.h **** 
+ 115:../../libDaisy//src/daisy_core.h **** /** 
+ 116:../../libDaisy//src/daisy_core.h ****     Converts Signed 16-bit to float
+ 117:../../libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
+ 118:../../libDaisy//src/daisy_core.h ****     \return Scaled number.
+ 119:../../libDaisy//src/daisy_core.h **** */
+ 120:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s162f(int16_t x)
+ 121:../../libDaisy//src/daisy_core.h **** {
+ 122:../../libDaisy//src/daisy_core.h ****     return (float)x * S162F_SCALE;
+ 123:../../libDaisy//src/daisy_core.h **** }
+ 124:../../libDaisy//src/daisy_core.h **** 
+ 125:../../libDaisy//src/daisy_core.h **** /**
+ 126:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 16-bit
+ 127:../../libDaisy//src/daisy_core.h **** */
+ 128:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int16_t f2s16(float x)
+ 129:../../libDaisy//src/daisy_core.h **** {
+ 130:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 131:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 132:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S16_SCALE);
+ 133:../../libDaisy//src/daisy_core.h **** }
+ 134:../../libDaisy//src/daisy_core.h **** 
+ 135:../../libDaisy//src/daisy_core.h **** /**
+ 136:../../libDaisy//src/daisy_core.h ****     Converts Signed 24-bit to float
+ 137:../../libDaisy//src/daisy_core.h ****  */
+ 138:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s242f(int32_t x)
+ 139:../../libDaisy//src/daisy_core.h **** {
+ 140:../../libDaisy//src/daisy_core.h ****     x = (x ^ S24SIGN) - S24SIGN; //sign extend aka ((x<<8)>>8)
+ 141:../../libDaisy//src/daisy_core.h ****     return (float)x * S242F_SCALE;
+ 142:../../libDaisy//src/daisy_core.h **** }
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 5
+
+
+ 143:../../libDaisy//src/daisy_core.h **** /**
+ 144:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 24-bit
+ 145:../../libDaisy//src/daisy_core.h ****  */
+ 146:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int32_t f2s24(float x)
+ 147:../../libDaisy//src/daisy_core.h **** {
+ 148:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 149:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 150:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S24_SCALE);
+ 151:../../libDaisy//src/daisy_core.h **** }
+ 152:../../libDaisy//src/daisy_core.h **** 
+ 153:../../libDaisy//src/daisy_core.h **** /**
+ 154:../../libDaisy//src/daisy_core.h ****     Converts Signed 32-bit to float
+ 155:../../libDaisy//src/daisy_core.h ****  */
+ 156:../../libDaisy//src/daisy_core.h **** FORCE_INLINE float s322f(int32_t x)
+ 157:../../libDaisy//src/daisy_core.h **** {
+ 158:../../libDaisy//src/daisy_core.h ****     return (float)x * S322F_SCALE;
+ 159:../../libDaisy//src/daisy_core.h **** }
+ 160:../../libDaisy//src/daisy_core.h **** /**
+ 161:../../libDaisy//src/daisy_core.h ****     Converts float to Signed 24-bit
+ 162:../../libDaisy//src/daisy_core.h ****  */
+ 163:../../libDaisy//src/daisy_core.h **** FORCE_INLINE int32_t f2s32(float x)
+ 164:../../libDaisy//src/daisy_core.h **** {
+ 165:../../libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
+ 166:../../libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
+ 167:../../libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S32_SCALE);
+ 168:../../libDaisy//src/daisy_core.h **** }
+ 169:../../libDaisy//src/daisy_core.h **** 
+ 170:../../libDaisy//src/daisy_core.h **** 
+ 171:../../libDaisy//src/daisy_core.h **** /** Enums and a simple struct for defining a hardware pin on the MCU
+ 172:../../libDaisy//src/daisy_core.h ****  *  These correlate with the stm32 datasheet, and are used to configure
+ 173:../../libDaisy//src/daisy_core.h ****  *  the hardware.
+ 174:../../libDaisy//src/daisy_core.h ****  * 
+ 175:../../libDaisy//src/daisy_core.h ****  *  This along with the dsy_gpio_pin class should no longer be used.
+ 176:../../libDaisy//src/daisy_core.h ****  *  They are available for backwards compatability. 
+ 177:../../libDaisy//src/daisy_core.h ****  * 
+ 178:../../libDaisy//src/daisy_core.h ****  *  Please use GPIOPort enum and the Pin struct instead.
+ 179:../../libDaisy//src/daisy_core.h ****  */
+ 180:../../libDaisy//src/daisy_core.h **** typedef enum
+ 181:../../libDaisy//src/daisy_core.h **** {
+ 182:../../libDaisy//src/daisy_core.h ****     DSY_GPIOA, /**< & */
+ 183:../../libDaisy//src/daisy_core.h ****     DSY_GPIOB, /**< & */
+ 184:../../libDaisy//src/daisy_core.h ****     DSY_GPIOC, /**< & */
+ 185:../../libDaisy//src/daisy_core.h ****     DSY_GPIOD, /**< & */
+ 186:../../libDaisy//src/daisy_core.h ****     DSY_GPIOE, /**< & */
+ 187:../../libDaisy//src/daisy_core.h ****     DSY_GPIOF, /**< & */
+ 188:../../libDaisy//src/daisy_core.h ****     DSY_GPIOG, /**< & */
+ 189:../../libDaisy//src/daisy_core.h ****     DSY_GPIOH, /**< & */
+ 190:../../libDaisy//src/daisy_core.h ****     DSY_GPIOI, /**< & */
+ 191:../../libDaisy//src/daisy_core.h ****     DSY_GPIOJ, /**< & */
+ 192:../../libDaisy//src/daisy_core.h ****     DSY_GPIOK, /**< & */
+ 193:../../libDaisy//src/daisy_core.h ****     DSY_GPIOX, /** This is a non-existant port for unsupported bits of hardware. */
+ 194:../../libDaisy//src/daisy_core.h ****     DSY_GPIO_LAST, /** Final enum member */
+ 195:../../libDaisy//src/daisy_core.h **** } dsy_gpio_port;
+ 196:../../libDaisy//src/daisy_core.h **** 
+ 197:../../libDaisy//src/daisy_core.h **** /** Hardware define pins 
+ 198:../../libDaisy//src/daisy_core.h ****  *  
+ 199:../../libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 6
+
+
+ 200:../../libDaisy//src/daisy_core.h ****  *  backwards compatability.
+ 201:../../libDaisy//src/daisy_core.h ****  * 
+ 202:../../libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
+ 203:../../libDaisy//src/daisy_core.h ****  */
+ 204:../../libDaisy//src/daisy_core.h **** typedef struct
+ 205:../../libDaisy//src/daisy_core.h **** {
+ 206:../../libDaisy//src/daisy_core.h ****     dsy_gpio_port port; /**< & */
+ 207:../../libDaisy//src/daisy_core.h ****     uint8_t       pin;  /**< number 0-15 */
+ 208:../../libDaisy//src/daisy_core.h **** } dsy_gpio_pin;
+ 209:../../libDaisy//src/daisy_core.h **** 
+ 210:../../libDaisy//src/daisy_core.h **** /** Helper for creating pins from port/pin combos easily
+ 211:../../libDaisy//src/daisy_core.h ****  * 
+ 212:../../libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
+ 213:../../libDaisy//src/daisy_core.h ****  *  backwards compatability.
+ 214:../../libDaisy//src/daisy_core.h ****  * 
+ 215:../../libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
+ 216:../../libDaisy//src/daisy_core.h **** */
+ 217:../../libDaisy//src/daisy_core.h **** FORCE_INLINE dsy_gpio_pin dsy_pin(dsy_gpio_port port, uint8_t pin)
+ 218:../../libDaisy//src/daisy_core.h **** {
+ 219:../../libDaisy//src/daisy_core.h ****     dsy_gpio_pin p;
+ 220:../../libDaisy//src/daisy_core.h ****     p.port = port;
+ 221:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+ 222:../../libDaisy//src/daisy_core.h ****     return p;
+ 223:../../libDaisy//src/daisy_core.h **** }
+ 224:../../libDaisy//src/daisy_core.h **** 
+ 225:../../libDaisy//src/daisy_core.h **** /** Helper for testing sameness of two dsy_gpio_pins
+ 226:../../libDaisy//src/daisy_core.h ****  *  \return    1 if same, 0 if different
+ 227:../../libDaisy//src/daisy_core.h ****  * 
+ 228:../../libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
+ 229:../../libDaisy//src/daisy_core.h ****  *  backwards compatability.
+ 230:../../libDaisy//src/daisy_core.h ****  * 
+ 231:../../libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
+ 232:../../libDaisy//src/daisy_core.h ****  */
+ 233:../../libDaisy//src/daisy_core.h **** FORCE_INLINE uint8_t dsy_pin_cmp(dsy_gpio_pin *a, dsy_gpio_pin *b)
+ 234:../../libDaisy//src/daisy_core.h **** {
+ 235:../../libDaisy//src/daisy_core.h ****     return ((a->port == b->port) && (a->pin == b->pin));
+ 236:../../libDaisy//src/daisy_core.h **** }
+ 237:../../libDaisy//src/daisy_core.h **** 
+ 238:../../libDaisy//src/daisy_core.h **** #ifdef __cplusplus
+ 239:../../libDaisy//src/daisy_core.h **** 
+ 240:../../libDaisy//src/daisy_core.h **** namespace daisy
+ 241:../../libDaisy//src/daisy_core.h **** {
+ 242:../../libDaisy//src/daisy_core.h **** /** @brief GPIO Port names */
+ 243:../../libDaisy//src/daisy_core.h **** enum GPIOPort
+ 244:../../libDaisy//src/daisy_core.h **** {
+ 245:../../libDaisy//src/daisy_core.h ****     PORTA, /**< Port A */
+ 246:../../libDaisy//src/daisy_core.h ****     PORTB, /**< Port B */
+ 247:../../libDaisy//src/daisy_core.h ****     PORTC, /**< Port C */
+ 248:../../libDaisy//src/daisy_core.h ****     PORTD, /**< Port D */
+ 249:../../libDaisy//src/daisy_core.h ****     PORTE, /**< Port E */
+ 250:../../libDaisy//src/daisy_core.h ****     PORTF, /**< Port F */
+ 251:../../libDaisy//src/daisy_core.h ****     PORTG, /**< Port G */
+ 252:../../libDaisy//src/daisy_core.h ****     PORTH, /**< Port H */
+ 253:../../libDaisy//src/daisy_core.h ****     PORTI, /**< Port I */
+ 254:../../libDaisy//src/daisy_core.h ****     PORTJ, /**< Port J */
+ 255:../../libDaisy//src/daisy_core.h ****     PORTK, /**< Port K */
+ 256:../../libDaisy//src/daisy_core.h ****     PORTX, /**< Used as a dummy port to signal an invalid pin. */
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 7
+
+
+ 257:../../libDaisy//src/daisy_core.h **** };
+ 258:../../libDaisy//src/daisy_core.h **** 
+ 259:../../libDaisy//src/daisy_core.h **** /** @brief representation of hardware port/pin combination */
+ 260:../../libDaisy//src/daisy_core.h **** struct Pin
+ 261:../../libDaisy//src/daisy_core.h **** {
+ 262:../../libDaisy//src/daisy_core.h ****     GPIOPort port;
+ 263:../../libDaisy//src/daisy_core.h ****     uint8_t  pin;
+ 264:../../libDaisy//src/daisy_core.h **** 
+ 265:../../libDaisy//src/daisy_core.h ****     /** @brief Constructor creates a valid pin. 
+ 266:../../libDaisy//src/daisy_core.h ****      *  @param pt GPIOPort between PA, and PK corresponding to STM32 Port.
+ 267:../../libDaisy//src/daisy_core.h ****      *  @param pn pin number in range of 0-15
+ 268:../../libDaisy//src/daisy_core.h ****     */
+ 269:../../libDaisy//src/daisy_core.h ****     constexpr Pin(const GPIOPort pt, const uint8_t pn) : port(pt), pin(pn) {}
+ 270:../../libDaisy//src/daisy_core.h **** 
+ 271:../../libDaisy//src/daisy_core.h ****     /** @brief Basic Constructor creates an invalid Pin object */
+ 272:../../libDaisy//src/daisy_core.h ****     constexpr Pin() : port(PORTX), pin(255) {}
+ 273:../../libDaisy//src/daisy_core.h **** 
+ 274:../../libDaisy//src/daisy_core.h ****     /** @brief checks validity of a Pin 
+ 275:../../libDaisy//src/daisy_core.h ****      *  @retval returns true if the port is a valid hardware pin, otherwise false.
+ 276:../../libDaisy//src/daisy_core.h ****     */
+ 277:../../libDaisy//src/daisy_core.h ****     constexpr bool IsValid() const { return port != PORTX && pin < 16; }
+ 278:../../libDaisy//src/daisy_core.h **** 
+ 279:../../libDaisy//src/daisy_core.h ****     /** @brief comparison operator for checking equality between Pin objects */
+ 280:../../libDaisy//src/daisy_core.h ****     constexpr bool operator==(const Pin &rhs) const
+ 281:../../libDaisy//src/daisy_core.h ****     {
+ 282:../../libDaisy//src/daisy_core.h ****         return (rhs.port == port) && (rhs.pin == pin);
+ 283:../../libDaisy//src/daisy_core.h ****     }
+ 284:../../libDaisy//src/daisy_core.h **** 
+ 285:../../libDaisy//src/daisy_core.h ****     /** @brief comparison operator for checking inequality between Pin objects */
+ 286:../../libDaisy//src/daisy_core.h ****     constexpr bool operator!=(const Pin &rhs) const { return !operator==(rhs); }
+ 287:../../libDaisy//src/daisy_core.h **** 
+ 288:../../libDaisy//src/daisy_core.h ****     /** @brief conversion operation for converting to the old-style representation
+ 289:../../libDaisy//src/daisy_core.h ****      *         of a pin.
+ 290:../../libDaisy//src/daisy_core.h ****      * 
+ 291:../../libDaisy//src/daisy_core.h ****      *  This allows the new Pin type to be used in place of the older, dsy_gpio_pin
+ 292:../../libDaisy//src/daisy_core.h ****      *  type.
+ 293:../../libDaisy//src/daisy_core.h ****      */
+ 294:../../libDaisy//src/daisy_core.h ****     operator dsy_gpio_pin() const
+  77              		.loc 2 294 5 view .LVU15
+  78              	.LBB10:
+ 295:../../libDaisy//src/daisy_core.h ****     {
+ 296:../../libDaisy//src/daisy_core.h ****         return dsy_pin(static_cast<dsy_gpio_port>(port), pin);
+  79              		.loc 2 296 9 view .LVU16
+  80              		.loc 2 296 58 is_stmt 0 view .LVU17
+  81 0032 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+  82              	.LVL4:
+  83              	.LBB11:
+  84              	.LBI11:
+ 217:../../libDaisy//src/daisy_core.h **** {
+  85              		.loc 2 217 27 is_stmt 1 view .LVU18
+  86              	.LBE11:
+  87              	.LBE10:
+  88              	.LBE9:
+ 219:../../libDaisy//src/daisy_core.h ****     p.port = port;
+  89              		.loc 2 219 5 view .LVU19
+ 220:../../libDaisy//src/daisy_core.h ****     p.pin  = pin;
+  90              		.loc 2 220 5 view .LVU20
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 8
+
+
+ 221:../../libDaisy//src/daisy_core.h ****     return p;
+  91              		.loc 2 221 5 view .LVU21
+ 222:../../libDaisy//src/daisy_core.h **** }
+  92              		.loc 2 222 5 view .LVU22
+ 222:../../libDaisy//src/daisy_core.h **** }
+  93              		.loc 2 222 5 is_stmt 0 view .LVU23
+  94 0036 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
+  95              		.loc 1 6 15 view .LVU24
+  96 003a 04F12C00 		add	r0, r4, #44
+  97 003e 8DF81D30 		strb	r3, [sp, #29]
+  98              	.LVL5:
+  99              		.loc 1 6 15 view .LVU25
+ 100 0042 8DF81C20 		strb	r2, [sp, #28]
+ 101 0046 9FED040A 		vldr.32	s0, .L2
+ 102 004a 0799     		ldr	r1, [sp, #28]
+ 103 004c FFF7FEFF 		bl	_ZN5daisy6Switch4InitE12dsy_gpio_pinf
+ 104              	.LVL6:
+   7:EncoderPush.cpp ****         prevNextCode = 0;
+ 105              		.loc 1 7 9 is_stmt 1 view .LVU26
+ 106              		.loc 1 7 22 is_stmt 0 view .LVU27
+ 107 0050 2570     		strb	r5, [r4]
+   8:EncoderPush.cpp ****         store = 0;
+ 108              		.loc 1 8 9 is_stmt 1 view .LVU28
+ 109              		.loc 1 8 15 is_stmt 0 view .LVU29
+ 110 0052 6580     		strh	r5, [r4, #2]	@ movhi
+   9:EncoderPush.cpp ****     }
+ 111              		.loc 1 9 5 view .LVU30
+ 112 0054 09B0     		add	sp, sp, #36
+ 113              		.cfi_def_cfa_offset 12
+ 114              		@ sp needed
+ 115 0056 30BD     		pop	{r4, r5, pc}
+ 116              	.LVL7:
+ 117              	.L3:
+ 118              		.loc 1 9 5 view .LVU31
+ 119              		.align	2
+ 120              	.L2:
+ 121 0058 00000000 		.word	0
+ 122              		.cfi_endproc
+ 123              	.LFE2540:
+ 125              		.section	.text._ZN11EncoderPush6UpdateEv,"ax",%progbits
+ 126              		.align	1
+ 127              		.global	_ZN11EncoderPush6UpdateEv
+ 128              		.syntax unified
+ 129              		.thumb
+ 130              		.thumb_func
+ 132              	_ZN11EncoderPush6UpdateEv:
+ 133              	.LVL8:
+ 134              	.LFB2541:
+  10:EncoderPush.cpp **** 
+  11:EncoderPush.cpp ****     
+  12:EncoderPush.cpp **** 
+  13:EncoderPush.cpp ****     void EncoderPush::Update() {
+ 135              		.loc 1 13 32 is_stmt 1 view -0
+ 136              		.cfi_startproc
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 0, uses_anonymous_args = 0
+ 139              		@ link register save eliminated.
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 9
+
+
+  14:EncoderPush.cpp ****         s.Debounce();
+ 140              		.loc 1 14 9 view .LVU33
+ 141              		.loc 1 14 19 is_stmt 0 view .LVU34
+ 142 0000 2C30     		adds	r0, r0, #44
+ 143              	.LVL9:
+ 144              		.loc 1 14 19 view .LVU35
+ 145 0002 FFF7FEBF 		b	_ZN5daisy6Switch8DebounceEv
+ 146              	.LVL10:
+ 147              		.loc 1 14 19 view .LVU36
+ 148              		.cfi_endproc
+ 149              	.LFE2541:
+ 151              		.section	.text._ZN11EncoderPush6RisingEv,"ax",%progbits
+ 152              		.align	1
+ 153              		.global	_ZN11EncoderPush6RisingEv
+ 154              		.syntax unified
+ 155              		.thumb
+ 156              		.thumb_func
+ 158              	_ZN11EncoderPush6RisingEv:
+ 159              	.LVL11:
+ 160              	.LFB2542:
+  15:EncoderPush.cpp ****     }
+  16:EncoderPush.cpp **** 
+  17:EncoderPush.cpp ****     bool EncoderPush::Rising() {
+ 161              		.loc 1 17 32 is_stmt 1 view -0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165              		@ link register save eliminated.
+  18:EncoderPush.cpp ****         return s.RisingEdge();
+ 166              		.loc 1 18 9 view .LVU38
+ 167              	.LBB14:
+ 168              	.LBI14:
+ 169              		.file 3 "../../libDaisy//src/hid/switch.h"
+   1:../../libDaisy//src/hid/switch.h **** #pragma once
+   2:../../libDaisy//src/hid/switch.h **** #ifndef DSY_SWITCH_H
+   3:../../libDaisy//src/hid/switch.h **** #define DSY_SWITCH_H
+   4:../../libDaisy//src/hid/switch.h **** #include "daisy_core.h"
+   5:../../libDaisy//src/hid/switch.h **** #include "per/gpio.h"
+   6:../../libDaisy//src/hid/switch.h **** #include "sys/system.h"
+   7:../../libDaisy//src/hid/switch.h **** 
+   8:../../libDaisy//src/hid/switch.h **** namespace daisy
+   9:../../libDaisy//src/hid/switch.h **** {
+  10:../../libDaisy//src/hid/switch.h **** /** 
+  11:../../libDaisy//src/hid/switch.h ****     Generic Class for handling momentary/latching switches \n 
+  12:../../libDaisy//src/hid/switch.h ****     Inspired/influenced by Mutable Instruments (pichenettes) Switch classes
+  13:../../libDaisy//src/hid/switch.h ****     @author Stephen Hensley
+  14:../../libDaisy//src/hid/switch.h ****     @date December 2019
+  15:../../libDaisy//src/hid/switch.h ****     @ingroup controls
+  16:../../libDaisy//src/hid/switch.h **** */
+  17:../../libDaisy//src/hid/switch.h **** class Switch
+  18:../../libDaisy//src/hid/switch.h **** {
+  19:../../libDaisy//src/hid/switch.h ****   public:
+  20:../../libDaisy//src/hid/switch.h ****     /** Specifies the expected behavior of the switch */
+  21:../../libDaisy//src/hid/switch.h ****     enum Type
+  22:../../libDaisy//src/hid/switch.h ****     {
+  23:../../libDaisy//src/hid/switch.h ****         TYPE_TOGGLE,    /**< & */
+  24:../../libDaisy//src/hid/switch.h ****         TYPE_MOMENTARY, /**< & */
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 10
+
+
+  25:../../libDaisy//src/hid/switch.h ****     };
+  26:../../libDaisy//src/hid/switch.h ****     /** Specifies whether the pressed is HIGH or LOW. */
+  27:../../libDaisy//src/hid/switch.h ****     enum Polarity
+  28:../../libDaisy//src/hid/switch.h ****     {
+  29:../../libDaisy//src/hid/switch.h ****         POLARITY_NORMAL,   /**< & */
+  30:../../libDaisy//src/hid/switch.h ****         POLARITY_INVERTED, /**< & */
+  31:../../libDaisy//src/hid/switch.h ****     };
+  32:../../libDaisy//src/hid/switch.h **** 
+  33:../../libDaisy//src/hid/switch.h ****     /** Specifies whether to use built-in Pull Up/Down resistors to hold button at a given state wh
+  34:../../libDaisy//src/hid/switch.h ****     enum Pull
+  35:../../libDaisy//src/hid/switch.h ****     {
+  36:../../libDaisy//src/hid/switch.h ****         PULL_UP,   /**< & */
+  37:../../libDaisy//src/hid/switch.h ****         PULL_DOWN, /**< & */
+  38:../../libDaisy//src/hid/switch.h ****         PULL_NONE, /**< & */
+  39:../../libDaisy//src/hid/switch.h ****     };
+  40:../../libDaisy//src/hid/switch.h **** 
+  41:../../libDaisy//src/hid/switch.h ****     Switch() {}
+  42:../../libDaisy//src/hid/switch.h ****     ~Switch() {}
+  43:../../libDaisy//src/hid/switch.h **** 
+  44:../../libDaisy//src/hid/switch.h ****     /** 
+  45:../../libDaisy//src/hid/switch.h ****     Initializes the switch object with a given port/pin combo.
+  46:../../libDaisy//src/hid/switch.h ****     \param pin port/pin object to tell the switch which hardware pin to use.
+  47:../../libDaisy//src/hid/switch.h ****     \param update_rate Does nothing. Backwards compatibility until next breaking update.
+  48:../../libDaisy//src/hid/switch.h ****     \param t switch type -- Default: TYPE_MOMENTARY
+  49:../../libDaisy//src/hid/switch.h ****     \param pol switch polarity -- Default: POLARITY_INVERTED
+  50:../../libDaisy//src/hid/switch.h ****     \param pu switch pull up/down -- Default: PULL_UP
+  51:../../libDaisy//src/hid/switch.h ****     */
+  52:../../libDaisy//src/hid/switch.h ****     void
+  53:../../libDaisy//src/hid/switch.h ****     Init(dsy_gpio_pin pin, float update_rate, Type t, Polarity pol, Pull pu);
+  54:../../libDaisy//src/hid/switch.h **** 
+  55:../../libDaisy//src/hid/switch.h ****     /**
+  56:../../libDaisy//src/hid/switch.h ****        Simplified Init.
+  57:../../libDaisy//src/hid/switch.h ****        \param pin port/pin object to tell the switch which hardware pin to use.
+  58:../../libDaisy//src/hid/switch.h ****        \param update_rate Left for backwards compatibility until next breaking change.
+  59:../../libDaisy//src/hid/switch.h ****     */
+  60:../../libDaisy//src/hid/switch.h ****     void Init(dsy_gpio_pin pin, float update_rate = 0.f);
+  61:../../libDaisy//src/hid/switch.h **** 
+  62:../../libDaisy//src/hid/switch.h ****     /** 
+  63:../../libDaisy//src/hid/switch.h ****     Called at update_rate to debounce and handle timing for the switch.
+  64:../../libDaisy//src/hid/switch.h ****     In order for events not to be missed, its important that the Edge/Pressed checks
+  65:../../libDaisy//src/hid/switch.h ****     be made at the same rate as the debounce function is being called.
+  66:../../libDaisy//src/hid/switch.h ****     */
+  67:../../libDaisy//src/hid/switch.h ****     void Debounce();
+  68:../../libDaisy//src/hid/switch.h **** 
+  69:../../libDaisy//src/hid/switch.h ****     /** \return true if a button was just pressed. */
+  70:../../libDaisy//src/hid/switch.h ****     inline bool RisingEdge() const { return updated_ ? state_ == 0x7f : false; }
+ 170              		.loc 3 70 17 view .LVU39
+ 171              	.LBB15:
+ 172              		.loc 3 70 38 view .LVU40
+ 173              	.LBE15:
+ 174              	.LBE14:
+  17:EncoderPush.cpp ****         return s.RisingEdge();
+ 175              		.loc 1 17 32 is_stmt 0 view .LVU41
+ 176 0000 0346     		mov	r3, r0
+ 177              	.LBB17:
+ 178              	.LBB16:
+ 179              		.loc 3 70 45 view .LVU42
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 11
+
+
+ 180 0002 90F83000 		ldrb	r0, [r0, #48]	@ zero_extendqisi2
+ 181              	.LVL12:
+ 182              		.loc 3 70 54 view .LVU43
+ 183 0006 28B1     		cbz	r0, .L6
+ 184 0008 93F83600 		ldrb	r0, [r3, #54]	@ zero_extendqisi2
+ 185 000c A0F17F03 		sub	r3, r0, #127
+ 186              	.LVL13:
+ 187              		.loc 3 70 54 view .LVU44
+ 188 0010 5842     		rsbs	r0, r3, #0
+ 189 0012 5841     		adcs	r0, r0, r3
+ 190              	.L6:
+ 191              	.LVL14:
+ 192              		.loc 3 70 54 view .LVU45
+ 193              	.LBE16:
+ 194              	.LBE17:
+  19:EncoderPush.cpp ****     }
+ 195              		.loc 1 19 5 view .LVU46
+ 196 0014 7047     		bx	lr
+ 197              		.cfi_endproc
+ 198              	.LFE2542:
+ 200              		.section	.text._ZN11EncoderPush7FallingEv,"ax",%progbits
+ 201              		.align	1
+ 202              		.global	_ZN11EncoderPush7FallingEv
+ 203              		.syntax unified
+ 204              		.thumb
+ 205              		.thumb_func
+ 207              	_ZN11EncoderPush7FallingEv:
+ 208              	.LVL15:
+ 209              	.LFB2543:
+  20:EncoderPush.cpp **** 
+  21:EncoderPush.cpp ****     bool EncoderPush::Falling() {
+ 210              		.loc 1 21 33 is_stmt 1 view -0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214              		@ link register save eliminated.
+  22:EncoderPush.cpp ****         return s.FallingEdge();
+ 215              		.loc 1 22 9 view .LVU48
+ 216              	.LBB20:
+ 217              	.LBI20:
+  71:../../libDaisy//src/hid/switch.h **** 
+  72:../../libDaisy//src/hid/switch.h ****     /** \return true if the button was just released */
+  73:../../libDaisy//src/hid/switch.h ****     inline bool FallingEdge() const
+ 218              		.loc 3 73 17 view .LVU49
+ 219              	.LBB21:
+  74:../../libDaisy//src/hid/switch.h ****     {
+  75:../../libDaisy//src/hid/switch.h ****         return updated_ ? state_ == 0x80 : false;
+ 220              		.loc 3 75 9 view .LVU50
+ 221              	.LBE21:
+ 222              	.LBE20:
+  21:EncoderPush.cpp ****         return s.FallingEdge();
+ 223              		.loc 1 21 33 is_stmt 0 view .LVU51
+ 224 0000 0346     		mov	r3, r0
+ 225              	.LBB23:
+ 226              	.LBB22:
+ 227              		.loc 3 75 16 view .LVU52
+ 228 0002 90F83000 		ldrb	r0, [r0, #48]	@ zero_extendqisi2
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 12
+
+
+ 229              	.LVL16:
+ 230              		.loc 3 75 25 view .LVU53
+ 231 0006 28B1     		cbz	r0, .L11
+ 232 0008 93F83600 		ldrb	r0, [r3, #54]	@ zero_extendqisi2
+ 233 000c A0F18003 		sub	r3, r0, #128
+ 234              	.LVL17:
+ 235              		.loc 3 75 25 view .LVU54
+ 236 0010 5842     		rsbs	r0, r3, #0
+ 237 0012 5841     		adcs	r0, r0, r3
+ 238              	.L11:
+ 239              	.LVL18:
+ 240              		.loc 3 75 25 view .LVU55
+ 241              	.LBE22:
+ 242              	.LBE23:
+  23:EncoderPush.cpp ****     }
+ 243              		.loc 1 23 5 view .LVU56
+ 244 0014 7047     		bx	lr
+ 245              		.cfi_endproc
+ 246              	.LFE2543:
+ 248              		.section	.text._ZN11EncoderPush7PressedEv,"ax",%progbits
+ 249              		.align	1
+ 250              		.global	_ZN11EncoderPush7PressedEv
+ 251              		.syntax unified
+ 252              		.thumb
+ 253              		.thumb_func
+ 255              	_ZN11EncoderPush7PressedEv:
+ 256              	.LVL19:
+ 257              	.LFB2544:
+  24:EncoderPush.cpp **** 
+  25:EncoderPush.cpp ****     bool EncoderPush::Pressed() {
+ 258              		.loc 1 25 33 is_stmt 1 view -0
+ 259              		.cfi_startproc
+ 260              		@ args = 0, pretend = 0, frame = 0
+ 261              		@ frame_needed = 0, uses_anonymous_args = 0
+ 262              		@ link register save eliminated.
+  26:EncoderPush.cpp ****         return s.Pressed();
+ 263              		.loc 1 26 9 view .LVU58
+ 264              	.LBB24:
+ 265              	.LBI24:
+  76:../../libDaisy//src/hid/switch.h ****     }
+  77:../../libDaisy//src/hid/switch.h **** 
+  78:../../libDaisy//src/hid/switch.h ****     /** \return true if the button is held down (or if the toggle is on) */
+  79:../../libDaisy//src/hid/switch.h ****     inline bool Pressed() const { return state_ == 0xff; }
+ 266              		.loc 3 79 17 view .LVU59
+ 267              	.LBB25:
+ 268              		.loc 3 79 35 view .LVU60
+ 269              		.loc 3 79 52 is_stmt 0 view .LVU61
+ 270 0000 90F83600 		ldrb	r0, [r0, #54]	@ zero_extendqisi2
+ 271              	.LVL20:
+ 272              		.loc 3 79 52 view .LVU62
+ 273              	.LBE25:
+ 274              	.LBE24:
+  27:EncoderPush.cpp ****     }
+ 275              		.loc 1 27 5 view .LVU63
+ 276 0004 A0F1FF03 		sub	r3, r0, #255
+ 277 0008 5842     		rsbs	r0, r3, #0
+ 278 000a 5841     		adcs	r0, r0, r3
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 13
+
+
+ 279 000c 7047     		bx	lr
+ 280              		.cfi_endproc
+ 281              	.LFE2544:
+ 283              		.section	.text._ZN11EncoderPush10ReadRotaryEv,"ax",%progbits
+ 284              		.align	1
+ 285              		.global	_ZN11EncoderPush10ReadRotaryEv
+ 286              		.syntax unified
+ 287              		.thumb
+ 288              		.thumb_func
+ 290              	_ZN11EncoderPush10ReadRotaryEv:
+ 291              	.LVL21:
+ 292              	.LFB2545:
+  28:EncoderPush.cpp **** 
+  29:EncoderPush.cpp ****     // A vald CW or  CCW move returns 1, invalid returns 0.
+  30:EncoderPush.cpp ****     int8_t EncoderPush::ReadRotary() {
+ 293              		.loc 1 30 38 is_stmt 1 view -0
+ 294              		.cfi_startproc
+ 295              		@ args = 0, pretend = 0, frame = 0
+ 296              		@ frame_needed = 0, uses_anonymous_args = 0
+  31:EncoderPush.cpp **** 
+  32:EncoderPush.cpp ****         prevNextCode <<= 2;
+ 297              		.loc 1 32 9 view .LVU65
+  30:EncoderPush.cpp **** 
+ 298              		.loc 1 30 38 is_stmt 0 view .LVU66
+ 299 0000 10B5     		push	{r4, lr}
+ 300              		.cfi_def_cfa_offset 8
+ 301              		.cfi_offset 4, -8
+ 302              		.cfi_offset 14, -4
+ 303              		.loc 1 32 22 view .LVU67
+ 304 0002 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+  30:EncoderPush.cpp **** 
+ 305              		.loc 1 30 38 view .LVU68
+ 306 0004 0446     		mov	r4, r0
+ 307              		.loc 1 32 22 view .LVU69
+ 308 0006 9B00     		lsls	r3, r3, #2
+ 309 0008 00F8043B 		strb	r3, [r0], #4
+ 310              	.LVL22:
+  33:EncoderPush.cpp ****         if (a.Read()) prevNextCode |= 0x02;
+ 311              		.loc 1 33 9 is_stmt 1 view .LVU70
+ 312              		.loc 1 33 19 is_stmt 0 view .LVU71
+ 313 000c FFF7FEFF 		bl	_ZN5daisy4GPIO4ReadEv
+ 314              	.LVL23:
+ 315              		.loc 1 33 9 view .LVU72
+ 316 0010 18B1     		cbz	r0, .L17
+ 317              		.loc 1 33 23 is_stmt 1 discriminator 1 view .LVU73
+ 318              		.loc 1 33 36 is_stmt 0 discriminator 1 view .LVU74
+ 319 0012 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 320 0014 43F00203 		orr	r3, r3, #2
+ 321 0018 2370     		strb	r3, [r4]
+ 322              	.L17:
+  34:EncoderPush.cpp ****         if (b.Read()) prevNextCode |= 0x01;
+ 323              		.loc 1 34 9 is_stmt 1 view .LVU75
+ 324              		.loc 1 34 19 is_stmt 0 view .LVU76
+ 325 001a 04F11800 		add	r0, r4, #24
+ 326 001e FFF7FEFF 		bl	_ZN5daisy4GPIO4ReadEv
+ 327              	.LVL24:
+ 328              		.loc 1 34 9 view .LVU77
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 14
+
+
+ 329 0022 18B1     		cbz	r0, .L18
+ 330              		.loc 1 34 23 is_stmt 1 discriminator 1 view .LVU78
+ 331              		.loc 1 34 36 is_stmt 0 discriminator 1 view .LVU79
+ 332 0024 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 333 0026 43F00103 		orr	r3, r3, #1
+ 334 002a 2370     		strb	r3, [r4]
+ 335              	.L18:
+  35:EncoderPush.cpp ****         prevNextCode &= 0x0f;
+ 336              		.loc 1 35 9 is_stmt 1 view .LVU80
+ 337              		.loc 1 35 22 is_stmt 0 view .LVU81
+ 338 002c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 339 002e 03F00F03 		and	r3, r3, #15
+  36:EncoderPush.cpp **** 
+  37:EncoderPush.cpp ****         // If valid then store as 16 bit data.
+  38:EncoderPush.cpp ****         if  (rot_enc_table[prevNextCode] ) {
+ 340              		.loc 1 38 40 view .LVU82
+ 341 0032 E218     		adds	r2, r4, r3
+  35:EncoderPush.cpp ****         prevNextCode &= 0x0f;
+ 342              		.loc 1 35 22 view .LVU83
+ 343 0034 2370     		strb	r3, [r4]
+ 344              		.loc 1 38 9 is_stmt 1 view .LVU84
+ 345              		.loc 1 38 40 is_stmt 0 view .LVU85
+ 346 0036 92F93C00 		ldrsb	r0, [r2, #60]
+ 347              		.loc 1 38 9 view .LVU86
+ 348 003a 50B1     		cbz	r0, .L19
+  39:EncoderPush.cpp ****             store <<= 4;
+ 349              		.loc 1 39 13 is_stmt 1 view .LVU87
+  40:EncoderPush.cpp ****             store |= prevNextCode;
+ 350              		.loc 1 40 13 view .LVU88
+  39:EncoderPush.cpp ****             store <<= 4;
+ 351              		.loc 1 39 19 is_stmt 0 view .LVU89
+ 352 003c 6088     		ldrh	r0, [r4, #2]
+ 353              		.loc 1 40 19 view .LVU90
+ 354 003e 43EA0013 		orr	r3, r3, r0, lsl #4
+ 355 0042 9BB2     		uxth	r3, r3
+ 356 0044 6380     		strh	r3, [r4, #2]	@ movhi
+  41:EncoderPush.cpp ****             //if (store==0xd42b) return 1;
+  42:EncoderPush.cpp ****             //if (store==0xe817) return -1;
+  43:EncoderPush.cpp ****             if ((store&0xff)==0x2b) return -1;
+ 357              		.loc 1 43 13 is_stmt 1 view .LVU91
+ 358 0046 DBB2     		uxtb	r3, r3
+ 359 0048 2B2B     		cmp	r3, #43
+ 360 004a 03D0     		beq	.L20
+  44:EncoderPush.cpp ****             if ((store&0xff)==0x17) return 1;
+ 361              		.loc 1 44 13 view .LVU92
+  43:EncoderPush.cpp ****             if ((store&0xff)==0x17) return 1;
+ 362              		.loc 1 43 45 is_stmt 0 view .LVU93
+ 363 004c 173B     		subs	r3, r3, #23
+ 364 004e 5842     		rsbs	r0, r3, #0
+ 365 0050 5841     		adcs	r0, r0, r3
+ 366              	.L19:
+  45:EncoderPush.cpp ****         }
+  46:EncoderPush.cpp ****         return 0;
+  47:EncoderPush.cpp ****     }...
+ 367              		.loc 1 47 5 view .LVU94
+ 368 0052 10BD     		pop	{r4, pc}
+ 369              	.LVL25:
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 15
+
+
+ 370              	.L20:
+  43:EncoderPush.cpp ****             if ((store&0xff)==0x17) return 1;
+ 371              		.loc 1 43 45 view .LVU95
+ 372 0054 4FF0FF30 		mov	r0, #-1
+ 373 0058 FBE7     		b	.L19
+ 374              		.cfi_endproc
+ 375              	.LFE2545:
+ 377              		.text
+ 378              	.Letext0:
+ 379              		.file 4 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/machine/_default_types.h"
+ 380              		.file 5 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_stdint.h"
+ 381              		.file 6 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdint.h"
+ 382              		.file 7 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h"
+ 383              		.file 8 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath"
+ 384              		.file 9 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/std_abs.h"
+ 385              		.file 10 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdlib"
+ 386              		.file 11 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdint"
+ 387              		.file 12 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/type_traits"
+ 388              		.file 13 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/debug/debug.h"
+ 389              		.file 14 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v
+ 390              		.file 15 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/algorithmfwd.h"
+ 391              		.file 16 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/stl_pair.h"
+ 392              		.file 17 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/exception_ptr.h"
+ 393              		.file 18 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdarg"
+ 394              		.file 19 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdio"
+ 395              		.file 20 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstring"
+ 396              		.file 21 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/predefined_ops.h
+ 397              		.file 22 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_types.h"
+ 398              		.file 23 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/reent.h"
+ 399              		.file 24 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/lock.h"
+ 400              		.file 25 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/math.h"
+ 401              		.file 26 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdlib.h"
+ 402              		.file 27 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/math.h"
+ 403              		.file 28 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/stdlib.h"
+ 404              		.file 29 "../../libDaisy//src/per/gpio.h"
+ 405              		.file 30 "../../libDaisy//src/util/wav_format.h"
+ 406              		.file 31 "../../libDaisy//src/dev/max11300.h"
+ 407              		.file 32 "../../libDaisy//src/daisy_seed.h"
+ 408              		.file 33 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h"
+ 409              		.file 34 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdio.h"
+ 410              		.file 35 "../../libDaisy//src/dev/sr_595.h"
+ 411              		.file 36 "../../libDaisy//src/dev/sr_165.h"
+ 412              		.file 37 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/string.h"
+ 413              		.file 38 "EncoderPush.h"
+ 414              		.file 39 "<built-in>"
+ARM GAS  /var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 EncoderPush.cpp
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:19     .text._ZN11EncoderPush4InitEN5daisy3PinES1_S1_:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:25     .text._ZN11EncoderPush4InitEN5daisy3PinES1_S1_:0000000000000000 _ZN11EncoderPush4InitEN5daisy3PinES1_S1_
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:121    .text._ZN11EncoderPush4InitEN5daisy3PinES1_S1_:0000000000000058 $d
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:126    .text._ZN11EncoderPush6UpdateEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:132    .text._ZN11EncoderPush6UpdateEv:0000000000000000 _ZN11EncoderPush6UpdateEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:152    .text._ZN11EncoderPush6RisingEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:158    .text._ZN11EncoderPush6RisingEv:0000000000000000 _ZN11EncoderPush6RisingEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:201    .text._ZN11EncoderPush7FallingEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:207    .text._ZN11EncoderPush7FallingEv:0000000000000000 _ZN11EncoderPush7FallingEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:249    .text._ZN11EncoderPush7PressedEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:255    .text._ZN11EncoderPush7PressedEv:0000000000000000 _ZN11EncoderPush7PressedEv
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:284    .text._ZN11EncoderPush10ReadRotaryEv:0000000000000000 $t
+/var/folders/z5/_7t90xy14zq1swjhncg0p5z00000gn/T//ccj0gZ2o.s:290    .text._ZN11EncoderPush10ReadRotaryEv:0000000000000000 _ZN11EncoderPush10ReadRotaryEv
+
+UNDEFINED SYMBOLS
+_ZN5daisy4GPIO4InitENS_3PinENS0_4ModeENS0_4PullENS0_5SpeedE
+_ZN5daisy6Switch4InitE12dsy_gpio_pinf
+_ZN5daisy6Switch8DebounceEv
+_ZN5daisy4GPIO4ReadEv
