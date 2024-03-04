@@ -58,7 +58,7 @@ const int height = 64;
 
 
 
-enum MODE {STEP, SEQUENCER, GLOBAL};
+enum MODE {STEP, SEQUENCER, GLOBAL, SAMPLE_BROWSER};
 OledDisplay<SSD130xI2c128x64Driver> display;
 StepLEDs leds;
 
@@ -237,14 +237,17 @@ int main(void)
 
 				} else if (input.index == 1) {
 					if (input.left()) IncrementControl(voice, ControlChangeMsg::ID::VOICE_PAN, -1);
-					else if (input.right()) IncrementControl(voice, ControlChangeMsg::ID::VOICE_PAN, 1);						
+					else if (input.right()) IncrementControl(voice, ControlChangeMsg::ID::VOICE_PAN, 1);	
+					else if (input.down() && input.shift()) {
+						currentPage = SAMPLE_BROWSER;
+						hw.StopAudio();
+					}					
 				}
 			} else if (input.isPlay() && input.down()) {
 				ToggleControl(ControlChangeMsg::ID::PLAY_PAUSE);
 			} else if (input.isStop() && input.down()) {
 				ToggleControl(ControlChangeMsg::ID::STOP_START);
 			}	
-
 
 		} else if (currentPage == GLOBAL) {
 			if (input.IsEncoder()) {
@@ -258,6 +261,23 @@ int main(void)
 					}
 				}
 			}
+		} else if (currentPage == SAMPLE_BROWSER) {
+			 if (input.IsEncoder()) {
+				if (input.index == 0) {
+					if (input.left()) IncrementControl(voice, ControlChangeMsg::ID::VOICE_GAIN, -1);
+					else if (input.right()) IncrementControl(voice, ControlChangeMsg::ID::VOICE_GAIN, 1);
+					else if (input.down() && input.shift()) {
+						GetGlobalParameters();
+						currentPage = GLOBAL;
+					}
+
+				} else if (input.index == 1) {
+					if (input.down() && input.shift()) {
+						currentPage = SAMPLE_BROWSER;
+						hw.StopAudio();
+					}					
+				}			
+			}
 		}
 
 		// got control change from Audio Interupt
@@ -266,8 +286,10 @@ int main(void)
 			pageChanged = true;
 			if (cc.id == ControlChangeMsg::ID::SAMPLE_VOICE && cc.type == ControlChangeMsg::TYPE::GET) {
 				memcpy(&sampleVoice, cc.data, sizeof(sampleVoice));
+
 			} else if (cc.id == ControlChangeMsg::ID::GLOBAL && cc.type == ControlChangeMsg::TYPE::GET) {
 				memcpy(&globalParameters, cc.data, sizeof(globalParameters));
+
 			}  else if (cc.id == ControlChangeMsg::ID::VOICE_SEQUENCE && cc.type == ControlChangeMsg::TYPE::GET) {
 				memcpy(&sequenceParamters, cc.data, sizeof(sequenceParamters));
 			}
@@ -321,7 +343,9 @@ int main(void)
 				display.Update();
 				leds.Set(0);
 				leds.Write();
-			}	
+			} else if (currentPage == SAMPLE_BROWSER) {
+
+			}
 		}
 
 	}
