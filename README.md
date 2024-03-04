@@ -1,9 +1,5 @@
 # RM-38D
 
-## Author
-
-Hayden Barry
-
 ## Description
 
 RM-38D is a sample based hardware drum machine with 16 voices.
@@ -22,6 +18,9 @@ Micro-SD card
 ### Software
 The current software version has sixteen sample voices that can be selected from the micro-sd card. Currently supports 16bit PCM 48kHz mono wav files. 
 Currently a single bar can be looped and the pattern for each voice edited. The volume and panning for each voice can be modified using the encoders.
+
+[![Watch the video](https://img.youtube.com/vi/ZyIz7Wy38NY/hqdefault.jpg)](https://www.youtube.com/embed/ZyIz7Wy38NY)
+
 
 
 ## Features to add 
